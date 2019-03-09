@@ -6,3 +6,4 @@
 
 ## Others
 * github webhook
+* bazel

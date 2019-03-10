@@ -23,6 +23,47 @@ FAILED: Build did NOT complete successfully (0 packages loaded)
 
 ```
 
+manual steps: blocked
+
+```
+$ oc new-project abc
+$ kubectl create secret generic hmac-token --from-file=hmac=/home/liu/abc/hmac-token
+$ kubectl create secret generic oauth-token --from-file=oauth=/home/liu/abc/ci-oauth-token
+### replace default with abc
+$ vi prow/cluster/starter.yaml
+$ oc create -f prow/cluster/starter.yaml
+
+$ bazel run //experiment/add-hook -- \
+>   --hmac-path=/home/liu/abc/hmac-token \
+>   --github-token-path=/home/liu/abc/ci-oauth-token \
+>   --hook-url http://hook-abc.apps.34.209.72.132.xip.io/hook \
+>   --repo dev-tool-index
+Starting local Bazel server and connecting to it...
+DEBUG: Rule 'io_kubernetes_build' modified arguments {"shallow_since": "1517262872 -0800"}
+INFO: SHA256 (https://codeload.github.com/golang/tools/zip/bf090417da8b6150dcfe96795325f5aa78fff718) = 11629171a39a1cb4d426760005be6f7cb9b4182e4cb2756b7f1c5c2b6ae869fe
+ERROR: /home/liu/go/src/k8s.io/test-infra/BUILD.bazel:15:1: no such package '@org_golang_x_tools//go/analysis/passes/unusedresult': Traceback (most recent call last):
+	File "/home/liu/.cache/bazel/_bazel_liu/dfa086725f77f9c3976de48d68ce12a2/external/bazel_tools/tools/build_defs/repo/http.bzl", line 55
+		patch(ctx)
+	File "/home/liu/.cache/bazel/_bazel_liu/dfa086725f77f9c3976de48d68ce12a2/external/bazel_tools/tools/build_defs/repo/utils.bzl", line 84, in patch
+		fail(("Error applying patch %s:\n%s%s...)))
+Error applying patch @io_bazel_rules_go//third_party:org_golang_x_tools-gazelle.patch:
+bash: patch: command not found
+ and referenced by '//:nogo_vet'
+ERROR: Analysis of target '//experiment/add-hook:add-hook' failed; build aborted: no such package '@org_golang_x_tools//go/analysis/passes/unusedresult': Traceback (most recent call last):
+	File "/home/liu/.cache/bazel/_bazel_liu/dfa086725f77f9c3976de48d68ce12a2/external/bazel_tools/tools/build_defs/repo/http.bzl", line 55
+		patch(ctx)
+	File "/home/liu/.cache/bazel/_bazel_liu/dfa086725f77f9c3976de48d68ce12a2/external/bazel_tools/tools/build_defs/repo/utils.bzl", line 84, in patch
+		fail(("Error applying patch %s:\n%s%s...)))
+Error applying patch @io_bazel_rules_go//third_party:org_golang_x_tools-gazelle.patch:
+bash: patch: command not found
+INFO: Elapsed time: 46.052s
+INFO: 0 processes.
+FAILED: Build did NOT complete successfully (265 packages loaded, 7597 targets configured)
+FAILED: Build did NOT complete successfully (265 packages loaded, 7597 targets configured)
+    Fetching @org_golang_x_tools; Patching repository
+
+```
+
 ### sinker
 
 ```

@@ -2,7 +2,8 @@
 
 ## [prow](https://github.com/kubernetes/test-infra/tree/master/prow)
 
-[getting_started_deploy.md](https://github.com/kubernetes/test-infra/blob/master/prow/getting_started_deploy.md)
+* [getting_started_deploy](https://github.com/kubernetes/test-infra/blob/master/prow/getting_started_deploy.md)
+
 
 ```
 $ go version
@@ -15,8 +16,6 @@ Build timestamp: 1551707161
 Build timestamp as int: 1551707161
 
 ```
-
-* [getting_started_deploy](https://github.com/kubernetes/test-infra/blob/master/prow/getting_started_deploy.md)
 
 bazel methods: blocked
 

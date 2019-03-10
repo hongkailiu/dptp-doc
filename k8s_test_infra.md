@@ -33,6 +33,14 @@ $ kubectl create secret generic oauth-token --from-file=oauth=/home/liu/abc/ci-o
 $ vi prow/cluster/starter.yaml
 $ oc create -f prow/cluster/starter.yaml
 
+### no address for the ingress ing
+# oc get ingress ing
+NAME      HOSTS     ADDRESS   PORTS     AGE
+ing       *                   80        26m
+### tried to use routes
+# oc expose svc deck
+# oc expose svc hook
+
 $ bazel run //experiment/add-hook -- \
 >   --hmac-path=/home/liu/abc/hmac-token \
 >   --github-token-path=/home/liu/abc/ci-oauth-token \

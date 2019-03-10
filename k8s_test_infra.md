@@ -16,6 +16,21 @@ Build timestamp: 1551707161
 Build timestamp as int: 1551707161
 
 ```
+`tackle` binary method:
+
+```
+$ /home/liu/go/bin/tackle
+Existing kubernetes contexts:
+* 0: abc/ec2-34-209-72-132-us-west-2-compute-amazonaws-com:8443/redhat (current)
+  1: admin
+  2: default/192-168-122-65:8443/
+  3: default/ec2-34-209-72-132-us-west-2-compute-amazonaws-com:8443/redhat
+  4: minikube
+
+Choose context or [create new]: 0
+Applying admin role bindings (to create RBAC rules)...
+FATA[0020] Failed to apply cluster role binding to abc/ec2-34-209-72-132-us-west-2-compute-amazonaws-com:8443/redhat  error="current account: exec: \"gcloud\": executable file not found in $PATH"
+```
 
 bazel methods: blocked
 

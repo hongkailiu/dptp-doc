@@ -115,6 +115,20 @@ FAILED: Build did NOT complete successfully (265 packages loaded, 7597 targets c
 
 ```
 $ go get -d k8s.io/test-infra/prow/cmd/sinker
+$ cd ${GOPATH}/src/k8s.io/test-infra
+$ go build ./prow/cmd/sinker/
+
+### oc login: ready
+$ ./sinker --kubeconfig=/home/hongkliu/.kube/config --config-path=/home/hongkliu/go/src/k8s.io/test-infra/prow/config.yaml
+
+$ ./sinker --kubeconfig=/home/hongkliu/.kube/config --config-path=/home/hongkliu/go/src/k8s.io/test-infra/prow/config.yaml --job-config-path=/home/hongkliu/go/src/k8s.io/test-infra/config/jobs
+
+```
+
+Run tests:
+
+```
+$ go test ./prow/cmd/sinker/ -v
 ```
 
 ## Others

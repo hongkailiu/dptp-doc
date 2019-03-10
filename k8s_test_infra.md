@@ -2,6 +2,20 @@
 
 ## [prow](https://github.com/kubernetes/test-infra/tree/master/prow)
 
+[getting_started_deploy.md](https://github.com/kubernetes/test-infra/blob/master/prow/getting_started_deploy.md)
+
+```
+$ go version
+go version go1.11.5 linux/amd64
+$ bazel version
+Build label: 0.23.1- (@non-git)
+Build target: bazel-out/k8-opt/bin/src/main/java/com/google/devtools/build/lib/bazel/BazelServer_deploy.jar
+Build time: Mon Mar 4 13:46:01 2019 (1551707161)
+Build timestamp: 1551707161
+Build timestamp as int: 1551707161
+
+```
+
 * [getting_started_deploy](https://github.com/kubernetes/test-infra/blob/master/prow/getting_started_deploy.md)
 
 bazel methods: blocked

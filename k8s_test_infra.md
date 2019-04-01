@@ -91,6 +91,16 @@ Run tests:
 $ go test ./prow/cmd/sinker/ -v
 ```
 
+## tide
+
+```
+### https://stackoverflow.com/questions/13195110/matlab-kalman-usr-bin-ld-cannot-find-lstdc
+$ sudo dnf install libstdc++-static
+$ bazel build //prow/cmd/tide/...
+$ ll bazel-bin/prow/cmd/tide/linux_amd64_pure_stripped/tide
+-r-xr-xr-x. 1 hongkliu hongkliu 33392840 Mar 24 09:01 bazel-bin/prow/cmd/tide/linux_amd64_pure_stripped/tide
+```
+
 ## Others
 * github webhook
 * bazel

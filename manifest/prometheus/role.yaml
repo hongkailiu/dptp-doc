@@ -1,0 +1,17 @@
+apiVersion: authorization.openshift.io/v1
+kind: Role
+metadata:
+  name: prometheus-k8s
+  namespace: ci
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - endpoints
+  - pods
+  - services
+  verbs:
+  - get
+  - list
+  - watch
+

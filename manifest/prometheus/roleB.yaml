@@ -1,0 +1,15 @@
+apiVersion: authorization.openshift.io/v1
+kind: RoleBinding
+metadata:
+  name: prometheus-k8s
+  namespace: ci
+roleRef:
+  name: prometheus-k8s
+  namespace: ci
+subjects:
+- kind: ServiceAccount
+  name: prometheus-k8s
+  namespace: openshift-monitoring
+userNames:
+- system:serviceaccount:openshift-monitoring:prometheus-k8s
+

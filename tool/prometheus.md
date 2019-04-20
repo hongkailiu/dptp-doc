@@ -242,18 +242,7 @@ using-slack-with-the-alertmanager: [1](https://www.robustperception.io/using-sla
 
 ## [Integration with Grafana](https://prometheus.io/docs/visualization/grafana/)
 
-```bash
-# wget https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-5.3.2-1.x86_64.rpm 
-# yum localinstall grafana-5.3.2-1.x86_64.rpm 
-# service grafana-server start
-
-```
-
-Visit UI via browser: `http://ec2-54-218-40-188.us-west-2.compute.amazonaws.com:3000/`.
-
-u/p: admin/admin
-
-Then follow [the steps](https://prometheus.io/docs/visualization/grafana/#creating-a-prometheus-data-source)
+Installation: [steps](../grafana.md) and then follow [the steps](https://prometheus.io/docs/visualization/grafana/#creating-a-prometheus-data-source)
 to add a Prometheus data source.
 
 Add graph (ongoing)

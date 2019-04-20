@@ -14,3 +14,6 @@
 * jsonnet
 * https://jenkins-x.io/
 * https://tekton.dev/
+
+* https://sensu.io/
+* https://www.datadoghq.com/

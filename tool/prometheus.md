@@ -186,6 +186,8 @@ and [functions](https://prometheus.io/docs/prometheus/latest/querying/functions/
 sum(http_requests_total) by (job)
 rate(http_requests_total{job="test-go"}[5m])
 random_number{hostname="web-75c864d4c7-8lfj8"}>200
+sum(rate(http_request_duration_seconds_bucket{le="0.005"}[5m])) by (job)/  sum(rate(http_request_duration_seconds_count[5m])) by (job)
+sum by (job) (rate(http_request_duration_seconds_sum[5m]))/sum by (job) (rate(http_request_duration_seconds_count[5m]))
 
 Set up alert in Prometheus:
 

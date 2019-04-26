@@ -19,7 +19,7 @@ Qs:
 * PVC as Storage (avoiding data lost when recreating the crds): I saw [storageSpec](https://github.com/coreos/prometheus-operator/blob/master/pkg/apis/monitoring/v1/types.go#L285). Example and doc would be nice. Which version of prom.-opr? We have `quay.io/coreos/prometheus-operator:v0.29.0` right now deployed on OCP 311.
 * HA (avoiding downtime when updating config or version): 
     * [prometheus and alert-manager should be HA already out of the box](https://coreos.com/operators/prometheus/docs/latest/high-availability.html).
-    The status of shading implementation?
+    The status of sharding implementation?
     * grafana: via [helm](https://github.com/helm/charts/tree/master/stable/grafana)? Convert it into an opr? 
         * sidecar: config-reloader.
         * ha: replica

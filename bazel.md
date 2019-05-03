@@ -16,16 +16,14 @@ Fedora release 29 (Twenty Nine)
 # dnf install bazel
 
 $ bazel version
-Extracting Bazel installation...
-WARNING: --batch mode is deprecated. Please instead explicitly shut down your Bazel server using the command "bazel shutdown".
+...
 Build label: 0.23.1- (@non-git)
-Build target: bazel-out/k8-opt/bin/src/main/java/com/google/devtools/build/lib/bazel/BazelServer_deploy.jar
-Build time: Mon Mar 4 13:46:01 2019 (1551707161)
-Build timestamp: 1551707161
-Build timestamp as int: 1551707161
+
 
 ### https://github.com/bazelbuild/rules_go/issues/1807#issuecomment-436491815
 $ sudo dnf install patch
+### https://stackoverflow.com/questions/13195110/matlab-kalman-usr-bin-ld-cannot-find-lstdc
+$ sudo dnf install libstdc++-static
 
 ```
 

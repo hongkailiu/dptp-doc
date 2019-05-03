@@ -10,10 +10,8 @@ $ go version
 go version go1.11.5 linux/amd64
 $ bazel version
 Build label: 0.23.1- (@non-git)
-Build target: bazel-out/k8-opt/bin/src/main/java/com/google/devtools/build/lib/bazel/BazelServer_deploy.jar
-Build time: Mon Mar 4 13:46:01 2019 (1551707161)
-Build timestamp: 1551707161
-Build timestamp as int: 1551707161
+...
+
 
 ```
 `tackle` binary method:
@@ -99,6 +97,29 @@ $ sudo dnf install libstdc++-static
 $ bazel build //prow/cmd/tide/...
 $ ll bazel-bin/prow/cmd/tide/linux_amd64_pure_stripped/tide
 -r-xr-xr-x. 1 hongkliu hongkliu 33392840 Mar 24 09:01 bazel-bin/prow/cmd/tide/linux_amd64_pure_stripped/tide
+```
+
+## mkpj
+
+```
+### https://coreos.slack.com/archives/GB7NB0CUC/p1556812445275800
+$ bazel run //prow/cmd/mkpj -- --help
+$ bazel run //prow/cmd/mkpj -- --config-path=/home/hongkliu/go/src/github.com/openshift/release/cluster/ci/config/prow/config.yaml --job-config-path=/home/hongkliu/go/src/github.com/openshift/release/ci-operator/jobs --job=pull-ci-openshift-release-master-generated-dashboards  --base-ref=master --base-sha=b05852c0f7cf57b11be737f433fc1f4d8cf80be1 --pull-sha=bc16979c38cfde24589efac69bd588cbb4f4c326 --pull-author=hongkailiu --pull-number=3664
+...
+apiVersion: prow.k8s.io/v1
+kind: ProwJob
+...
+
+### write it to /home/hongkliu/Downloads/abc.yaml
+$ bazel run //prow/cmd/mkpod -- --prow-job=/home/hongkliu/Downloads/abc.yaml
+...
+apiVersion: v1
+kind: Pod
+
+### write it to /home/hongkliu/Downloads/abc1.yaml
+$ oc apply -f  /home/hongkliu/Downloads/abc1.yaml
+pod/0f609c54-6d1f-11e9-a908-c85b76866133 created
+
 ```
 
 ## Others

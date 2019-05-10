@@ -22,6 +22,17 @@ $ go get github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb
 
 ```
 
+c++ version, compile from src:
+
+```
+###https://github.com/openshift/release/pull/3730/commits/8269527a73eb9457efec416bfff6a0d73d16ba3e
+$ sudo dnf groupinstall 'Development Tools'
+$ sudo dnf install gcc-c++
+$ git clone https://github.com/google/jsonnet.git
+$ cd jsonnet && make && cp jsonnet ~/bin/
+
+```
+
 ## start
 
 ```

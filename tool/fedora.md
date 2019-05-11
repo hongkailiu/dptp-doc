@@ -184,6 +184,23 @@ $ sudo dnf install filezilla
 $ sudo dnf install tilix
 ```
 
+## redshift
+
+```
+### Not working on f30 with wayland
+###https://fedoramagazine.org/safe-eyes-redshift/
+$ sudo dnf install redshift
+$ mkdir ~/.config/redshift
+$ cd ~/.config/redshift
+$ curl -o ~/.config/redshift/redshift.conf https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample
+$ grep '\[manual' ~/.config/redshift/redshift.conf -A2
+[manual]
+lat=45.51
+lon=-73.71
+
+
+```
+
 ## foxit (pdf viewer)
 
 ```

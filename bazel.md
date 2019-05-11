@@ -24,6 +24,7 @@ Build label: 0.23.1- (@non-git)
 $ sudo dnf install patch
 ### https://stackoverflow.com/questions/13195110/matlab-kalman-usr-bin-ld-cannot-find-lstdc
 $ sudo dnf install libstdc++-static
+$ sudo dnf install python2
 
 ```
 

@@ -168,6 +168,7 @@ $ sudo dnf install google-chrome-stable
 ```
 ### https://www.dedoimedo.com/computers/fedora-29-perfect-after-install.html
 $ sudo dnf install gnome-tweak-tool
+### dash to dock
 
 ```
 

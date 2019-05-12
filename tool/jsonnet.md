@@ -14,6 +14,12 @@
 $ sudo dnf copr enable randomvariable/jsonnet
 $ sudo dnf install jsonnet
 
+### thanks to Pawel Krupa
+#https://copr.fedorainfracloud.org/coprs/paulfantom/jsonnet/
+#https://github.com/paulfantom/jsonnet-rpm/blob/master/jsonnet.spec
+$ sudo dnf copr enable paulfantom/jsonnet
+$ sudo dnf install -y jsonnet
+
 ### https://github.com/google/go-jsonnet
 $ go get github.com/google/go-jsonnet/cmd/jsonnet
 $ jsonnet --version

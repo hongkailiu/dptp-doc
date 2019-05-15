@@ -18,3 +18,7 @@
 
 * https://sensu.io/
 * https://www.datadoghq.com/
+
+## books
+
+* https://landing.google.com/sre/books/

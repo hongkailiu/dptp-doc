@@ -68,6 +68,7 @@ $ bazel build //cmd/http
 
 $ bazel test //...
 $ bazel clean
-
+###
+$ bazel build //prow/cmd/deck/...
 
 ```

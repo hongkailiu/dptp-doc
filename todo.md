@@ -18,7 +18,12 @@
 
 * https://sensu.io/
 * https://www.datadoghq.com/
+* https://cloud.google.com/stackdriver/
 
 ## books
 
 * https://landing.google.com/sre/books/
+
+## slack
+Steve Kuznetsov [7:18 PM]
+@Petr Muller @nmoraitis @bbguimaraes @hongkliu we now have all logs from Prow in Stackdriver for the GCE "origin-ci-infra" project -- they are parsed out into JSON from the logs, so you can search by key-value pairs like URL or github comment ID, etc -- let me know how it works for y'all

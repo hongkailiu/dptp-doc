@@ -4,6 +4,8 @@
 and 
 [DPTP-404](https://jira.coreos.com/browse/DPTP-404)
 
+* Do we still need the first panel (basically what we are using now for build-cop report) with the rest of them present?
+
 * release qualification vs pull request:
 release-* vs pull-ci-*
 

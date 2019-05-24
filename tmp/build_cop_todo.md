@@ -1,12 +1,18 @@
-1. release qualification vs pull request
+[PR3810](https://github.com/openshift/release/pull/3810)
+and 
+[DPTP-404](https://jira.coreos.com/browse/DPTP-404)
+
+* release qualification vs pull request:
 release-* vs pull-ci-*
 
-Q: not include e2e in the keyword?
+    Q: not include e2e in the keyword?
 
-3. image builds vs e2e vs other types of tests (can bucket) vs upgrade tests
+* infrastructure failures vs other types
 
-Q: other types of tests?
+    Remark: Not failured information saved (by prow) for the noment.
 
-6: infrastructure failures vs other types
+Review [the current board](https://grafana-prow-monitoring-stage.svc.ci.openshift.org/d/6829209d59479d48073d09725ce807fa/build-cop-dashboard?orgId=1):
 
-R: Not failured information saved for the noment.
+```
+$ oc get deployment -n prow-monitoring-stage grafana -o yaml | grep ": GF_SECURITY_ADMIN_PASSWORD" -A1 -B2
+```

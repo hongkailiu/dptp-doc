@@ -9,7 +9,7 @@ and
 * release qualification vs pull request:
 release-* vs pull-ci-*
 
-    Q: not include e2e in the keyword?
+    Q: no include e2e in the keyword?
 
 * infrastructure failures vs other types
 

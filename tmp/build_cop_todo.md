@@ -15,6 +15,10 @@ release-* vs pull-ci-*
 
     Remark: Not failured information saved (by prow) for the noment.
 
+* `job_name1` and `job_name2` are used only in the last panel for the case that none of the predefined panel satisfies your request, try the last one.
+
+    Q: Do we need this?
+
 Review [the current board](https://grafana-prow-monitoring-stage.svc.ci.openshift.org/d/6829209d59479d48073d09725ce807fa/build-cop-dashboard?orgId=1):
 
 ```

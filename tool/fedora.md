@@ -438,3 +438,7 @@ Upload: 518.96 Mbit/s
 
 
 ```
+
+## exit emergency mode
+
+Followed [this](https://www.youtube.com/watch?v=u42IpZU5ipQ) and it worked for my recently installation of F30.

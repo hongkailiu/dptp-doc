@@ -241,6 +241,34 @@ using-slack-with-the-alertmanager: [1](https://www.robustperception.io/using-sla
 [2](https://medium.com/quiq-blog/better-slack-alerts-from-prometheus-49125c8c672b),
 [3](https://github.com/prometheus/alertmanager/issues/307)
 
+Time before sending alerts: [1](https://pracucci.com/prometheus-understanding-the-delays-on-alerting.html), [2](https://www.robustperception.io/whats-the-difference-between-group_interval-group_wait-and-repeat_interval)
+
+
+```
+### alert rule:
+alert: no-webhook-calls
+expr: sum(increase(prow_webhook_counter[1m]))
+  == 0 and ((day_of_week() > 0) and (day_of_week() < 6) and (hour() >= 7))
+for: 5m
+
+### alert manager config:
+route:
+...
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 2h
+```
+
+In theory, maximally it takes 10.5 mins before sending an alert.
+
+When `expr` is statisfied, the Alert is in `pending` state.
+If it stays in that state over 5 mins (`for`), then prometheus sends
+alert firing request to alertmanager. Otherwise, it will go back to `inactive` state (I have seen this on prometheus ui).
+
+`group_wait` and `group_interval` are explained [here](https://prometheus.io/docs/alerting/configuration/#route).
+
+The same alert won't be fired in the following 2 hours (`repeat_interval`).
+
 
 ## [Integration with Grafana](https://prometheus.io/docs/visualization/grafana/)
 

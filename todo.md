@@ -20,7 +20,8 @@
 * https://www.datadoghq.com/
 * https://cloud.google.com/stackdriver/
 
-* https://github.com/kubernetes/test-infra/tree/master/testgrid
+* [testgrid](https://github.com/kubernetes/test-infra/tree/master/testgrid)
+    [talk.by.Michelle.Shepardson](https://www.youtube.com/watch?v=jm2l2SLq_yE)
 
 ## books
 

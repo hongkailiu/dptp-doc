@@ -42,7 +42,7 @@ A better visualization tool for test results. Have the links back to prow.
         `Unable to retrieve container logs for docker://8bbd3de524981278248673ab98a41a43d364fa24e6a9f418ceeccce6dab15413`
 * `search svc`:
     * context? build-log vs junit?
-    * `search-next` vs `search`: the former is bigger?
+    * `search-next` vs `search`: the former has more content/storage?
     * which line should be used as keyword for search? Eg, in [this build log](https://prow.svc.ci.openshift.org/log?job=rehearse-3842-pull-ci-openshift-builder-master-e2e-aws&id=30)
 
             level=error msg="Error: Invalid index"

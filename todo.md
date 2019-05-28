@@ -34,3 +34,31 @@ Steve Kuznetsov [7:18 PM]
 ## jira
 
 templating cards based on this [gdoc](https://docs.google.com/document/d/11jvb7yWNVQ3-fXwjpfVDAIY6BRVFjroDoDMcGwR57js/edit).
+
+## bump up prow component version
+
+```
+Steve Kuznetsov   [2 hours ago]
+@hongkliu oops -- forgot you asked to do the bump: https://github.com/openshift/release/pull/3898
+
+Steve Kuznetsov   [2 hours ago]
+tomorrow, you can do it :slightly_smiling_face:
+
+
+Steve Kuznetsov   [2 hours ago]
+I just run the `hack/bump-prow-images.sh` script  and have it merge, while running `hack/prow-monitor.py` in a different console (I always have that running)
+
+Steve Kuznetsov   [2 hours ago]
+these days we should be able to also get alerts on error messages from stackdriver
+```
+
+## Automate build-cop report
+
+```
+Hongkai Liu   [2 minutes ago]
+another crazy thinking ... we could automate the build-cop report since we have the stack ready ... we could ask prometheus/grafana (maybe rest api) for the data ... like you did today ... 3 times / day ... 3h/12h/24h ... can send the email out
+
+Steve Kuznetsov   [< 1 minute ago]
+Maybe even more useful would be to set up alerts on the tests when they do not pass the threshold we want
+
+```

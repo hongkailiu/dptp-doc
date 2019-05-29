@@ -39,13 +39,13 @@ A better visualization tool for test results. Have the links back to prow.
 Thanks to Trevor and Chance: [slack-thread](https://coreos.slack.com/archives/CEKNRGF25/p1559162180085200?thread_ts=1559160551.073700&cid=CEKNRGF25).
 
 * prow:
-    * build-log is missing? 
+    * build-log is missing? Still not clear to me after reading [bz1709420](https://bugzilla.redhat.com/show_bug.cgi?id=1709420)
     
         `Unable to retrieve container logs for docker://8bbd3de524981278248673ab98a41a43d364fa24e6a9f418ceeccce6dab15413`
 * `search svc`:
-    * context? build-log vs junit?
-    * `search-next` vs `search`: the former has more content/storage?
-    * which line should be used as keyword for search? Eg, in [this build log](https://prow.svc.ci.openshift.org/log?job=rehearse-3842-pull-ci-openshift-builder-master-e2e-aws&id=30)
+    * context? the context in returned answer. build-log vs junit? which artifact to search.
+    * `search-next` vs `search`: the former has more content/storage? [next](https://github.com/wking/ci-search/tree/next) is under review.
+    * which line should be used as keyword for search? Eg, in [this build log](https://prow.svc.ci.openshift.org/log?job=rehearse-3842-pull-ci-openshift-builder-master-e2e-aws&id=30). _try to find something specific, but not overly specific_ ^_^
 
             level=error msg="Error: Invalid index"
     
@@ -53,8 +53,7 @@ Thanks to Trevor and Chance: [slack-thread](https://coreos.slack.com/archives/CE
 
             level=fatal msg="failed to fetch Cluster: failed to generate asset \"Cluster\": failed to create cluster: failed to apply using Terraform"
 
-        
             {"component":"entrypoint","error":"wrapped process failed: exit status 1","level":"error","msg":"Error executing test process","time":"2019-05-27T13:51:00Z"}
     * diff from `Stackdriver`? Access issue as well.
 
-* `internal whiteboard` in bz: try the query again after getting access.
+* `internal whiteboard` in bz: try the query again after getting access. [DOC-1081313](https://mojo.redhat.com/docs/DOC-1081313#jive_content_id_Bugzilla_Access)

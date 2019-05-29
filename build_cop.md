@@ -36,6 +36,8 @@ A better visualization tool for test results. Have the links back to prow.
 
 ## Questions
 
+Thanks to Trevor and Chance: [slack-thread](https://coreos.slack.com/archives/CEKNRGF25/p1559162180085200?thread_ts=1559160551.073700&cid=CEKNRGF25).
+
 * prow:
     * build-log is missing? 
     

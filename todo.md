@@ -16,7 +16,7 @@
 * https://draft.sh/
 * https://tekton.dev/
 
-* https://sensu.io/
+* https://sentry.io/
 * https://www.datadoghq.com/
 * https://cloud.google.com/stackdriver/
 

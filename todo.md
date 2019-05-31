@@ -39,17 +39,20 @@ templating cards based on this [gdoc](https://docs.google.com/document/d/11jvb7y
 
 ```
 Steve Kuznetsov   [2 hours ago]
-@hongkliu oops -- forgot you asked to do the bump: https://github.com/openshift/release/pull/3898
-
-Steve Kuznetsov   [2 hours ago]
-tomorrow, you can do it :slightly_smiling_face:
-
-
-Steve Kuznetsov   [2 hours ago]
+do the bump: https://github.com/openshift/release/pull/3898
 I just run the `hack/bump-prow-images.sh` script  and have it merge, while running `hack/prow-monitor.py` in a different console (I always have that running)
+
+$ gcloud config list
+[core]
+account = <kerberos_id>@redhat.com
+disable_usage_reporting = True
+project = openshift-ci-infra
+
 
 Steve Kuznetsov   [2 hours ago]
 these days we should be able to also get alerts on error messages from stackdriver
+
+
 ```
 
 ## Automate build-cop report

@@ -2,6 +2,7 @@
 
 * [src](https://github.com/kubernetes/kubernetes)
 * [community](https://github.com/kubernetes/community): All the help on the src.
+* [k8s-playground@katacoda](https://www.katacoda.com/courses/kubernetes/playground)
 
 ## Get started
 

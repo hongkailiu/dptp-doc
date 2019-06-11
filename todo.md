@@ -31,6 +31,10 @@
 Steve Kuznetsov [7:18 PM]
 @Petr Muller @nmoraitis @bbguimaraes @hongkliu we now have all logs from Prow in Stackdriver for the GCE "origin-ci-infra" project -- they are parsed out into JSON from the logs, so you can search by key-value pairs like URL or github comment ID, etc -- let me know how it works for y'all
 
+Katharine [1:30 PM]
+replied to a thread:
+I recommend installing bazelisk (`go get github.com/bazelbuild/bazelisk`) and just symlinking bazel to that
+
 ## jira
 
 templating cards based on this [gdoc](https://docs.google.com/document/d/11jvb7yWNVQ3-fXwjpfVDAIY6BRVFjroDoDMcGwR57js/edit).

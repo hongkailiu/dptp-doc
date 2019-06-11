@@ -38,6 +38,7 @@ Build label: 0.26.1
 ...
 
 $ bazel clean --expunge
+$ rm -rf ~/.cache/bazel
 
 ```
 

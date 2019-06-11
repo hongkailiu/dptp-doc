@@ -26,6 +26,16 @@ $ sudo dnf install patch
 $ sudo dnf install libstdc++-static
 $ sudo dnf install python2
 
+### https://github.com/bazelbuild/bazelisk
+$ curl -OL https://github.com/bazelbuild/bazelisk/releases/download/v0.0.7/bazelisk-linux-amd64
+$ sudo mv /usr/bin/bazel /usr/bin/bazel.origin
+$ sudo mv bazelisk-linux-amd64 /usr/bin/bazel
+$ sudo chmod +x /usr/bin/bazel
+$ bazel version
+Bazelisk version: v0.0.7
+...
+Build label: 0.26.1
+...
 ```
 
 ## bazel and golang

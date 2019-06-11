@@ -36,6 +36,9 @@ Bazelisk version: v0.0.7
 ...
 Build label: 0.26.1
 ...
+
+$ bazel clean --expunge
+
 ```
 
 ## bazel and golang

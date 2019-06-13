@@ -340,6 +340,18 @@ $ sudo dnf install flash-plugin alsa-plugins-pulseaudio libcurl
 
 ```
 
+bj screen-share with chrome under wayland:
+
+```
+# https://bugzilla.redhat.com/show_bug.cgi?id=1392072#c28
+$ systemctl --user enable pipewire
+$ systemctl --user start pipewire
+
+```
+
+Then open chrome:
+   chrome://flags/#enable-webrtc-pipewire-capturer (enabled)
+
 ## podman
 
 ```

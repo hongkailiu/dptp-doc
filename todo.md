@@ -12,7 +12,7 @@
 * jaeger
 
 * jsonnet
-* https://jenkins-x.io/, [gke-vs-aks-vs-eks](https://blog.hasura.io/gke-vs-aks-vs-eks-411f080640dc/)
+* https://jenkins-x.io/, [gke-vs-aks-vs-eks](https://blog.hasura.io/gke-vs-aks-vs-eks-411f080640dc/), [jenkins-x and prow](https://technologyconversations.com/2019/04/15/going-serverless-with-jenkins-x-exploring-prow-jenkins-x-pipeline-operator-and-tekton/)
 * https://draft.sh/
 * https://tekton.dev/
 

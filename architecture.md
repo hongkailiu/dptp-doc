@@ -42,6 +42,8 @@ ghproxy   1         1         1            1           218d
 
 [Q&A@slack](https://coreos.slack.com/archives/GB7NB0CUC/p1562767143290700).
 
+Check `--github-endpoint` flag in the production to see which components use `ghproxy`. It should be _all of them_.
+
 ## [ci-tools](https://github.com/openshift/ci-tools)
 ## ci-operator
 ## build-cop

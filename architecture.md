@@ -33,6 +33,8 @@ tide      1         1         1            1           217d
 
 ### [ghproxy](https://github.com/kubernetes/test-infra/tree/master/ghproxy)
 
+We use `ghproxy` to avoid [rate-limiting of api tokens](https://developer.github.com/v3/#rate-limiting).
+
 ```
 $ oc get deploy -n ci ghproxy
 NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE

@@ -31,6 +31,17 @@ NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
 tide      1         1         1            1           217d
 ```
 
+### [ghproxy](https://github.com/kubernetes/test-infra/tree/master/ghproxy)
+
+```
+$ oc get deploy -n ci ghproxy
+NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+ghproxy   1         1         1            1           218d
+
+```
+
+[Q&A@slack](https://coreos.slack.com/archives/GB7NB0CUC/p1562767143290700).
+
 ## [ci-tools](https://github.com/openshift/ci-tools)
 ## ci-operator
 ## build-cop

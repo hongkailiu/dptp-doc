@@ -117,7 +117,7 @@ apiVersion: v1
 kind: Pod
 
 ### write it to /home/hongkliu/Downloads/abc1.yaml
-$ oc apply -f  /home/hongkliu/Downloads/abc1.yaml
+$ oc apply -n ci -f  /home/hongkliu/Downloads/abc1.yaml
 pod/0f609c54-6d1f-11e9-a908-c85b76866133 created
 
 ```

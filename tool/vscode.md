@@ -42,3 +42,5 @@ https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spel
 Need to reinstall after `vscode` upgrade.
 
 `ctrl + p`, then `ext install streetsidesoftware.code-spell-checker`.
+
+[Visual Studio Code is unable to watch for file changes in this large workspace](https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc)

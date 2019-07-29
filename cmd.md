@@ -14,4 +14,8 @@ $ oc get groups ci-admins
 $ oc adm policy add-role-to-group admin ci-admins --as system:admin
 role "admin" added: "ci-admins"
 
+### print out the token of a service-account
+$ oc sa get-token -n ci ipi-deprovisioner
+### use the sa token to oc-login
+$ oc login https://api.ci.openshift.org --token=<sa_token>
 ```

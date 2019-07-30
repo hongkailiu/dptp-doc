@@ -122,6 +122,26 @@ pod/0f609c54-6d1f-11e9-a908-c85b76866133 created
 
 ```
 
+## bump up prow component version
+
+```
+Steve Kuznetsov   [2 hours ago]
+do the bump: https://github.com/openshift/release/pull/3898
+I just run the `hack/bump-prow-images.sh` script  and have it merge, while running `hack/prow-monitor.py` in a different console (I always have that running)
+
+$ gcloud config list
+[core]
+account = <kerberos_id>@redhat.com
+disable_usage_reporting = True
+project = openshift-ci-infra
+
+
+Steve Kuznetsov   [2 hours ago]
+these days we should be able to also get alerts on error messages from stackdriver
+
+
+```
+
 ## Others
 * github webhook
 * bazel

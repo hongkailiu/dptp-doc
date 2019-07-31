@@ -148,6 +148,7 @@ Ref:
 * [GO111MODULE](https://tip.golang.org/cmd/go/#hdr-Module_support)
 * [Golang Module Vs Dep: Pros & Cons](https://www.activestate.com/blog/golang-module-vs-dep-pros-cons/)
 * [vendoring-with-modules?](https://github.com/golang/go/wiki/Modules#how-do-i-use-vendoring-with-modules-is-vendoring-going-away)
+* [Intellij with go-mod support](https://www.jetbrains.com/help/go/create-a-project-with-vgo-integration.html)
 
 
 https://github.com/go-gormigrate/gormigrate/pull/27/files

@@ -122,3 +122,32 @@ Generate dep files: NOT work for my test-go repo (does not return over several h
 ```
 $ dep init
 ```
+
+## [go mod](https://github.com/golang/go/wiki/Modules)
+
+[migrating-from-dep-to-go-mod](https://blog.callr.tech/migrating-from-dep-to-go-1.11-modules/)
+
+```
+$ echo $GOPATH
+/home/hongkliu/go
+$ pwd
+/home/hongkliu/repo/me
+$ cp -r ~/go/src/github.com/hongkailiu/test-go/ .
+$ cd ./test-go
+$ go mod init
+go: creating new go.mod: module github.com/hongkailiu/test-go
+go: copying requirements from Gopkg.lock
+$ go mod tidy
+
+### some error: solution: https://github.com/go-gormigrate/gormigrate/pull/27/files
+### bazel still need the vendor folder
+
+```
+
+Ref:
+* [GO111MODULE](https://tip.golang.org/cmd/go/#hdr-Module_support)
+* [Golang Module Vs Dep: Pros & Cons](https://www.activestate.com/blog/golang-module-vs-dep-pros-cons/)
+* [vendoring-with-modules?](https://github.com/golang/go/wiki/Modules#how-do-i-use-vendoring-with-modules-is-vendoring-going-away)
+
+
+https://github.com/go-gormigrate/gormigrate/pull/27/files

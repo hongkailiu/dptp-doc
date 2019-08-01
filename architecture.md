@@ -9,6 +9,9 @@ Prowjobs:
 * [image-mirror setup requests](https://coreos.slack.com/archives/GB7NB0CUC/p1558533720293300)
 
 ### deck
+
+histogram on the UI: [Petr@slack](https://coreos.slack.com/archives/GB7NB0CUC/p1558533700292600).
+
 ### hook
 
 `hook` receives [events](https://developer.github.com/webhooks/) from `github`.

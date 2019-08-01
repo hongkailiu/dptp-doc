@@ -150,5 +150,3 @@ Ref:
 * [vendoring-with-modules?](https://github.com/golang/go/wiki/Modules#how-do-i-use-vendoring-with-modules-is-vendoring-going-away)
 * [Intellij with go-mod support](https://www.jetbrains.com/help/go/create-a-project-with-vgo-integration.html)
 * [goproxy](https://goproxy.io/)
-
-https://github.com/go-gormigrate/gormigrate/pull/27/files

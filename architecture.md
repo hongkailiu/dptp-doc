@@ -1,12 +1,8 @@
 # dpcp architecture
 
+[elder's diagram](https://elder.dev/posts/prow/)
+
 ## prow
-
-Prowjobs:
-
-* [prow plugins](https://deck-ci.svc.ci.openshift.org/plugins) and its [configurations](https://github.com/openshift/release/blob/master/cluster/ci/config/prow/plugins.yaml): eg, [approve](https://github.com/kubernetes/test-infra/blob/master/prow/plugins/approve/approvers/README.md).
-* prowJobs: [definitions](https://github.com/openshift/release/tree/master/ci-operator/jobs)
-* [image-mirror setup requests](https://coreos.slack.com/archives/GB7NB0CUC/p1558533720293300)
 
 ### deck
 

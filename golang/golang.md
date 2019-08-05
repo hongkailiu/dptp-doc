@@ -142,6 +142,10 @@ $ go mod tidy
 ### some error: solution: https://github.com/go-gormigrate/gormigrate/pull/27/files
 ### bazel still need the vendor folder
 
+### update a single dep.
+$ go get -u github.com/gin-gonic/gin
+$ go mod vendor
+
 ```
 
 Ref:

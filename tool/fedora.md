@@ -372,7 +372,12 @@ $ sudo dnf install https://spideroak.com/dist/encryptr/signed/linux/rpm/encryptr
 ## bitwarden
 
 ```
+### lost desktop file once
 # Use the AppImage: https://itsfoss.com/use-appimage-linux/
+### https://www.addictivetips.com/ubuntu-linux-tips/install-and-set-up-the-bitwarden-app-linux/
+### download rpm
+$ sudo dnf -y install ./Bitwarden-1.15.2-x86_64.rpm
+
 ```
 
 ## travis-cli

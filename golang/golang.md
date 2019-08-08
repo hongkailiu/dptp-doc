@@ -151,6 +151,7 @@ $ go mod vendor
 k8s as module: [go/issues/32776](https://github.com/golang/go/issues/32776), [kubernetes/issues/79384](https://github.com/kubernetes/kubernetes/issues/79384).
 
 Ref:
+* [daily-workflow](https://github.com/golang/go/wiki/Modules#daily-workflow)
 * [GO111MODULE](https://tip.golang.org/cmd/go/#hdr-Module_support)
 * [Golang Module Vs Dep: Pros & Cons](https://www.activestate.com/blog/golang-module-vs-dep-pros-cons/)
 * [vendoring-with-modules?](https://github.com/golang/go/wiki/Modules#how-do-i-use-vendoring-with-modules-is-vendoring-going-away)

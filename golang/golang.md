@@ -148,7 +148,13 @@ $ go mod vendor
 
 ```
 
+
+k8s: [go-mod-with-vendor](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/vendor.md);
+k8s/client-go: [go-modules](https://github.com/kubernetes/client-go/blob/master/INSTALL.md#go-modules)
+
+
 k8s as module: [go/issues/32776](https://github.com/golang/go/issues/32776), [kubernetes/issues/79384](https://github.com/kubernetes/kubernetes/issues/79384).
+
 
 Ref:
 * [daily-workflow](https://github.com/golang/go/wiki/Modules#daily-workflow)
@@ -157,3 +163,5 @@ Ref:
 * [vendoring-with-modules?](https://github.com/golang/go/wiki/Modules#how-do-i-use-vendoring-with-modules-is-vendoring-going-away)
 * [Intellij with go-mod support](https://www.jetbrains.com/help/go/create-a-project-with-vgo-integration.html)
 * [goproxy](https://goproxy.io/)
+* [vgo-mvs](https://research.swtch.com/vgo-mvs)
+* [The_go_mod_file](https://golang.org/cmd/go/#hdr-The_go_mod_file)

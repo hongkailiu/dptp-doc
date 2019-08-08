@@ -49,3 +49,18 @@ Steve Kuznetsov   [< 1 minute ago]
 Maybe even more useful would be to set up alerts on the tests when they do not pass the threshold we want
 
 ```
+
+Pointer or not
+
+```
+Steve Kuznetsov [11:13 AM]
+so the idea was this
+
+1. `omitempty` is useful for people, not robots
+2. `nil` is nice when you want to tell the difference between a zero-value `struct{}` and nothing
+3. in a perfect world, all `struct`s work with their zero values
+for instance, the `rerun_auth_config` has a `allow_all` boolean
+when you have a `new(rerun_auth_config)` that will be `false`
+so the struct is functional in the zero state -- you don't need to check if it's `nil` and then not allow everyone
+so we did _not_ want to have a pointer on the ProwJob since that means _everyone_ has to always check if this thing is `nil` -- but it works fine if it is never `nil`
+```

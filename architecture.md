@@ -89,6 +89,71 @@ $ docker run -it -v $(pwd)/ci-operator:/ci-operator:z           \
   --from-dir /ci-operator/config/ --to-dir /ci-operator/jobs
 ```
 
+Take a presubmit job [instance](https://prow.svc.ci.openshift.org/prowjob?prowjob=183d5e64-b9ee-11e9-a5f9-0a58ac10330c) for `ci-tools` itself: This prow job and its pod running in `ns` `ci`.
+The pod runs `ci-operator`.
+
+
+```
+$ oc get prowjob -n ci 183d5e64-b9ee-11e9-a5f9-0a58ac10330c
+NAME                                   JOB                                      BUILDID   TYPE        ORG         REPO       PULLS     STARTTIME   COMPLETIONTIME
+183d5e64-b9ee-11e9-a5f9-0a58ac10330c   pull-ci-openshift-ci-tools-master-lint   197       presubmit   openshift   ci-tools   58        39m         38m
+
+$ oc get pod -n ci 183d5e64-b9ee-11e9-a5f9-0a58ac10330c
+NAME                                   READY     STATUS      RESTARTS   AGE
+183d5e64-b9ee-11e9-a5f9-0a58ac10330c   0/2       Completed   0          35m
+```
+
+The job's [log](https://prow.svc.ci.openshift.org/view/gcs/origin-ci-test/pr-logs/pull/openshift_ci-tools/58/pull-ci-openshift-ci-tools-master-lint/197) has
+`Using namespace ci-op-gp46wlf7`: The `ci-operator` creates
+`ns` `ci-op-gp46wlf7` and does its task in it.
+
+```
+$ oc get all -n ci-op-gp46wlf7
+NAME                                READY     STATUS      RESTARTS   AGE
+pod/applyconfig-build               0/1       Completed   0          10m
+pod/bin-build                       0/1       Completed   0          12m
+pod/breaking-changes                0/2       Completed   0          10m
+pod/ci-operator-build               0/1       Completed   0          10m
+pod/ci-operator-checkconfig-build   0/1       Completed   0          10m
+pod/ci-operator-prowgen-build       0/1       Completed   0          10m
+pod/config-brancher-build           0/1       Completed   0          10m
+pod/config-shard-validator-build    0/1       Completed   0          10m
+pod/determinize-ci-operator-build   0/1       Completed   0          10m
+pod/determinize-prow-jobs-build     0/1       Completed   0          10m
+pod/format                          0/2       Completed   0          12m
+pod/integration                     0/2       Completed   0          10m
+pod/ipi-deprovision-build           0/1       Completed   0          12m
+pod/lint                            0/2       Completed   0          12m
+pod/pj-rehearse-build               0/1       Completed   0          10m
+pod/repo-brancher-build             0/1       Completed   0          10m
+pod/src-build                       0/1       Completed   0          12m
+pod/unit                            0/2       Completed   0          12m
+
+NAME                                               TYPE      FROM         STATUS     STARTED          DURATION
+build.build.openshift.io/src                       Docker    Dockerfile   Complete   12 minutes ago   30s
+build.build.openshift.io/bin                       Docker    Dockerfile   Complete   12 minutes ago   1m29s
+build.build.openshift.io/ipi-deprovision           Docker                 Complete   12 minutes ago   1m4s
+build.build.openshift.io/config-shard-validator    Docker                 Complete   10 minutes ago   58s
+build.build.openshift.io/ci-operator-prowgen       Docker                 Complete   10 minutes ago   29s
+build.build.openshift.io/config-brancher           Docker                 Complete   10 minutes ago   32s
+build.build.openshift.io/ci-operator-checkconfig   Docker                 Complete   10 minutes ago   30s
+build.build.openshift.io/determinize-ci-operator   Docker                 Complete   10 minutes ago   33s
+build.build.openshift.io/determinize-prow-jobs     Docker                 Complete   10 minutes ago   33s
+build.build.openshift.io/ci-operator               Docker                 Complete   10 minutes ago   1m3s
+build.build.openshift.io/pj-rehearse               Docker                 Complete   10 minutes ago   1m2s
+build.build.openshift.io/repo-brancher             Docker                 Complete   10 minutes ago   31s
+build.build.openshift.io/applyconfig               Docker                 Complete   10 minutes ago   34s
+
+NAME                                      DOCKER REPO                                             TAGS                                                          UPDATED
+imagestream.image.openshift.io/pipeline   registry.svc.ci.openshift.org/ci-op-gp46wlf7/pipeline   ci-operator,pj-rehearse,config-shard-validator + 15 more...   9 minutes ago
+imagestream.image.openshift.io/stable     registry.svc.ci.openshift.org/ci-op-gp46wlf7/stable     ci-operator,pj-rehearse,config-shard-validator + 8 more...    9 minutes ago
+
+```
+
+The builds are from the `images` defined in [the job config](https://github.com/openshift/release/blob/master/ci-operator/config/openshift/ci-tools/openshift-ci-tools-master.yaml#L19).
+
+The pods [for tests in th econfig](https://github.com/openshift/release/blob/master/ci-operator/config/openshift/ci-tools/openshift-ci-tools-master.yaml#L129) (`oc get pod -n ci-op-gp46wlf7 | grep -v build`) are generated from the prowjob pod ``.
+
 TODO: understand templates folder
 
 Practice this `ci-tools` with [ci-secret-mirroring-controller](https://github.com/openshift/ci-secret-mirroring-controller):

@@ -148,8 +148,7 @@ $ go mod vendor
 
 ```
 
-
-k8s: [go-mod-with-vendor](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/vendor.md);
+k8s: [go-modules](https://github.com/kubernetes/enhancements/blob/master/keps/sig-architecture/2019-03-19-go-modules.md); [go-mod-with-vendor](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/vendor.md);
 k8s/client-go: [go-modules](https://github.com/kubernetes/client-go/blob/master/INSTALL.md#go-modules)
 
 

@@ -64,3 +64,7 @@ when you have a `new(rerun_auth_config)` that will be `false`
 so the struct is functional in the zero state -- you don't need to check if it's `nil` and then not allow everyone
 so we did _not_ want to have a pointer on the ProwJob since that means _everyone_ has to always check if this thing is `nil` -- but it works fine if it is never `nil`
 ```
+
+git: interactive rebase: https://thoughtbot.com/blog/git-interactive-rebase-squash-amend-rewriting-history
+
+pprof: https://github.com/kubernetes/test-infra/pull/13824

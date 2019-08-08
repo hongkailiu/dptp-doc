@@ -148,6 +148,8 @@ $ go mod vendor
 
 ```
 
+k8s as module: [go/issues/32776](https://github.com/golang/go/issues/32776), [kubernetes/issues/79384](https://github.com/kubernetes/kubernetes/issues/79384).
+
 Ref:
 * [GO111MODULE](https://tip.golang.org/cmd/go/#hdr-Module_support)
 * [Golang Module Vs Dep: Pros & Cons](https://www.activestate.com/blog/golang-module-vs-dep-pros-cons/)

@@ -42,7 +42,7 @@ ghproxy   1         1         1            1           218d
 
 ```
 
-[Q&A@slack](https://coreos.slack.com/archives/GB7NB0CUC/p1562767143290700).
+[Q&A@slack](https://coreos.slack.com/archives/GB7NB0CUC/p1562767143290700) and [proxy lawyers in ghproxy](https://coreos.slack.com/archives/GB7NB0CUC/p1565793345353000).
 
 Check `--github-endpoint` flag in the production to see which components use `ghproxy`. It should be _all of them_.
 

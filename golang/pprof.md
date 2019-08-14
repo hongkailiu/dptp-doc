@@ -1,4 +1,6 @@
-# pprof
+# [pprof](https://github.com/google/pprof)
+
+* [basic-usage](https://github.com/google/pprof#basic-usage) and [README](https://github.com/google/pprof/blob/master/doc/README.md)
 
 * [net/http/pprof](https://golang.org/pkg/net/http/pprof/) and [runtime/pprof](https://golang.org/pkg/runtime/pprof/)
 * blogs: [1](https://jvns.ca/blog/2017/09/24/profiling-go-with-pprof/), [2](https://blog.golang.org/profiling-go-programs), and [3](https://coder.today/tech/2018-11-10_profiling-your-golang-app-in-3-steps/)

@@ -46,6 +46,37 @@ ghproxy   1         1         1            1           218d
 
 Check `--github-endpoint` flag in the production to see which components use `ghproxy`. It should be _all of them_.
 
+Understanding ghproxy: Steve: we have [the following layers](https://github.com/kubernetes/test-infra/blob/af1a26bf30f5f3776dba3b171899f400d3fe22ad/ghproxy/ghcache/ghcache.go#L205-L216):
+
+> request --> http cache --> output throttle --> request coaleser --> github
+
+In our production, [deployment](https://github.com/openshift/release/blob/master/cluster/ci/config/prow/openshift/ghproxy.yaml#L59) indicates we use
+[`NewDiskCache`](https://github.com/kubernetes/test-infra/blob/master/ghproxy/ghproxy.go#L135-L142).
+So we cache the requests by [`diskcache.NewWithDiskv`](https://github.com/kubernetes/test-infra/blob/af1a26bf30f5f3776dba3b171899f400d3fe22ad/ghproxy/ghcache/ghcache.go#L205-L216).
+
+So let us start with [`cacheTransport := httpcache.NewTransport(cache)`](https://github.com/kubernetes/test-infra/blob/af1a26bf30f5f3776dba3b171899f400d3fe22ad/ghproxy/ghcache/ghcache.go#L227)
+which returns a [`httpcache.Transport`](https://github.com/gregjones/httpcache/blob/master/httpcache.go#L99). We can also [customize](https://github.com/gregjones/httpcache/blob/master/httpcache.go#L102) its own `Transport` behavior:
+
+> cacheTransport.Transport = newThrottlingTransport(maxConcurrency, upstreamTransport{delegate: delegate})
+
+At last, the `http.RoundTripper`, `requestCoalescer` uses the `cacheTransport`.
+
+A cache is an implementation of [http.RoundTripper](https://lanre.wtf/blog/2017/07/24/roundtripper-go/). In ghproxy, the customized cache is defined by `requestCoalescer`.
+
+How do we tell our cache not to cache for a request?
+
+`throttlingTransport` takes care of the connection to github.
+So the logic should be embedded into its `RoundTrip` [function](https://github.com/kubernetes/test-infra/blob/af1a26bf30f5f3776dba3b171899f400d3fe22ad/ghproxy/ghcache/ghcache.go#L160).
+
+[The way](https://github.com/kubernetes/test-infra/blob/af1a26bf30f5f3776dba3b171899f400d3fe22ad/ghproxy/ghcache/ghcache.go#L183-L185) to do it:
+
+> resp.Header.Set("Cache-Control", "no-store")
+
+where the meaning of the head is defined in [http protocol](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Cacheability). So our cache lib "github.com/gregjones/httpcache" will use that header.
+
+TODO: understand how to do reverse proxy in golang
+
+
 ## OpenShift CI
 
 ### Prow

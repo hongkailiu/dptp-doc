@@ -77,6 +77,20 @@ https://flaviocopes.com/golang-sql-database/
 https://github.com/golang-migrate/migrate
 https://github.com/pressly/goose
 
+http:
+
+* [`Client`](https://github.com/golang/go/blob/master/src/net/http/client.go#L56): has a [`Transport`](https://github.com/golang/go/blob/master/src/net/http/client.go#L60) field which is `RoundTrip`.
+
+* `Transport`: If we use [`DefaultClient`](https://github.com/golang/go/blob/master/src/net/http/client.go#L108), it uses [DefaultTransport](https://github.com/golang/go/blob/master/src/net/http/transport.go#L42) which does caching as well.
+
+* `RoundTrip`: is an interface defining only one method: [`RoundTrip`](https://github.com/golang/go/blob/master/src/net/http/client.go#L115-L141). A `Transport` usually implements `RoundTrip`, eg, `DefaultClient`.
+
+So [blog](https://lanre.wtf/blog/2017/07/24/roundtripper-go/) shows
+that how a http client is made by a [customized](https://github.com/adelowo/rounder/blob/master/client/main.go#L27-L30) `Transport` to do caching. It uses a chain of `Transport`: `cachedTransport` for caching and
+`http.DefaultTransport` for connecting the server.
+In other words, a customized client can use a `RoundTrip` which
+is usually a `Transport` which chains up a `http.DefaultTransport` and embedding its own logic by its own implementation of `RoundTrip`.
+
 ## Test
 * [gomega](https://onsi.github.io/gomega/) and [ginkgo](https://onsi.github.io/ginkgo/)
 * [testify](https://github.com/stretchr/testify/) and [mockery](https://github.com/vektra/mockery): [examples](https://blog.lamida.org/mocking-in-golang-using-testify/)

@@ -91,6 +91,8 @@ that how a http client is made by a [customized](https://github.com/adelowo/roun
 In other words, a customized client can use a `RoundTrip` which
 is usually a `Transport` which chains up a `http.DefaultTransport` and embedding its own logic by its own implementation of `RoundTrip`.
 
+http reverse proxy: [1](https://hackernoon.com/writing-a-reverse-proxy-in-just-one-line-with-go-c1edfa78c84b), [2](https://blog.charmes.net/post/reverse-proxy-go/)
+
 ## Test
 * [gomega](https://onsi.github.io/gomega/) and [ginkgo](https://onsi.github.io/ginkgo/)
 * [testify](https://github.com/stretchr/testify/) and [mockery](https://github.com/vektra/mockery): [examples](https://blog.lamida.org/mocking-in-golang-using-testify/)

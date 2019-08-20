@@ -161,4 +161,7 @@ See [more examples](http://docs.aws.amazon.com/cli/latest/userguide/controlling-
 [Examples](http://docs.aws.amazon.com/cli/latest/reference/ec2/create-volume.html#examples) of creating Volumes.
 
 
+## aws_service_limits
 
+[aws_service_limits](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html) and the request to increase is recorded in
+`Supported Center` -> `My support cases`.

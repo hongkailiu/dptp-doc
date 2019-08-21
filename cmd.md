@@ -26,4 +26,6 @@ $ oc login https://api.ci.openshift.org --token=<sa_token>
 ### https://kubernetes.io/docs/reference/access-authn-authz/rbac/#rolebinding-and-clusterrolebinding
 ### eg, https://github.com/openshift/release/pull/4520
 
+### output pod logs
+$ oc get pod -n openshift-sdn --no-headers | awk '{print $1}' | while read pod; do oc logs -n openshift-sdn $pod >> ~/Downloads/20190820network/pods-${pod}.log; done
 ```

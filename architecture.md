@@ -18,6 +18,8 @@ NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
 hook      2         2         2            2           216d
 ```
 
+[plugins](https://github.com/kubernetes/test-infra/tree/master/prow/plugins)
+
 ### plank
 
 ### sinker

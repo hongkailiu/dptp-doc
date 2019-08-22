@@ -33,4 +33,7 @@ $ cd <path_to_github.com/openshift/release>
 ###install jq, oc (assume that oc-login is done)
 $ ci-operator/populate-secrets-from-bitwarden.sh
 
+$ bw logout
+You have logged out.
+
 ```

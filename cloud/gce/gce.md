@@ -90,12 +90,17 @@ $ gcloud config list
 ###
 $ ls -al ~/.config/gcloud/
 ###ref. https://www.the-swamp.info/blog/configuring-gcloud-multiple-projects/
+$ gcloud auth list
 $  gcloud config configurations list
 NAME     IS_ACTIVE  ACCOUNT              PROJECT              DEFAULT_ZONE  DEFAULT_REGION
 default  True       hongkliu@redhat.com  openshift-gce-devel
 
 ###https://reviewdb.io/questions/1509294958998/how-to-logout-from-an-account-on-gcloud-sdk
 $ gcloud auth revoke --all
+
+### will open a browser
+### https://cloud.google.com/sdk/gcloud/reference/auth/login
+$ gcloud auth login hongkliu@redhat.com
 
 ```
 

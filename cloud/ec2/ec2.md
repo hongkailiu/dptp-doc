@@ -31,6 +31,10 @@ config  credentials
 ###set up authentication via env. vars
 ###https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html
 
+$ export AWS_ACCESS_KEY_ID=AAA
+$ export AWS_SECRET_ACCESS_KEY=BBB
+$ export AWS_DEFAULT_REGION=us-west-2
+
 ```
 
 ## [Cli tutorial](http://docs.aws.amazon.com/cli/latest/userguide/tutorial-ec2-ubuntu.html)

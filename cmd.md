@@ -33,4 +33,13 @@ $ oc get pod -n openshift-sdn --no-headers | awk '{print $1}' | while read pod; 
 $ oc get user
 ### list groups ... the users in the group are in the output
 $ oc get group
+
+###retag the latest of an image
+#https://coreos.slack.com/archives/CMC5URNEM/p1566327819028500
+#job history? https://prow.svc.ci.openshift.org/job-history/origin-ci-test/logs/branch-ci-openshift-ci-tools-master-images
+$ docker inspect registry.svc.ci.openshift.org/ci/ci-operator@sha256:947332cac382548ed99dd193be2674af8a5eba81881a6d6fde54e5cb75e5e96b | jq ".[0].Config.Labels[\"io.openshift.build.commit.id\"]"
+"b04de66e58ababf901783140acd3e8510309f1f2"
+
+$ oc tag ci/ci-operator@sha256:b9166ca34f581cb6e513c4824ce34f6d6f511b2bdc837e30325575f2cf5ecc5b ci/ci-operator:latest
+
 ```

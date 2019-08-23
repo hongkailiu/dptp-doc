@@ -91,16 +91,28 @@ $ gcloud config list
 $ ls -al ~/.config/gcloud/
 ###ref. https://www.the-swamp.info/blog/configuring-gcloud-multiple-projects/
 $ gcloud auth list
-$  gcloud config configurations list
-NAME     IS_ACTIVE  ACCOUNT              PROJECT              DEFAULT_ZONE  DEFAULT_REGION
-default  True       hongkliu@redhat.com  openshift-gce-devel
+$ gcloud config configurations list
 
 ###https://reviewdb.io/questions/1509294958998/how-to-logout-from-an-account-on-gcloud-sdk
 $ gcloud auth revoke --all
 
 ### will open a browser
 ### https://cloud.google.com/sdk/gcloud/reference/auth/login
-$ gcloud auth login hongkliu@redhat.com
+$ gcloud auth login <kerberos_id>@redhat.com
+
+### set up default zone and default region
+#https://cloud.google.com/compute/docs/gcloud-compute/#set_default_zone_and_region_in_your_local_client
+### $ gcloud compute zones list
+$ gcloud config set compute/zone "us-east1-c"
+### $ gcloud compute regions list
+$ gcloud config set compute/region "us-east1"
+
+$ gcloud config configurations list
+NAME     IS_ACTIVE  ACCOUNT                   PROJECT             DEFAULT_ZONE  DEFAULT_REGION
+default  True       <kerberos_id>@redhat.com  openshift-ci-infra  us-east1-c    us-east1
+
+### change project: https://stackoverflow.com/questions/46770900/how-to-change-the-project-in-gcp-using-cli-commands
+$ gcloud config set project `PROJECT ID`
 
 ```
 

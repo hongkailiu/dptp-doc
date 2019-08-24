@@ -28,6 +28,8 @@ $ oc login https://api.ci.openshift.org --token=<sa_token>
 
 ### output pod logs
 $ oc get pod -n openshift-sdn --no-headers | awk '{print $1}' | while read pod; do oc logs -n openshift-sdn $pod >> ~/Downloads/20190820network/pods-${pod}.log; done
+### logs with timestamp and since
+$ oc get pod -n default | grep docker-registry | awk '{print $1}' | while read pod; do oc logs -n default $pod --since 8h --timestamps > $pod.log; done
 
 ### list users
 $ oc get user
@@ -36,9 +38,11 @@ $ oc get group
 
 ###retag the latest of an image
 #https://coreos.slack.com/archives/CMC5URNEM/p1566327819028500
-#job history? https://prow.svc.ci.openshift.org/job-history/origin-ci-test/logs/branch-ci-openshift-ci-tools-master-images
+#steve: get history of sha of images:
+$ oc get is -n ci ci-operator -o yaml
 $ docker inspect registry.svc.ci.openshift.org/ci/ci-operator@sha256:947332cac382548ed99dd193be2674af8a5eba81881a6d6fde54e5cb75e5e96b | jq ".[0].Config.Labels[\"io.openshift.build.commit.id\"]"
 "b04de66e58ababf901783140acd3e8510309f1f2"
+
 
 $ oc tag ci/ci-operator@sha256:b9166ca34f581cb6e513c4824ce34f6d6f511b2bdc837e30325575f2cf5ecc5b ci/ci-operator:latest
 

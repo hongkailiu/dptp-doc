@@ -4,6 +4,8 @@
 
 ## prow
 
+[componnents](https://github.com/kubernetes/test-infra/blob/master/prow/cmd/README.md); [life_of_a_prow_job](https://github.com/kubernetes/test-infra/blob/master/prow/life_of_a_prow_job.md)
+
 ### deck
 
 histogram on the UI: [Petr@slack](https://coreos.slack.com/archives/GB7NB0CUC/p1558533700292600).

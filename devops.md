@@ -66,6 +66,8 @@ $ dptp-secret/aws-cli/active_aws_ci_unset.sh
 
 ```
 
+TODO: How ci-opeator tells aws to create cluster to run e2e tests with?
+
 ### bitwarden
 
 TODO: account setup and get access to existing item-collection (@James Russell)

@@ -29,7 +29,7 @@ TOOD
 installation: check [inventory](https://github.com/openshift/release/blob/master/cluster/test-deploy/api.ci/vars.yaml)
 
 TODO
-[autoscaler](k8s/autoscaling.md) setup.
+[autoscaler](k8s/autoscaling.md) setup: ci cluster is 311 openshift cluster on gce. Does k8s-autoscaler just work on it? But no doc says how. See also [autoscaler/issues/638](https://github.com/kubernetes/autoscaler/issues/638). Releated to [kubernetes-node-pool](https://kubernetes.io/docs/tasks/administer-cluster/cluster-management/#resizing-a-cluster)?
 
 
 ## Tools

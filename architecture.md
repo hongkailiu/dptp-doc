@@ -4,7 +4,7 @@
 
 ## prow
 
-[componnents](https://github.com/kubernetes/test-infra/blob/master/prow/cmd/README.md); [life_of_a_prow_job](https://github.com/kubernetes/test-infra/blob/master/prow/life_of_a_prow_job.md)
+[componnents](https://github.com/kubernetes/test-infra/blob/master/prow/cmd/README.md); [life_of_a_prow_job](https://github.com/kubernetes/test-infra/blob/master/prow/life_of_a_prow_job.md); [Job Cookbook](https://github.com/kubernetes/test-infra/blob/master/config/jobs/README.md)
 
 ### deck
 
@@ -77,8 +77,6 @@ So the logic should be embedded into its `RoundTrip` [function](https://github.c
 > resp.Header.Set("Cache-Control", "no-store")
 
 where the meaning of the head is defined in [http protocol](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Cacheability). So our cache lib "github.com/gregjones/httpcache" will use that header.
-
-TODO: understand how to do reverse proxy in golang
 
 
 ## OpenShift CI

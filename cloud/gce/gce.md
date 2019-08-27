@@ -183,3 +183,7 @@ By default, the device is called `sdb`. Use `glusterfs_devices='["/dev/sdb"]'` i
 
 ## docker registry storage on gce
 TODO
+
+## others
+
+* [gce vs gke](https://stackoverflow.com/questions/51762679/difference-between-google-kubernetes-engine-and-google-compute-engine-in-term-of)

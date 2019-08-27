@@ -1,6 +1,6 @@
 # dpcp architecture
 
-[elder's diagram](https://elder.dev/posts/prow/)
+[test-infra](https://github.com/kubernetes/test-infra); [elder's diagram](https://elder.dev/posts/prow/)
 
 ## prow
 

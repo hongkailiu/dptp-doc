@@ -186,4 +186,6 @@ TODO
 
 ## others
 
-* [gce vs gke](https://stackoverflow.com/questions/51762679/difference-between-google-kubernetes-engine-and-google-compute-engine-in-term-of)
+* [gce vs gke](https://stackoverflow.com/questions/51762679/difference-between-google-kubernetes-engine-and-google-compute-engine-in-term-of), [gce-gae-and-gke](https://www.slideshare.net/peihsinsu/google-cloud-computing-compares-gce-gae-and-gke)
+
+

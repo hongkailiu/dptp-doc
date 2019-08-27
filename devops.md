@@ -40,7 +40,7 @@ autoscaler setup.
 [some-prow-component-is-down-20190822](#some-prow-component-is-down-20190822) shows an example of using
 `oc` to troubleshoot.
 
-More [oc-command](cmd.md)
+More oc-cli commands: [cmd.md](cmd.md)
 
 ### gcloud
 

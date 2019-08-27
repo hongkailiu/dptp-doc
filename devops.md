@@ -26,10 +26,12 @@ $ oc get node -o wide
 ```
 
 TOOD
-installation: [inventory](https://github.com/openshift/release/blob/master/cluster/test-deploy/api.ci/vars.yaml)
+installation: check [inventory](https://github.com/openshift/release/blob/master/cluster/test-deploy/api.ci/vars.yaml)
 
 TODO
 autoscaler setup.
+
+* [Kubernetes Autoscaling 101](https://medium.com/magalix/kubernetes-autoscaling-101-cluster-autoscaler-horizontal-pod-autoscaler-and-vertical-pod-2a441d9ad231), [HPA@k8s](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
 
 ## Tools
 

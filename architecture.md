@@ -1,10 +1,8 @@
 # dpcp architecture
 
-[test-infra](https://github.com/kubernetes/test-infra); [prow](https://github.com/kubernetes/test-infra/tree/master/prow); [elder's diagram](https://elder.dev/posts/prow/)
+[test-infra](https://github.com/kubernetes/test-infra); [elder's diagram](https://elder.dev/posts/prow/)
 
-## prow
-
-[componnents](https://github.com/kubernetes/test-infra/blob/master/prow/cmd/README.md); [life_of_a_prow_job](https://github.com/kubernetes/test-infra/blob/master/prow/life_of_a_prow_job.md); [Job Cookbook](https://github.com/kubernetes/test-infra/blob/master/config/jobs/README.md)
+## [prow](https://github.com/kubernetes/test-infra/tree/master/prow)
 
 Upstream cluster: [config.yaml](https://github.com/kubernetes/test-infra/blob/master/prow/config.yaml); [plugin.yaml](https://github.com/kubernetes/test-infra/blob/master/prow/plugins.yaml); [job config folder](https://github.com/kubernetes/test-infra/tree/master/config/jobs)
 

@@ -2,6 +2,8 @@
 
 [test-infra](https://github.com/kubernetes/test-infra); [elder's diagram](https://elder.dev/posts/prow/)
 
+[test-infra/prow](https://github.com/kubernetes/test-infra/tree/master/prow)
+
 ## [prow](https://github.com/kubernetes/test-infra/tree/master/prow)
 
 Upstream cluster: [config.yaml](https://github.com/kubernetes/test-infra/blob/master/prow/config.yaml); [plugin.yaml](https://github.com/kubernetes/test-infra/blob/master/prow/plugins.yaml); [job config folder](https://github.com/kubernetes/test-infra/tree/master/config/jobs)

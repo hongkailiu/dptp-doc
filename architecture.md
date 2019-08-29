@@ -204,7 +204,7 @@ $ JOB_SPEC='{"type":"periodic","job":"periodic-ci-azure-e2e-applysecurityupdates
 
 ```
 
-[Templates](https://github.com/openshift/ci-tools/blob/master/TEMPLATES.md)
+[Templates](https://github.com/openshift/ci-tools/blob/master/TEMPLATES.md) and [how2use it for e2e tests with ci-operator](https://github.com/openshift/release/tree/master/ci-operator#end-to-end-tests)
 
 ### Others
 

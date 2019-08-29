@@ -192,8 +192,6 @@ The builds are from the `images` defined in [the job config](https://github.com/
 
 The pods [for tests in th econfig](https://github.com/openshift/release/blob/master/ci-operator/config/openshift/ci-tools/openshift-ci-tools-master.yaml#L129) (`oc get pod -n ci-op-gp46wlf7 | grep -v build`) are generated from the prowjob pod `183d5e64-b9ee-11e9-a5f9-0a58ac10330c` in `ns` `ci`.
 
-TODO: understand templates folder
-
 Practice this `ci-tools` with [ci-secret-mirroring-controller](https://github.com/openshift/ci-secret-mirroring-controller):
 
 * Enable `tide` for the repo: [release/pull/4601](https://github.com/openshift/release/pull/4601)
@@ -205,6 +203,8 @@ Practice this `ci-tools` with [ci-secret-mirroring-controller](https://github.co
 $ JOB_SPEC='{"type":"periodic","job":"periodic-ci-azure-e2e-applysecurityupdates","buildid":"21","prowjobid":"ec28bec2-b7a4-11e9-af8e-0a58ac108dbc","extra_refs":[{"org":"openshift","repo":"openshift-azure","base_ref":"master"}]}' ./ci-operator --config /home/hongkliu/go/src/github.com/openshift/release/ci-operator/config/openshift/ci-secret-mirroring-controller/openshift-ci-secret-mirroring-controller-master.yaml --git-ref openshift/ci-secret-mirroring-controller@master --dry-run
 
 ```
+
+[Templates](https://github.com/openshift/ci-tools/blob/master/TEMPLATES.md)
 
 ### Others
 

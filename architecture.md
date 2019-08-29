@@ -1,10 +1,11 @@
 # dpcp architecture
 
-[test-infra](https://github.com/kubernetes/test-infra); [elder's diagram](https://elder.dev/posts/prow/)
+[test-infra](https://github.com/kubernetes/test-infra);
 
-[test-infra/prow](https://github.com/kubernetes/test-infra/tree/master/prow)
 
 ## [prow](https://github.com/kubernetes/test-infra/tree/master/prow)
+
+[elder's diagram](https://elder.dev/posts/prow/)
 
 Upstream cluster: [config.yaml](https://github.com/kubernetes/test-infra/blob/master/prow/config.yaml); [plugin.yaml](https://github.com/kubernetes/test-infra/blob/master/prow/plugins.yaml); [job config folder](https://github.com/kubernetes/test-infra/tree/master/config/jobs)
 
@@ -80,6 +81,9 @@ So the logic should be embedded into its `RoundTrip` [function](https://github.c
 
 where the meaning of the head is defined in [http protocol](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Cacheability). So our cache lib "github.com/gregjones/httpcache" will use that header.
 
+## test a prowjob
+
+[how-to-test-a-prowjob](https://github.com/kubernetes/test-infra/blob/master/prow/build_test_update.md#how-to-test-a-prowjob)
 
 ## OpenShift CI
 

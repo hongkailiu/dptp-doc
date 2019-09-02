@@ -9,32 +9,6 @@
 
 Upstream cluster: [config.yaml](https://github.com/kubernetes/test-infra/blob/master/prow/config.yaml); [plugin.yaml](https://github.com/kubernetes/test-infra/blob/master/prow/plugins.yaml); [job config folder](https://github.com/kubernetes/test-infra/tree/master/config/jobs)
 
-Our prow deployment:
-
-```
-$ oc get deployment -n ci -l app=prow
-NAME                    DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-artifact-uploader       1         1         1            1           273d
-boskos-metrics          1         1         1            1           27d
-boskos-reaper           1         1         1            1           38d
-cherrypick              1         1         1            1           273d
-deck                    1         1         1            1           273d
-deck-internal           1         1         1            1           273d
-ghproxy                 1         1         1            1           273d
-hook                    2         2         2            2           273d
-horologium              1         1         1            1           273d
-jenkins-dev-operator    1         1         1            1           273d
-jenkins-operator        1         1         1            1           273d
-kata-jenkins-operator   1         1         1            1           273d
-needs-rebase            1         1         1            1           273d
-plank                   1         1         1            1           273d
-refresh                 1         1         1            1           273d
-sinker                  1         1         1            1           273d
-statusreconciler        1         1         1            1           271d
-tide                    1         1         1            1           273d
-tot                     1         1         1            1           180d
-
-```
 
 ### [prow components](https://github.com/kubernetes/test-infra/blob/master/prow/cmd/README.md#cluster-components)
 
@@ -49,13 +23,6 @@ tot                     1         1         1            1           180d
     * horologium
     * sinker
 * [tide](https://github.com/kubernetes/test-infra/blob/master/prow/cmd/tide/README.md): operates `github`'s PRs.
-
-
-All the job configs are mounted via configMap for ALL prow's core components. Eg, check `hook`':
-
-```
-$ oc set volumes deployment hook -n ci | grep job-config
-```
 
 ### [ghproxy](https://github.com/kubernetes/test-infra/tree/master/ghproxy)
 
@@ -101,12 +68,46 @@ where the meaning of the head is defined in [http protocol](https://developer.mo
 
 ### Prow
 
+Our [prow deployment](https://github.com/openshift/release/tree/master/cluster/ci/config/prow/openshift):
+
+```
+$ oc get deployment -n ci -l app=prow
+NAME                    DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+artifact-uploader       1         1         1            1           273d
+boskos-metrics          1         1         1            1           27d
+boskos-reaper           1         1         1            1           38d
+cherrypick              1         1         1            1           273d
+deck                    1         1         1            1           273d
+deck-internal           1         1         1            1           273d
+ghproxy                 1         1         1            1           273d
+hook                    2         2         2            2           273d
+horologium              1         1         1            1           273d
+jenkins-dev-operator    1         1         1            1           273d
+jenkins-operator        1         1         1            1           273d
+kata-jenkins-operator   1         1         1            1           273d
+needs-rebase            1         1         1            1           273d
+plank                   1         1         1            1           273d
+refresh                 1         1         1            1           273d
+sinker                  1         1         1            1           273d
+statusreconciler        1         1         1            1           271d
+tide                    1         1         1            1           273d
+tot                     1         1         1            1           180d
+
+```
+
 All prow components and prowjobs [are running in namespace](https://github.com/openshift/release/blob/master/cluster/ci/config/prow/config.yaml#L618-L619) `ci`.
 
 * [configuration](https://github.com/openshift/release/blob/master/cluster/ci/config/prow/config.yaml) for prow-components: 
     > oc get configmaps -n ci config
 * [prow plugins](https://deck-ci.svc.ci.openshift.org/plugins) and its [configurations](https://github.com/openshift/release/blob/master/cluster/ci/config/prow/plugins.yaml): eg, [approve](https://github.com/kubernetes/test-infra/blob/master/prow/plugins/approve/approvers/README.md):
     > oc get configmaps -n ci plugins
+
+
+All the job configs are mounted via configMap for ALL prow's core components. Eg, check `hook`':
+
+```
+$ oc set volumes deployment hook -n ci | grep job-config
+```
 
 ### [ci-tools](https://github.com/openshift/ci-tools)
 

@@ -66,7 +66,7 @@ where the meaning of the head is defined in [http protocol](https://developer.mo
 
 ## OpenShift CI
 
-### Prow
+### Prow deployment
 
 Our [prow deployment](https://github.com/openshift/release/tree/master/cluster/ci/config/prow/openshift):
 

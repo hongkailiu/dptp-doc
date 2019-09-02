@@ -9,45 +9,57 @@
 
 Upstream cluster: [config.yaml](https://github.com/kubernetes/test-infra/blob/master/prow/config.yaml); [plugin.yaml](https://github.com/kubernetes/test-infra/blob/master/prow/plugins.yaml); [job config folder](https://github.com/kubernetes/test-infra/tree/master/config/jobs)
 
-### deck
-
-histogram on the UI: [Petr@slack](https://coreos.slack.com/archives/GB7NB0CUC/p1558533700292600).
-
-### hook
-
-`hook` receives [events](https://developer.github.com/webhooks/) from `github`.
+Our prow deployment:
 
 ```
-$ oc get deploy -n ci hook
-NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-hook      2         2         2            2           216d
+$ oc get deployment -n ci -l app=prow
+NAME                    DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+artifact-uploader       1         1         1            1           273d
+boskos-metrics          1         1         1            1           27d
+boskos-reaper           1         1         1            1           38d
+cherrypick              1         1         1            1           273d
+deck                    1         1         1            1           273d
+deck-internal           1         1         1            1           273d
+ghproxy                 1         1         1            1           273d
+hook                    2         2         2            2           273d
+horologium              1         1         1            1           273d
+jenkins-dev-operator    1         1         1            1           273d
+jenkins-operator        1         1         1            1           273d
+kata-jenkins-operator   1         1         1            1           273d
+needs-rebase            1         1         1            1           273d
+plank                   1         1         1            1           273d
+refresh                 1         1         1            1           273d
+sinker                  1         1         1            1           273d
+statusreconciler        1         1         1            1           271d
+tide                    1         1         1            1           273d
+tot                     1         1         1            1           180d
+
 ```
 
-[plugins](https://github.com/kubernetes/test-infra/tree/master/prow/plugins)
+### [prow components](https://github.com/kubernetes/test-infra/blob/master/prow/cmd/README.md#cluster-components)
 
-### plank
+* core components
 
-### sinker
-### tide
+    * deck: prow's UI frent-end
 
-`tide` operates `github`'s PRs.
+        * histogram on the UI: [Petr@slack](https://coreos.slack.com/archives/GB7NB0CUC/p1558533700292600).
+
+    *  hook: receives [events](https://developer.github.com/webhooks/) from `github`. [plugins](https://github.com/kubernetes/test-infra/tree/master/prow/plugins): [are sub-components of hook](https://github.com/kubernetes/test-infra/blob/master/prow/plugins/README.md).
+    * plank: manages the execution of prow jobs.
+    * horologium
+    * sinker
+* [tide](https://github.com/kubernetes/test-infra/blob/master/prow/cmd/tide/README.md): operates `github`'s PRs.
+
+
+All the job configs are mounted via configMap for ALL prow's core components. Eg, check `hook`':
 
 ```
-$ oc get deploy -n ci tide
-NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-tide      1         1         1            1           217d
+$ oc set volumes deployment hook -n ci | grep job-config
 ```
 
 ### [ghproxy](https://github.com/kubernetes/test-infra/tree/master/ghproxy)
 
 We use `ghproxy` to avoid [rate-limiting of api tokens](https://developer.github.com/v3/#rate-limiting).
-
-```
-$ oc get deploy -n ci ghproxy
-NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-ghproxy   1         1         1            1           218d
-
-```
 
 [Q&A@slack](https://coreos.slack.com/archives/GB7NB0CUC/p1562767143290700) and [proxy lawyers in ghproxy](https://coreos.slack.com/archives/GB7NB0CUC/p1565793345353000).
 

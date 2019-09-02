@@ -2,7 +2,7 @@
 
 ## CI cluster
 
-CI-Cluster
+CI-Cluster: [deployment](https://github.com/hongkailiu/dptp-doc/blob/master/architecture.md#prow-deployment).
 
 Web console: https://api.ci.openshift.org/console/catalog
 

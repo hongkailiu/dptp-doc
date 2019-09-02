@@ -95,19 +95,20 @@ tot                     1         1         1            1           180d
 
 ```
 
-All prow components and prowjobs [are running in namespace](https://github.com/openshift/release/blob/master/cluster/ci/config/prow/config.yaml#L618-L619) `ci`.
+Configuration:
 
 * [configuration](https://github.com/openshift/release/blob/master/cluster/ci/config/prow/config.yaml) for prow-components: 
     > oc get configmaps -n ci config
 * [prow plugins](https://deck-ci.svc.ci.openshift.org/plugins) and its [configurations](https://github.com/openshift/release/blob/master/cluster/ci/config/prow/plugins.yaml): eg, [approve](https://github.com/kubernetes/test-infra/blob/master/prow/plugins/approve/approvers/README.md):
     > oc get configmaps -n ci plugins
 
-
 All the job configs are mounted via configMap for ALL prow's core components. Eg, check `hook`':
 
 ```
 $ oc set volumes deployment hook -n ci | grep job-config
 ```
+
+All prow components and prowjobs [are running in namespace](https://github.com/openshift/release/blob/master/cluster/ci/config/prow/config.yaml#L618-L619) `ci`.
 
 ### [ci-tools](https://github.com/openshift/ci-tools)
 

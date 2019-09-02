@@ -24,6 +24,10 @@ Upstream cluster: [config.yaml](https://github.com/kubernetes/test-infra/blob/ma
     * sinker
 * [tide](https://github.com/kubernetes/test-infra/blob/master/prow/cmd/tide/README.md): operates `github`'s PRs.
 
+* auxiliary components
+    * jenkins-operator
+    * tot
+
 ### [ghproxy](https://github.com/kubernetes/test-infra/tree/master/ghproxy)
 
 We use `ghproxy` to avoid [rate-limiting of api tokens](https://developer.github.com/v3/#rate-limiting).

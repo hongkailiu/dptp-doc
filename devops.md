@@ -196,4 +196,4 @@ origin-ci-instance-template-node-large-disk
 
 ```
 
-TO ask Steve:  i forgot to take it out of the node pool
+TO ask Steve:  i forgot to take it out of the node pool (autoscaler).

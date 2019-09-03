@@ -19,6 +19,7 @@ Upstream cluster: [config.yaml](https://github.com/kubernetes/test-infra/blob/ma
         * histogram on the UI: [Petr@slack](https://coreos.slack.com/archives/GB7NB0CUC/p1558533700292600).
 
     *  hook: receives [events](https://developer.github.com/webhooks/) from `github`. [plugins](https://github.com/kubernetes/test-infra/tree/master/prow/plugins): [are sub-components of hook](https://github.com/kubernetes/test-infra/blob/master/prow/plugins/README.md).
+        * [approve](https://github.com/kubernetes/test-infra/tree/master/prow/plugins/approve/): [Reviewers and Approvers](https://github.com/kubernetes/test-infra/tree/master/prow/plugins/approve/approvers) and [its meaning in k8s community](https://github.com/kubernetes/community/blob/master/community-membership.md).
     * plank: manages the execution of prow jobs.
     * horologium
     * sinker

@@ -122,6 +122,13 @@ pod/0f609c54-6d1f-11e9-a908-c85b76866133 created
 
 ```
 
+test  Periodics with docker:
+
+```
+### https://coreos.slack.com/archives/GB7NB0CUC/p1567761640222700
+$ docker run --rm --volume "${PWD}:/tmp/release:z" --workdir /tmp/release gcr.io/k8s-prow/mkpj:v20190827-70272a1e1 --config-path cluster/ci/config/prow/config.yaml --job-config-path ci-operator/jobs/ --job YOUR_JOB_HERE
+```
+
 ## bump up prow component version
 
 ```

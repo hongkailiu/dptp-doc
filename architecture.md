@@ -23,6 +23,7 @@ Upstream cluster: [config.yaml](https://github.com/kubernetes/test-infra/blob/ma
     *  hook: receives [events](https://developer.github.com/webhooks/) from `github`. [plugins](https://github.com/kubernetes/test-infra/tree/master/prow/plugins): [are sub-components of hook](https://github.com/kubernetes/test-infra/blob/master/prow/plugins/README.md).
         * [approve](https://github.com/kubernetes/test-infra/tree/master/prow/plugins/approve/): [Reviewers and Approvers](https://github.com/kubernetes/test-infra/tree/master/prow/plugins/approve/approvers) and [its meaning in k8s community](https://github.com/kubernetes/community/blob/master/community-membership.md).
     * plank: manages the execution of prow jobs.
+        TODO: check on [gcs_configuration section in plank's config](https://github.com/openshift/release/blob/master/cluster/ci/config/prow/config.yaml#L14-L21) from [Nikos](https://coreos.slack.com/archives/GB7NB0CUC/p1567690445207200).
     * horologium
     * sinker
 * [tide](https://github.com/kubernetes/test-infra/blob/master/prow/cmd/tide/README.md): operates `github`'s PRs.
@@ -234,6 +235,12 @@ $ JOB_SPEC='{"type":"periodic","job":"periodic-ci-azure-e2e-applysecurityupdates
 [Templates](https://github.com/openshift/ci-tools/blob/master/TEMPLATES.md) and [how2use it for e2e tests with ci-operator](https://github.com/openshift/release/tree/master/ci-operator#end-to-end-tests)
 
 TODO: practice testing with templates
+
+## config tools
+
+## release tools
+
+[gdoc](https://docs.google.com/document/d/1USkRjWPVxsRZNLG5BRJnm5Q1LSk-NtBgrxl2spFRRU8/edit)
 
 ### Others
 

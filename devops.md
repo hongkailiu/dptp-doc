@@ -88,6 +88,14 @@ You have logged out.
 
 ```
 
+### prometheus
+
+TODO: 
+
+CPU and MEM from k8s-prometheus: [slack](https://coreos.slack.com/archives/CBN38N3MW/p1568146226424800)
+
+autoscaler: node limit? [slack](https://coreos.slack.com/archives/CBN38N3MW/p1568150695436400)
+
 ## Troubleshooting
 
 [Outage Postmortems](https://drive.google.com/drive/u/1/folders/1PcUkPa76udM4Fzy5NSX12zs9hrjwt4EQ)

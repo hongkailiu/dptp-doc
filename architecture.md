@@ -1,6 +1,8 @@
 # dpcp architecture
 
-[test-infra](https://github.com/kubernetes/test-infra);
+[test-infra](https://github.com/kubernetes/test-infra).
+
+![k8s.prow.architecture.png](i/k8s.prow.architecture.png "k8s.prow.architecture")
 
 
 ## [prow](https://github.com/kubernetes/test-infra/tree/master/prow)

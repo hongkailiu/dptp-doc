@@ -4,6 +4,7 @@
 * [creating_images@oc](https://docs.openshift.com/container-platform/3.11/creating_images/index.html) and [managing-images@oc](https://docs.openshift.com/container-platform/3.11/dev_guide/managing_images.html#dev-guide-managing-images)
 * [builds_and_image_streams@oc](https://docs.openshift.com/container-platform/3.11/architecture/core_concepts/builds_and_image_streams.html) and [builds@oc](https://docs.openshift.com/container-platform/3.11/dev_guide/builds/index.html)
 * [build@svt-doc](https://github.com/hongkailiu/svt-case-doc/blob/master/learn/build.md) and [is@svt-doc](https://github.com/hongkailiu/svt-case-doc/blob/master/learn/image_stream.md)
+* [s2i@oc](https://docs.openshift.com/container-platform/3.11/creating_images/s2i.html), [s2i_testing](https://docs.openshift.com/container-platform/3.11/creating_images/s2i_testing.html): the key is the S2I Image (used in the `bc.spec.strategy.sourceStrategy.from` of `bc`)
 
 ## bc
 

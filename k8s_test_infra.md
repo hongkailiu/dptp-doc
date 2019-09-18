@@ -127,6 +127,9 @@ test  Periodics with docker:
 ```
 ### https://coreos.slack.com/archives/GB7NB0CUC/p1567761640222700
 $ docker run --rm --volume "${PWD}:/tmp/release:z" --workdir /tmp/release gcr.io/k8s-prow/mkpj:v20190827-70272a1e1 --config-path cluster/ci/config/prow/config.yaml --job-config-path ci-operator/jobs/ --job YOUR_JOB_HERE
+
+podman run --rm --volume "${PWD}:/tmp/release:z" --workdir /tmp/release gcr.io/k8s-prow/mkpj:v20190918-7672de02b --config-path core-services/prow/02_config/_config.yaml --job-config-path ci-operator/jobs/ --job periodic-prow-image-autoowners
+
 ```
 
 ## bump up prow component version

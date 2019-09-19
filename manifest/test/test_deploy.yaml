@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test
+  namespace: hongkliu-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: test
+  template:
+    metadata:
+      labels:
+        name: test
+    spec:
+      containers:
+      - image: registry.svc.ci.openshift.org/ci/ci-operator
+        command: ["/bin/sh","-c"]
+        args: ["git clone https://github.com/hongkailiu/MyTest.git /home/MyTest && echo \"machine github.com\" > /home/.netrc && echo \"aaa\" > /home/token && tail -f /dev/null"]
+        imagePullPolicy: Always
+        name: test
+        env:
+        - name: HOME
+          value: "/home"
+        - name: GIT_COMMITTER_NAME
+          value: "openshift-bot"
+        - name: GIT_COMMITTER_EMAIL
+          value: "openshift-bot@redhat.com"
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "125m"
+          limits:
+            memory: "128Mi"
+            cpu: "250m"
+        volumeMounts:
+        - mountPath: /home
+          name: home-volume
+      volumes:
+      - name: home-volume
+        emptyDir: {}

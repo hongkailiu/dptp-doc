@@ -16,7 +16,19 @@ spec:
       containers:
       - image: registry.svc.ci.openshift.org/ci/ci-operator
         command: ["/bin/sh","-c"]
-        args: ["git clone https://github.com/hongkailiu/MyTest.git /home/MyTest && echo \"machine github.com\" > /home/.netrc && echo \"aaa\" > /home/token && tail -f /dev/null"]
+        args:
+        - |
+          mkdir /home/github
+          echo aaa > /home/github/token
+          set -o errexit
+          set -o nounset
+          set -o pipefail
+          echo "machine github.com" > ${HOME}/.netrc
+          echo "login ${GIT_COMMITTER_NAME}" >> ${HOME}/.netrc
+          echo "password token" >> ${HOME}/.netrc
+          ### Be CAREFUL ... potential leaking?
+          sed -i "s/token/$(cat /home/github/token)/" ${HOME}/.netrc
+          tail -f /dev/null
         imagePullPolicy: Always
         name: test
         env:

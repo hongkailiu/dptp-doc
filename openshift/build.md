@@ -44,3 +44,56 @@ $ skopeo inspect docker://quay.io/hongkailiu/ci-staging:testctl-bc
 ```
 
 If we do not have the multi-stage in the Dockerfile, we could use [chaining-builds](https://docs.openshift.com/container-platform/3.11/dev_guide/builds/advanced_build_operations.html#dev-guide-chaining-builds) to achieve the same goal.
+
+## s2i
+
+```
+###https://blog.openshift.com/create-s2i-builder-image/
+$ cd ~/bin
+$ wget https://github.com/openshift/source-to-image/releases/download/v1.1.14/source-to-image-v1.1.14-874754de-linux-amd64.tar.gz
+$ tar -xvf source-to-image-v1.1.14-874754de-linux-amd64.tar.gz
+
+$ cd ~/test-go
+$ s2i create docker.io/golang:1.12 s2i-test-go
+### editing ...
+$ make -C s2i-test-go/ build
+$ buildah push quay.io/hongkailiu/test-go:s2i-1.0.0
+$ buildah push --creds=hongkailiu quay.io/hongkailiu/test-go:s2i-1.0.0
+
+### test locally
+$ podman run --entrypoint "/bin/bash" -it --rm quay.io/hongkailiu/test-go:s2i-1.0.0
+1001@ceb36659f5e0:~$ ls /usr/local/s2i/
+assemble  run  save-artifacts  usage
+1001@ceb36659f5e0:~$ tar --version
+tar (GNU tar) 1.30
+...
+1001@ceb36659f5e0:~$ which sh
+/bin/sh
+
+```
+
+Use the build image in a `bc`:
+
+```
+$ oc create is ci-staging
+imagestream.image.openshift.io/ci-staging created
+$ cd ~/test-go
+$ oc apply -f ./deploy/testctl_http/test-go_bc.yaml 
+buildconfig.build.openshift.io/test-go-build-s2i created
+$ oc get bc test-go-build-s2i
+NAME                TYPE      FROM      LATEST
+test-go-build-s2i   Source    Git       0
+$ oc start-build test-go-build-s2i 
+build.build.openshift.io/test-go-build-s2i-1 started
+$ oc get build
+NAME                  TYPE      FROM          STATUS    STARTED          DURATION
+test-go-build-s2i-1   Source    Git@9c76b0d   Running   58 seconds ago   
+$ oc logs build/test-go-build-s2i-1
+### OOM now
+### TODO since the production is image is from another base: alpine
+### we need another build-image, and then copy bin from first one
+### https://docs.openshift.com/container-platform/3.11/dev_guide/builds/build_inputs.html#image-source
+### All of this would not be necessary if dockerStrategy is allowed on openshift-online
+```
+
+TODO: incremental build, artifacts

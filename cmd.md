@@ -45,7 +45,12 @@ $ oc get is -n ci ci-operator -o yaml
 $ docker inspect registry.svc.ci.openshift.org/ci/ci-operator@sha256:947332cac382548ed99dd193be2674af8a5eba81881a6d6fde54e5cb75e5e96b | jq ".[0].Config.Labels[\"io.openshift.build.commit.id\"]"
 "b04de66e58ababf901783140acd3e8510309f1f2"
 
-
+###re-tag the image
 $ oc tag ci/ci-operator@sha256:b9166ca34f581cb6e513c4824ce34f6d6f511b2bdc837e30325575f2cf5ecc5b ci/ci-operator:latest
+
+
+###use podman to inspect
+$ podman inspect registry.svc.ci.openshift.org/ci/ci-operator:latest | jq -r '.[0].ContainerConfig.Labels["io.openshift.build.commit.id"]' 
+7087de11e0ce91d949e9ea6b00cbc1d7fb0561de
 
 ```

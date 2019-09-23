@@ -238,18 +238,132 @@ TODO: practice testing with templates
 
 ## config tools
 
+* ci-operator-prowgen
+
 ## release tools
 
-[gdoc](https://docs.google.com/document/d/1USkRjWPVxsRZNLG5BRJnm5Q1LSk-NtBgrxl2spFRRU8/edit)
+[gdoc](https://docs.google.com/document/d/1USkRjWPVxsRZNLG5BRJnm5Q1LSk-NtBgrxl2spFRRU8/edit), src: ci-tools
 
-### Others
-
-Inspect the current `ci-operator` image
+Those tools manage repos with the following stanza in their config files:
 
 ```
-# podman inspect registry.svc.ci.openshift.org/ci/ci-operator:latest | jq -r '.[0].ContainerConfig.Labels["io.openshift.build.commit.id"]' 
-7087de11e0ce91d949e9ea6b00cbc1d7fb0561de
+promotion:
+  namespace: ocp
+  name: 4.2
+
 ```
+
+Workflow:
+* repos: e.g., [openshift/origin](https://github.com/openshift/origin) with
+
+    * the developing branch: master
+    * the current release branch: 4.2
+    * the future release branch: 4.3
+
+    developers create PRs against dev-branch (master), when they got merged, [periodic-openshift-release-fast-forward](https://github.com/openshift/release/blob/99d102d253904d6ddf5337e2e09c22d01782f709/ci-operator/jobs/openshift/release/openshift-release-periodics.yaml#L620-L654) sync the commits from the developing branch (master) to the current release branch (4.2) and the future release branch (4.3).
+
+* ci-images: container images are build by post-submit jobs, e.g., [branch-ci-openshift-origin-master-images](https://github.com/openshift/release/blob/99d102d253904d6ddf5337e2e09c22d01782f709/ci-operator/jobs/openshift/origin/openshift-origin-master-postsubmits.yaml#L17)
+
+    * merge to the developing branch (master): images are pushed to `is` ocp/{current-release-branch}:{component} (ocp/4.2)
+    * merge to the current release branch (4.2): images are pushed nowhere [disabled: true](https://github.com/openshift/release/blob/391718206146563b303a4a972fce4c666b7f2ee1/ci-operator/config/openshift/ocs-operator/openshift-ocs-operator-release-4.2.yaml#L39)
+    * merge to the current release branch (4.2): images are pushed to `is` ocp/{future-release-branch}:{component} (ocp/4.3) from the code on branch 4.3.
+
+Those tools changes files automatically while we need to make-commits, push-to-remote, and create-PR manually.
+
+* determinize-ci-operator
+* config-brancher
+* blocking-issue-creator
+* repo-brancher
+
+Install them locally (for the local test below):
+
+```
+$ cd ci-tools
+$ make install
+```
+
+### Switch development branches
+Example PR: [release/pull/5144](https://github.com/openshift/release/pull/5144)
+
+```
+$ cd /tmp/
+$ git clone https://github.com/openshift/release
+$ cd release/
+### back to the status before the PR
+$ git reset --hard 391718206146563b303a4a972fce4c666b7f2ee1
+
+### format config files
+$ determinize-ci-operator --config-dir ./ci-operator/config --current-release 4.2 --future-release 4.3 --confirm
+### git-diff/add/commit
+
+### bumper config: release branch will be 4.3
+$ config-brancher --config-dir ./ci-operator/config --current-release 4.2 --future-release 4.3 --bump-release 4.3 --confirm
+### git-diff/add/commit
+
+### generate job configs based on the changes above
+$ ci-operator-prowgen --from-dir ./ci-operator/config --to-dir ./ci-operator/jobs
+
+### manually modify release's periodic job yaml file: from `4.2 to 4.3` to `4.3 to 4.4`
+### periodic-openshift-release-fast-forward
+### periodic-openshift-release-merge-blockers
+### git-diff/add/commit
+
+### git-push/creating-PR
+
+```
+
+
+### Blocking Issue Creation
+`blocking-issue-creator`: maintain the github-issues to blocker merges against the developing branch (master), e.g.,
+[openshift/origin/issues/22576](https://github.com/openshift/origin/issues/22576): It lists the branches which are fast-forwarded by the `periodic-openshift-release-fast-forward` and thus protected from PR merges.
+Those issues are maintained by `periodic-openshift-release-merge-blockers`.
+
+```
+release-4.2
+release-4.3
+
+```
+
+If we do it manually (we do not need to since `periodic-openshift-release-merge-blockers`):
+
+```
+### Petr: forgot to ask the command that you run. Is the following correct?
+$ blocking-issue-creator --config-dir ./ci-operator/config \
+                       --current-release 4.3             \
+                       --future-release  4.4           \
+                       --username foo --token-path /bar  \
+                       --confirm
+
+```
+
+Then, the issue has the new branches protected:
+
+```
+release-4.3
+release-4.4
+```
+
+So `release-4.2` becomes a RELEASED branch.
+
+### Branch Creation and Fast-Forwarding
+
+`repo-brancher`: create and fast-forward protected branches of repos. If we do it manually (we do not need to since `periodic-openshift-release-fast-forward`):
+
+```
+repo-brancher --config-dir ./ci-operator/config \
+              --current-release 4.3             \
+              --future-release  4.4           \
+              --fast-forward                    \
+              --username foo --token-path /bar  \
+              --confirm
+
+```
+
+### Addition tasks for the RELEASED branches
+TODO
+
+* labels on github PRs
+* bugzilla plugin
 
 ### build-cop
 
@@ -258,8 +372,3 @@ Inspect the current `ci-operator` image
 ### others
 
 * [image-mirror setup requests](https://coreos.slack.com/archives/GB7NB0CUC/p1558533720293300)
-
-Deprecated
-
-* [ci-operator](https://github.com/openshift/ci-operator)
-* [ci-operator-prowgen](https://github.com/openshift/ci-operator-prowgen)

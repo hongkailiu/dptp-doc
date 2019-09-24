@@ -205,3 +205,27 @@ origin-ci-instance-template-node-large-disk
 ```
 
 TO ask Steve:  i forgot to take it out of the node pool (autoscaler).
+
+### problem after bumping Prow version
+
+https://coreos.slack.com/archives/GB7NB0CUC/p1569340258310500?thread_ts=1569328593.277300&cid=GB7NB0CUC
+
+./hack/bump-pr.sh
+
+```
+Steve Kuznetsov  2 hours ago
+The simplest workflow we should default to when possible is always going to be
+
+Steve Kuznetsov  2 hours ago
+1. revert the Prow bump PR
+
+
+Steve Kuznetsov  2 hours ago
+2. revert the broken stuff upstream
+
+Steve Kuznetsov  2 hours ago
+3. wait for the upstream revert to land and build
+
+Steve Kuznetsov  2 hours ago
+4. re-create a new bump and merge it
+```

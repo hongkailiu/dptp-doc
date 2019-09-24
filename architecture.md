@@ -359,6 +359,12 @@ repo-brancher --config-dir ./ci-operator/config \
 
 ```
 
+### Generate 4.4 configs and jobs
+
+https://github.com/openshift/release/pull/5169
+
+https://coreos.slack.com/archives/GB7NB0CUC/p1569344963320900
+
 ### Addition tasks for the RELEASED branches
 TODO
 

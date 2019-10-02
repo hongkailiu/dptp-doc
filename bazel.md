@@ -25,6 +25,8 @@ $ sudo dnf install patch
 ### https://stackoverflow.com/questions/13195110/matlab-kalman-usr-bin-ld-cannot-find-lstdc
 $ sudo dnf install libstdc++-static
 $ sudo dnf install python2
+### on centos: https://stackoverflow.com/questions/8878676/compile-error-g-error-trying-to-exec-cc1plus-execvp-no-such-file-or-dir/22072238
+$ sudo yum install gcc-c++
 
 ### https://github.com/bazelbuild/bazelisk
 $ curl -OL https://github.com/bazelbuild/bazelisk/releases/download/v0.0.7/bazelisk-linux-amd64

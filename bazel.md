@@ -87,4 +87,12 @@ $ bazel clean
 ###
 $ bazel build //prow/cmd/deck/...
 
+### build image
+$ bazel build //prow/cmd/exporter:image
+# bazel run //prow/cmd/exporter:image
+# docker images
+REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
+bazel/prow/cmd/exporter   image               6898c75abda6        58 minutes ago      39.8 MB
+# docker run --entrypoint "/bin/ash"  -it --rm bazel/prow/cmd/exporter:image
+
 ```

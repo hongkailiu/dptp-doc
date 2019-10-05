@@ -459,3 +459,19 @@ Upload: 518.96 Mbit/s
 ## exit emergency mode
 
 Followed [this](https://www.youtube.com/watch?v=u42IpZU5ipQ) and it worked for my recently installation of F30.
+
+## os upgrade
+
+```
+###https://fedoramagazine.org/upgrading-fedora-29-to-fedora-30/
+$ sudo dnf upgrade --refresh
+$ sudo dnf install dnf-plugin-system-upgrade
+$ sudo dnf system-upgrade download --releasever=31  --allowerasing
+Complete!
+Download complete! Use 'dnf system-upgrade reboot' to start the upgrade.
+To remove cached metadata and transaction use 'dnf system-upgrade clean'
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing 'dnf clean packages'.
+$ dnf system-upgrade reboot
+
+```

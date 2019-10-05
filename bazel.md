@@ -95,4 +95,10 @@ REPOSITORY                TAG                 IMAGE ID            CREATED       
 bazel/prow/cmd/exporter   image               6898c75abda6        58 minutes ago      39.8 MB
 # docker run --entrypoint "/bin/ash"  -it --rm bazel/prow/cmd/exporter:image
 
+###https://prow.k8s.io/view/gcs/kubernetes-jenkins/logs/post-test-infra-push-prow/1180141158496473089#1:build-log.txt%3A137
+###{STABLE_PROW_REPO}/exporter:{DOCKER_TAG} was resolved to gcr.io/k8s-prow/exporter:v20191004-3059c69b0
+$ gcloud auth print-access-token
+$ docker login -u oauth2accesstoken -p <token> gcr.io
+$ podman pull gcr.io/k8s-prow/exporter:v20191004-3059c69b0
+
 ```

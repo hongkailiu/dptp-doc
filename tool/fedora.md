@@ -472,6 +472,6 @@ Download complete! Use 'dnf system-upgrade reboot' to start the upgrade.
 To remove cached metadata and transaction use 'dnf system-upgrade clean'
 The downloaded packages were saved in cache until the next successful transaction.
 You can remove cached packages by executing 'dnf clean packages'.
-$ dnf system-upgrade reboot
+$ sudo dnf system-upgrade reboot
 
 ```

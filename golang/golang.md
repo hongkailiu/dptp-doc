@@ -34,6 +34,7 @@ Follow [those steps](README.md#prerequisites).
 ## IDE
 * Intellij Ultimate Edition + go plugin
 * vscode
+* goland: [installation](https://www.jetbrains.com/help/go/installation-guide.html#first-run)
 
 ### Dep. Management
 

@@ -170,6 +170,8 @@ $ sudo dnf install google-chrome-stable
 $ sudo dnf install gnome-tweak-tool
 ### dash to dock
 $ sudo dnf install gnome-shell-extension-dash-to-dock
+###https://askubuntu.com/questions/1006499/how-to-get-more-information-about-error-loading-extension
+$ sudo journalctl /usr/bin/gnome-shell
 
 ```
 

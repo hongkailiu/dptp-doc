@@ -68,3 +68,5 @@ so we did _not_ want to have a pointer on the ProwJob since that means _everyone
 git: interactive rebase: https://thoughtbot.com/blog/git-interactive-rebase-squash-amend-rewriting-history
 
 pprof: https://github.com/kubernetes/test-infra/pull/13824: [steve@slack](https://coreos.slack.com/archives/GB7NB0CUC/p1565277916160200)
+
+Petr's genius action on `job-config-master`: [slack](https://coreos.slack.com/archives/GB7NB0CUC/p1570463934076100)

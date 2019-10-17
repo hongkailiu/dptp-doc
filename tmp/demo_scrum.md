@@ -1,3 +1,11 @@
+# demo: alert on job failures
+
+* [routes](https://alertmanager-prow-monitoring.svc.ci.openshift.org/#/status) on alertmanager
+    2 channels before: #ops-teamplatform, #build-cop-alerts; 1 more now: #forum-devex
+* [labels](https://prometheus-prow-monitoring.svc.ci.openshift.org/alerts) on alerts for routing: `team: build-cop`
+* alerts on job failures: [readme](https://github.com/openshift/release/tree/master/cluster/ci/monitoring#add-an-alert-on-prow-job-failures)
+
+
 # demo: auto-tools
 
 3 periodic jobs: [`bumper.UpdatePullRequest`](https://github.com/kubernetes/test-infra/blob/master/experiment/autobumper/bumper/bumper.go#L77)

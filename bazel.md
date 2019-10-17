@@ -102,3 +102,8 @@ $ docker login -u oauth2accesstoken -p <token> gcr.io
 $ podman pull gcr.io/k8s-prow/exporter:v20191004-3059c69b0
 
 ```
+
+```
+### flaky test: https://stackoverflow.com/questions/44744493/how-can-i-ask-bazel-to-rerun-a-cached-test
+$ bazel test --runs_per_test=10 //prow/cmd/exporter/...
+```

@@ -12,8 +12,11 @@ cluster role "cluster-monitoring-view" added: "wking"
 $ oc adm policy who-can patch configmaps -n prow-monitoring
 $ oc get rolebinding author-access -n prow-monitoring
 $ oc get groups ci-admins
+###ci-admins as project admins
 $ oc adm policy add-role-to-group admin ci-admins --as system:admin
 role "admin" added: "ci-admins"
+###ci-admins as cluster admins
+$ oc adm policy add-cluster-role-to-group cluster-admin ci-admins
 
 ### print out the token of a service-account
 $ oc sa get-token -n ci ipi-deprovisioner

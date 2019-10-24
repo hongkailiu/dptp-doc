@@ -59,4 +59,7 @@ $ podman inspect registry.svc.ci.openshift.org/ci/ci-operator:latest | jq -r '.[
 ### approve certificate
 # oc get csr -o name | xargs oc adm certificate approve
 
+### debug node
+$ oc debug node/ip-10-0-133-100.us-east-2.compute.internal -- chroot /host journalctl -u kubelet.service -f
+
 ```

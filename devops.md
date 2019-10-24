@@ -53,6 +53,9 @@ default  True       <kerberos_id>@redhat.com  openshift-ci-infra  us-east1-c    
 $ gcloud compute ssh "origin-ci-ig-n-t48j" --command "ls -al"
 $ gcloud compute ssh "origin-ci-ig-m-428p" --command "sudo cat /etc/origin/master/master-config.yaml"
 
+### interactive ssh login
+$ gcloud compute ssh origin-ci-ig-m-428p -- -L 2222:localhost:8888
+
 ```
 
 ```

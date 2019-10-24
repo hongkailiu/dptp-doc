@@ -55,6 +55,28 @@ $ gcloud compute ssh "origin-ci-ig-m-428p" --command "sudo cat /etc/origin/maste
 
 ```
 
+```
+###https://cloud.google.com/storage/docs/gsutil_install#linux
+(p2env) [hongkliu@MiWiFi-R1CM-srv ~]$ pip install gsutil
+$ gsutil --version
+gsutil version: 4.45
+
+### -a not working
+###https://stackoverflow.com/questions/38398066/gsutil-config-a-which-key-to-use
+$ gsutil config -a
+...key/secret...
+
+### -b works, will open browser
+$ gsutil config -a
+
+### the bucket is in project "OpenShift GCE Devel"
+$ gsutil ls gs://origin-ci-test/
+
+$ gcloud config set pass_credentials_to_gsutil false
+### delete stored logs from google storage
+$ gsutil -m rm -r gs://origin-ci-test/pr-logs/pull/openshift_release/5534/pull-ci-openshift-release-master-build01-dry/8/
+```
+
 ### aws
 
 The aws-tests run on clusters created on aws. [Set up](cloud/ec2/ec2.md#configure) `aws-cli` with the env. vars.

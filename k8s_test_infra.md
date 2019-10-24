@@ -120,6 +120,8 @@ kind: Pod
 $ oc apply -n ci -f  /home/hongkliu/Downloads/abc1.yaml
 pod/0f609c54-6d1f-11e9-a908-c85b76866133 created
 
+### with container
+# podman run --rm --volume "${PWD}:/tmp/release:z" --workdir /tmp/release gcr.io/k8s-prow/mkpj:v20191023-cb1899b6e --config-path core-services/prow/02_config/_config.yaml --job-config-path ci-operator/jobs/ --job pull-ci-openshift-release-master-build01-dry --base-ref=master --base-sha=5fe03dff8 --pull-sha=73cfc197d9c7d526231d8c318b0fb6eab8b5b12e --pull-author=hongkailiu --pull-number=5534
 ```
 
 test  Periodics with docker:
@@ -128,7 +130,8 @@ test  Periodics with docker:
 ### https://coreos.slack.com/archives/GB7NB0CUC/p1567761640222700
 $ docker run --rm --volume "${PWD}:/tmp/release:z" --workdir /tmp/release gcr.io/k8s-prow/mkpj:v20190827-70272a1e1 --config-path cluster/ci/config/prow/config.yaml --job-config-path ci-operator/jobs/ --job YOUR_JOB_HERE
 
-podman run --rm --volume "${PWD}:/tmp/release:z" --workdir /tmp/release gcr.io/k8s-prow/mkpj:v20190918-7672de02b --config-path core-services/prow/02_config/_config.yaml --job-config-path ci-operator/jobs/ --job periodic-prow-image-autoowners
+# podman run --rm --volume "${PWD}:/tmp/release:z" --workdir /tmp/release gcr.io/k8s-prow/mkpj:v20190918-7672de02b --config-path core-services/prow/02_config/_config.yaml --job-config-path ci-operator/jobs/ --job periodic-prow-image-autoowners
+
 
 ```
 

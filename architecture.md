@@ -345,6 +345,10 @@ release-4.4
 
 So `release-4.2` becomes a RELEASED branch.
 
+Qs after [reading](https://coreos.slack.com/archives/CHY2E1BL4/p1572045689085700):
+
+* `blocking-issue-creator` [searches for](https://github.com/openshift/ci-tools/blob/02257615e22f89e7d746d15593116c8b14193c90/cmd/blocking-issue-creator/main.go#L226) the label `tide/merge-blocker`. Is it tide to maintain the labels? Why did not tide do its job for repo `kubevirt/hyperconverged-cluster-operator`?
+
 ### Branch Creation and Fast-Forwarding
 
 `repo-brancher`: create and fast-forward protected branches of repos. If we do it manually (we do not need to since `periodic-openshift-release-fast-forward`):

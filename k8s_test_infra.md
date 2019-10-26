@@ -135,6 +135,10 @@ $ docker run --rm --volume "${PWD}:/tmp/release:z" --workdir /tmp/release gcr.io
 
 ```
 
+## branchprotector
+
+[src](https://github.com/kubernetes/test-infra/tree/master/prow/cmd/branchprotector)
+
 ## bump up prow component version
 
 ```

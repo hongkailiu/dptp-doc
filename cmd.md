@@ -62,4 +62,7 @@ $ podman inspect registry.svc.ci.openshift.org/ci/ci-operator:latest | jq -r '.[
 ### debug node
 $ oc debug node/ip-10-0-133-100.us-east-2.compute.internal -- chroot /host journalctl -u kubelet.service -f
 
+
+$ oc get prowjob -n ci -o "jsonpath={.items[?(@.spec.cluster==\"ci/api-build01-ci-devcluster-openshift-com:6443\")].metadata.name}"
+
 ```

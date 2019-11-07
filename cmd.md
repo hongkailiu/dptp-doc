@@ -65,4 +65,6 @@ $ oc debug node/ip-10-0-133-100.us-east-2.compute.internal -- chroot /host journ
 
 $ oc get prowjob -n ci -o "jsonpath={.items[?(@.spec.cluster==\"ci/api-build01-ci-devcluster-openshift-com:6443\")].metadata.name}"
 
+$ oc set volume -n openshift-image-registry deployment.apps/image-registry --all
+
 ```

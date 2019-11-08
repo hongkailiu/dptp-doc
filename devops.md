@@ -233,6 +233,15 @@ origin-ci-instance-template-node-large-disk
 
 TO ask Steve:  i forgot to take it out of the node pool (autoscaler).
 
+### remove a node from cluster
+
+```
+$ oc adm cordon origin-ci-ig-n-3m3d
+$ oc --as system:admin adm drain origin-ci-ig-n-3m3d  --delete-local-data --ignore-daemonsets --force #stuck and had to ctrl c
+$ oc --as system:admin delete node origin-ci-ig-n-3m3d
+
+```
+
 ### problem after bumping Prow version
 
 https://coreos.slack.com/archives/GB7NB0CUC/p1569340258310500?thread_ts=1569328593.277300&cid=GB7NB0CUC

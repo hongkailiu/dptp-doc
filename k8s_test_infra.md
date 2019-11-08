@@ -121,7 +121,11 @@ $ oc apply -n ci -f  /home/hongkliu/Downloads/abc1.yaml
 pod/0f609c54-6d1f-11e9-a908-c85b76866133 created
 
 ### with container
+###presubmit
 # podman run --rm --volume "${PWD}:/tmp/release:z" --workdir /tmp/release gcr.io/k8s-prow/mkpj:v20191023-cb1899b6e --config-path core-services/prow/02_config/_config.yaml --job-config-path ci-operator/jobs/ --job pull-ci-openshift-release-master-build01-dry --base-ref=master --base-sha=5fe03dff8 --pull-sha=73cfc197d9c7d526231d8c318b0fb6eab8b5b12e --pull-author=hongkailiu --pull-number=5534
+
+###postsubmit
+# podman run --rm --volume "${PWD}:/tmp/release:z" --workdir /tmp/release gcr.io/k8s-prow/mkpj:v20191107-34a664162 --config-path core-services/prow/02_config/_config.yaml --job-config-path ci-operator/jobs/ --job branch-ci-openshift-ci-secret-mirroring-controller-master-images --base-ref=master --base-sha=f235b499aac6d84d9c79cce15df88a3d5c41c255
 ```
 
 test  Periodics with docker:

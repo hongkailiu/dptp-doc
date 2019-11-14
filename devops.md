@@ -6,6 +6,8 @@ CI-Cluster: [deployment](https://github.com/hongkailiu/dptp-doc/blob/master/arch
 
 Web console: https://api.ci.openshift.org/console/catalog
 
+[DPTP Operational Duties](https://docs.google.com/document/d/11Ao_as9Pi2WLIffwn6Xh1XO_857Xra1liAwEVjrGtg8/edit#)
+
 Authentication provider: github
 
 [GCE console](https://console.cloud.google.com/home/dashboard?project=openshift-ci-infra&authuser=1&_ga=2.69769623.-621947859.1558447342): [VM instances](https://console.cloud.google.com/compute/instances?authuser=1&project=openshift-ci-infra&instancessize=50): 3 masters (n1-highmem-4 (4 vCPUs, 26 GB memory)) and 21 compute/infra (n1-standard-16 (16 vCPUs, 60 GB memory)) with [cluster autoscaler](k8s/autoscaling.md).

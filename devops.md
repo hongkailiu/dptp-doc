@@ -6,7 +6,8 @@ CI-Cluster: [deployment](https://github.com/hongkailiu/dptp-doc/blob/master/arch
 
 Web console: https://api.ci.openshift.org/console/catalog
 
-[DPTP Operational Duties](https://docs.google.com/document/d/11Ao_as9Pi2WLIffwn6Xh1XO_857Xra1liAwEVjrGtg8/edit#)
+[DPTP Operational Duties](https://docs.google.com/document/d/11Ao_as9Pi2WLIffwn6Xh1XO_857Xra1liAwEVjrGtg8/edit#) and 
+[DPTP Operational Role Signup](https://docs.google.com/spreadsheets/u/1/d/1vfFt_MLg-eFTg6iEMG-ZIw6yiGr7LjvmJXj-LYKvrVM/edit#gid=0)
 
 Authentication provider: github
 

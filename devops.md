@@ -83,6 +83,18 @@ $ gcloud config set pass_credentials_to_gsutil false
 $ gsutil -m rm -r gs://origin-ci-test/pr-logs/pull/openshift_release/5534/pull-ci-openshift-release-master-build01-dry/8/
 ```
 
+### stackdriver: logs viewer
+
+[stackdriver](https://console.cloud.google.com/logs/viewer?authuser=1&organizationId=54643501348&project=openshift-ci-infra)
+
+[422](https://coreos.slack.com/archives/CHY2E1BL4/p1573828491211800) alert
+
+```
+resource.type="gce_instance"
+422
+jsonPayload.level="error"
+```
+
 ### aws
 
 The aws-tests run on clusters created on aws. [Set up](cloud/ec2/ec2.md#configure) `aws-cli` with the env. vars.

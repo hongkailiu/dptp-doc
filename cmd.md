@@ -67,4 +67,6 @@ $ oc get prowjob -n ci -o "jsonpath={.items[?(@.spec.cluster==\"ci/api-build01-c
 
 $ oc set volume -n openshift-image-registry deployment.apps/image-registry --all
 
+###https://github.com/openshift/origin/issues/18449#issuecomment-363516477
+$ oc create secret generic --from-file=.dockerconfigjson=/home/hongkliu/Downloads/.dockercfg --type=kubernetes.io/dockerconfigjson pullsecret  --kubeconfig ~/.kube/build01.config
 ```

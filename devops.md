@@ -6,6 +6,9 @@ CI-Cluster: [deployment](https://github.com/hongkailiu/dptp-doc/blob/master/arch
 
 Web console: https://api.ci.openshift.org/console/catalog
 
+[DPTP Operational Duties](https://docs.google.com/document/d/11Ao_as9Pi2WLIffwn6Xh1XO_857Xra1liAwEVjrGtg8/edit#) and 
+[DPTP Operational Role Signup](https://docs.google.com/spreadsheets/u/1/d/1vfFt_MLg-eFTg6iEMG-ZIw6yiGr7LjvmJXj-LYKvrVM/edit#gid=0)
+
 Authentication provider: github
 
 [GCE console](https://console.cloud.google.com/home/dashboard?project=openshift-ci-infra&authuser=1&_ga=2.69769623.-621947859.1558447342): [VM instances](https://console.cloud.google.com/compute/instances?authuser=1&project=openshift-ci-infra&instancessize=50): 3 masters (n1-highmem-4 (4 vCPUs, 26 GB memory)) and 21 compute/infra (n1-standard-16 (16 vCPUs, 60 GB memory)) with [cluster autoscaler](k8s/autoscaling.md).
@@ -78,6 +81,18 @@ $ gsutil ls gs://origin-ci-test/
 $ gcloud config set pass_credentials_to_gsutil false
 ### delete stored logs from google storage
 $ gsutil -m rm -r gs://origin-ci-test/pr-logs/pull/openshift_release/5534/pull-ci-openshift-release-master-build01-dry/8/
+```
+
+### stackdriver: logs viewer
+
+[stackdriver](https://console.cloud.google.com/logs/viewer?authuser=1&organizationId=54643501348&project=openshift-ci-infra)
+
+[422](https://coreos.slack.com/archives/CHY2E1BL4/p1573828491211800) alert
+
+```
+resource.type="gce_instance"
+422
+jsonPayload.level="error"
 ```
 
 ### aws

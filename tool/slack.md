@@ -24,6 +24,7 @@ https://get.slack.help/hc/en-us/articles/208423427-Set-a-reminder#desktop-1
 /remind list
 
 /remind me "@hongkliu is build-cop on duty today" on September 20, at 8:00AM
+/remind #team-dp-testplatform "@hongkliu holds ops duty on Monday, Nov 18" on November 18 2019, at 09:00AM
 ```
 
 Note that whether or not you get notifications of those reminders depends on your notification setting on the channel. We could also monify it in the way with @channel (see [here](https://get.slack.help/hc/en-us/articles/202009646-Notify-a-channel-or-workspace) for details).

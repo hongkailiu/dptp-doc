@@ -369,11 +369,13 @@ https://github.com/openshift/release/pull/5169
 
 https://coreos.slack.com/archives/GB7NB0CUC/p1569344963320900
 
+More for 4.5: https://coreos.slack.com/archives/GB7NB0CUC/p1574706364052700
+
 ### Addition tasks for the RELEASED branches
 TODO
 
 * labels on github PRs
-* bugzilla plugin
+* bugzilla plugin: [4.3 cutting example](https://github.com/openshift/release/pull/6042)
 
 ### build-cop
 

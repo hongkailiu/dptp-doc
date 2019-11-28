@@ -229,6 +229,11 @@ node/origin-ci-ig-n-d4fs cordoned
 ###All pods that use PV and have something in Unkown status cannot release the PVC, so new Pods cannot come up 
 $ oc adm drain origin-ci-ig-n-d4fs --delete-local-data --force --ignore-daemonsets --as system:admin --loglevel 4
 
+$ bad_node=origin-ci-ig-n-6nhx
+$ oc adm cordon "${bad_node}" --as system:admin --loglevel 4 | tee "${HOME}/Downloads/cordon-${bad_node}.log"
+$ oc --as system:admin adm drain "${bad_node}"  --delete-local-data --ignore-daemonsets --loglevel 4 | tee "${HOME}/Downloads/drain-${bad_node}.log"
+$ oc --as system:admin delete node "${bad_node}"
+
 ###fetch journals on the node
 $ gcloud compute --project "openshift-ci-infra" ssh --zone "us-east1-c" origin-ci-ig-n-d4fs -- "sudo journalctl --all --lines all --no-pager --unit origin-node.service --since '24 hours ago'" > /tmp/origin-ci-ig-n-d4fs.txt
 $ gcloud compute --project "openshift-ci-infra" ssh --zone "us-east1-c" origin-ci-ig-n-d4fs -- "sudo journalctl --all --lines all --no-pager --unit docker.service --since '24 hours ago'" > /tmp/origin-ci-ig-n-d4fs-docker.txt

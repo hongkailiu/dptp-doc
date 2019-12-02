@@ -19,4 +19,5 @@ readonly TARGET
 
 curl --insecure -v "https://${TARGET}" 2>&1 | awk 'BEGIN { cert=0 } /^\* Server certificate:/ { cert=1 } /^\*/ { if (cert) print }'
 
-
+#https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-openssl.html
+# openssl s_client -connect registry.svc.ci.openshift.org:443 -quiet

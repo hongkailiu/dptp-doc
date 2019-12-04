@@ -1,0 +1,51 @@
+periodics:
+- agent: kubernetes
+  labels:
+    #ci.openshift.io/role: infra
+    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+  cron: ""
+  decorate: true
+  cron: "@hourly"
+  name: periodic-ca-cert-check
+  skip_cloning: true
+  spec:
+    containers:
+    - args:
+      - -c
+      - |
+        set -o errexit
+        set -o nounset
+        set -o pipefail
+        pass_flag=true
+        declare -a arr=("default-route-openshift-image-registry.apps.build01.ci.devcluster.openshift.com" "api.build01.ci.devcluster.openshift.com:6443" "registry.svc.ci.openshift.org" "api.ci.openshift.org:443")
+        for site in "${arr[@]}"; do
+          >&2 echo "[INFO] Checking CA on ${site} ..."
+          curl --insecure -v "https://${site}" 2>&1 | awk 'BEGIN { cert=0 } /^\* Server certificate:/ { cert=1 } /^\*/ { if (cert) print }' | tee "/tmp/${site}.out"
+          if ! grep -q "SSL certificate verify ok" "/tmp/${site}.out"; then
+            >&2 echo "[FATAL] Verification failed on ${site}"
+            pass_flag=false
+          fi
+          expire_date=$(grep "expire date" "/tmp/${site}.out" | sed 's/.*expire date: //')
+          >&2 echo "[INFO] The certificate will expire on ${expire_date}."
+          exp_sec=$(date -d "${expire_date}" +%s)
+          next_week_sec=$(date -u --date='15 days' +%s)
+          >&2 echo "[Debug] exp_sec is ${exp_sec} and next_week_sec is ${next_week_sec}"
+          if [[ ${exp_sec} -le ${next_week_sec} ]]; then
+            >&2 echo "[FATAL] The certificate will expire less than 15 days. Please RENEW!"
+            pass_flag=false
+          fi
+        done
+        if [[ "${pass_flag}" == "true" ]]; then
+          >&2 echo "[INFO] Verification of certificate on all sites are OK."
+        else
+          >&2 echo "[FATAL] Verification of certificate on some sites FAILED!"
+          exit 1
+        fi  
+      command:
+      - /bin/bash
+      image: docker.io/fedora:30
+      imagePullPolicy: Always
+      name: ""
+      resources:
+          requests:
+            cpu: 500m

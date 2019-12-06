@@ -1,7 +1,7 @@
 # DevOps
 
 [DPTP Operational Role Signup](https://docs.google.com/spreadsheets/u/1/d/1vfFt_MLg-eFTg6iEMG-ZIw6yiGr7LjvmJXj-LYKvrVM/edit?ouid=117551473102555683702&usp=sheets_home&ths=true), 
-[DPTP Operational Duties](https://docs.google.com/document/d/11Ao_as9Pi2WLIffwn6Xh1XO_857Xra1liAwEVjrGtg8/edit#heading=h.yms7sbq3ypl4)
+[DPTP Operational Duties](https://docs.google.com/document/d/11Ao_as9Pi2WLIffwn6Xh1XO_857Xra1liAwEVjrGtg8/edit#heading=h.yms7sbq3ypl4),
 [DPTP Triage Summary](https://docs.google.com/document/d/1xWUtEWuud39zs2RrX9WqV6daF5Be31SmpagsIKeL_HU/edit)
 
 ## CI cluster

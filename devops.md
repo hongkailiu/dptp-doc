@@ -63,6 +63,9 @@ $ gcloud compute ssh "origin-ci-ig-m-428p" --command "sudo cat /etc/origin/maste
 ### interactive ssh login
 $ gcloud compute ssh origin-ci-ig-m-428p -- -L 2222:localhost:8888
 
+### https://cloud.google.com/sdk/gcloud/reference/compute/scp
+gcloud compute scp --recurse ~/Downloads/api.ci.cert.1209/upload/ origin-ci-ig-m-428p:~/20191209/
+
 ```
 
 ```
@@ -141,6 +144,15 @@ TODO:
 CPU and MEM from k8s-prometheus: [slack](https://coreos.slack.com/archives/CBN38N3MW/p1568146226424800)
 
 autoscaler: node limit? [slack](https://coreos.slack.com/archives/CBN38N3MW/p1568150695436400)
+
+### OCP4 clsuter
+
+```bash
+# collecting node logs
+# Encrypting your drive with FileVault
+$ TODO
+
+```
 
 ## Troubleshooting
 

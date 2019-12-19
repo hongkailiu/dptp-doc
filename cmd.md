@@ -71,4 +71,15 @@ $ oc set volume -n openshift-image-registry deployment.apps/image-registry --all
 $ oc create secret generic --from-file=.dockerconfigjson=/home/hongkliu/Downloads/.dockercfg --type=kubernetes.io/dockerconfigjson pullsecret  --kubeconfig ~/.kube/build01.config
 
 # skopeo copy --src-creds hongkailiu:secret docker://registry.svc.ci.openshift.org/ci-op-v9xbbsn6/pipeline:ci-operator docker://quay.io/hongkailiu/ci-op:ci-operator-009
+
+# publicize the image
+oc adm policy add-role-to-group system:image-puller system:unauthenticated
+```
+
+## migration
+
+```bash
+$ ci-operator-prowgen --from-dir ./ci-operator/config/ --to-dir ./ci-operator/jobs/
+$ config-migrater --config-dir ./ci-operator/config/ --current-release unused --future-release unused --confirm
+
 ```

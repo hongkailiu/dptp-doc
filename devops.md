@@ -139,6 +139,13 @@ You have logged out.
 
 ### prometheus
 
+```
+### ben
+container_memory_rss
+### steve
+max(max_over_time(container_memory_max_usage_bytes{pod_name="artifacts-build"}[3w])) by (container_name)
+```
+
 TODO: 
 
 CPU and MEM from k8s-prometheus: [slack](https://coreos.slack.com/archives/CBN38N3MW/p1568146226424800)

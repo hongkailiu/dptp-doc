@@ -70,3 +70,15 @@ Python 3.7.0
 
 
 ```
+
+## on mac
+
+```bash
+$ brew install python3
+$ pip3 install virtualenv --user
+$ cd ~/tool
+$ virtualenv --python=/usr/local/bin/python3 p3env
+$ source p3env/bin/activate 
+$ pip install pyyaml
+$ brew install libyaml
+```

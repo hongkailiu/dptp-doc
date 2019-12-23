@@ -78,7 +78,8 @@ $ brew install python3
 $ pip3 install virtualenv --user
 $ cd ~/tool
 $ virtualenv --python=/usr/local/bin/python3 p3env
-$ source p3env/bin/activate 
+$ source p3env/bin/activate
+###https://stackoverflow.com/questions/14261614/how-do-i-install-the-yaml-package-for-python
 $ pip install pyyaml
 $ brew install libyaml
 ```

@@ -76,6 +76,7 @@ Python 3.7.0
 ```bash
 $ brew install python3
 $ pip3 install virtualenv --user
+$ export PATH=${HOME}/Library/Python/3.7/bin:$PATH
 $ cd ~/tool
 $ virtualenv --python=/usr/local/bin/python3 p3env
 $ source p3env/bin/activate

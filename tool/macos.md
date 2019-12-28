@@ -18,6 +18,12 @@ $ chsh -s /bin/bash
 
 ```
 
+## brew
+
+```
+$ brew install python-yq # not yq
+```
+
 ## golang
 
 ```bash

@@ -19,6 +19,11 @@ periodics:
         set -o nounset
         set -o pipefail
         pass_flag=true
+        date_command=date
+        if [[ $(uname -s) == *"Darwin"* ]]; then
+          >&2 echo "[INFO] using gdate command on mac ..."
+          date_command=gdate
+        fi
         declare -a arr=("default-route-openshift-image-registry.apps.build01.ci.devcluster.openshift.com" "api.build01.ci.devcluster.openshift.com:6443" "registry.svc.ci.openshift.org" "api.ci.openshift.org:443")
         for site in "${arr[@]}"; do
           >&2 echo "[INFO] Checking CA on ${site} ..."
@@ -29,8 +34,8 @@ periodics:
           fi
           expire_date=$(grep "expire date" "/tmp/${site}.out" | sed 's/.*expire date: //')
           >&2 echo "[INFO] The certificate will expire on ${expire_date}."
-          exp_sec=$(date -d "${expire_date}" +%s)
-          next_week_sec=$(date -u --date='15 days' +%s)
+          exp_sec=$(${date_command} -d "${expire_date}" +%s)
+          next_week_sec=$(${date_command} -u --date='15 days' +%s)
           >&2 echo "[Debug] exp_sec is ${exp_sec} and next_week_sec is ${next_week_sec}"
           if [[ ${exp_sec} -le ${next_week_sec} ]]; then
             >&2 echo "[FATAL] The certificate will expire less than 15 days. Please RENEW!"

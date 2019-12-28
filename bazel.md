@@ -44,7 +44,7 @@ $ rm -rf ~/.cache/bazel
 
 ```
 
-on mac:
+on mac: `bazelisk` downloads the required version of `bazel` on the fly.
 
 ```bash
 $ cd ~/bin

@@ -74,11 +74,12 @@ Python 3.7.0
 ## on mac
 
 ```bash
-$ brew install python3
-$ pip3 install virtualenv --user
-$ export PATH=${HOME}/Library/Python/3.7/bin:$PATH
 $ cd ~/tool
-$ virtualenv --python=/usr/local/bin/python3 p3env
+$ brew install python3
+#deprecated: $ pip3 install virtualenv --user
+#deprecated: $ export PATH=${HOME}/Library/Python/3.7/bin:$PATH
+#deprecated: $ virtualenv --python=/usr/local/bin/python3 p3env
+$ python3 -m venv p3env
 $ source p3env/bin/activate
 ###https://stackoverflow.com/questions/14261614/how-do-i-install-the-yaml-package-for-python
 $ pip install pyyaml

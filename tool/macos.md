@@ -23,9 +23,12 @@ $ chsh -s /bin/bash
 ```
 ➜  ~ brew doctor
 Your system is ready to brew.
+
 #python-yq: https://pypi.org/project/yq/
 #yq: https://mikefarah.github.io/yq/
+
 $ brew install python-yq # not yq
+➜  ~ brew install coreutils
 ```
 
 ## golang

@@ -44,6 +44,16 @@ $ rm -rf ~/.cache/bazel
 
 ```
 
+on mac:
+
+```bash
+$ cd ~/bin
+$ curl -LO https://github.com/bazelbuild/bazelisk/releases/download/v1.2.1/bazelisk-darwin-amd64
+$ mv bazelisk-darwin-amd64 baze
+$ chmod +x bazel
+
+```
+
 ## bazel and golang
 
 Examples: [1](https://filipnikolovski.com/managing-go-monorepo-with-bazel/) and [2](https://chrislovecnm.com/golang/bazel/bazel-hello-world/)

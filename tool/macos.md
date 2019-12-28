@@ -21,6 +21,8 @@ $ chsh -s /bin/bash
 ## brew
 
 ```
+#python-yq: https://pypi.org/project/yq/
+#yq: https://mikefarah.github.io/yq/
 $ brew install python-yq # not yq
 ```
 

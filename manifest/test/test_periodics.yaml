@@ -1,3 +1,5 @@
+###curl -s https://raw.githubusercontent.com/hongkailiu/dptp-doc/master/manifest/test/test_periodics.yaml | yq  -r '.periodics[0].spec.containers[0].args[1]' > ca-cert-check
+---
 periodics:
 - agent: kubernetes
   labels:

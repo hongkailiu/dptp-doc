@@ -55,7 +55,7 @@ mac keys on windows keyboard
 
 **function** | **shortcut**
 -------- | --------
- `launchpad` | `F4`
+ access launchpad | `F4`
 
 ### iterm2
 

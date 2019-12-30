@@ -41,7 +41,7 @@ go version go1.13.5 darwin/amd64
 
 ## Shortcuts
 
-mac keys to windows keyboard
+mac keys on windows keyboard
 * `⌘`: windows
 * `^`: `CTRL`
 * `⌥`: `ALT`

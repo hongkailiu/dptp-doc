@@ -42,11 +42,14 @@ go version go1.13.5 darwin/amd64
 ## Shortcuts
 
 mac keys on windows keyboard
-* `⌘`: `⊞`
-* `^`: `CTRL`
-* `⌥`: `ALT`
-* `⇧`: `SHIFT`
-* `delete`: `←`
+
+**mac** | **win**
+-------- | --------
+ `⌘` | `⊞`
+ `^` | `CTRL`
+ `⌥` | `ALT`
+ `⇧` | `SHIFT`
+ `delete` | `←`
 
 ### iterm2
 

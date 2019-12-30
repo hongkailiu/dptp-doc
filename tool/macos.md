@@ -51,6 +51,12 @@ mac keys on windows keyboard
  `⇧` | `SHIFT`
  `delete` | `←`
 
+### macos
+
+**function** | **shortcut**
+-------- | --------
+ `launchpad` | `F4`
+
 ### iterm2
 
 **function** | **shortcut**

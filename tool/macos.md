@@ -46,11 +46,19 @@ mac keys on windows keyboard
 * `^`: `CTRL`
 * `⌥`: `ALT`
 * `⇧`: `SHIFT`
+* `delete`: `←`
 
 ### iterm2
 
-**Function** | **Shortcut**
+**function** | **shortcut**
 -------- | --------
-New tab | `⌘` + `t`
-Clear screen | `^` + `l`
-Clear buffer | `⌘` + `k`
+new tab | `⌘` + `t`
+clear screen | `^` + `l`
+clear buffer | `⌘` + `k`
+
+### intellij/goland
+
+**function** | **shortcut**
+-------- | --------
+delete line | `⌘` + `←`
+

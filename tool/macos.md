@@ -51,6 +51,6 @@ mac keys on windows keyboard
 
 **Function** | **Shortcut**
 -------- | --------
-New tab | `⌘` + `T`
+New tab | `⌘` + `t`
 Clear screen | `^` + `l`
 Clear buffer | `⌘` + `k`

@@ -88,7 +88,7 @@ $ brew install libyaml
 
 ```bash
 (p3env) ➜  ~ pip freeze > requirements.txt
-pip install --user --requirement requirements.txt
+➜  ~ pip install --requirement requirements.txt
 
 ```
 

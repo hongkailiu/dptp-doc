@@ -85,3 +85,10 @@ $ source p3env/bin/activate
 $ pip install pyyaml
 $ brew install libyaml
 ```
+
+```bash
+(p3env) ➜  ~ pip freeze > requirements.txt
+pip install --user --requirement requirements.txt
+
+```
+

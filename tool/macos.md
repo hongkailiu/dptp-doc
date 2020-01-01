@@ -75,4 +75,5 @@ delete line | `⌘` + `←`
 
 **function** | **shortcut**
 -------- | --------
-go back/forward | `^` + `-`/`⌃` + `⇧` + `-`
+go back | `^` + `-`
+go forward | `⌃` + `⇧` + `-`

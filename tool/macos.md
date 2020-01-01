@@ -71,3 +71,8 @@ clear buffer | `⌘` + `k`
 -------- | --------
 delete line | `⌘` + `←`
 
+### vscode
+
+**function** | **shortcut**
+-------- | --------
+go back/forward | `^` + `-` / `⌃` + `⇧` + `-`

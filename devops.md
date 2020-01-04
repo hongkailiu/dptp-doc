@@ -70,17 +70,7 @@ gcloud compute scp --recurse ~/Downloads/api.ci.cert.1209/upload/ origin-ci-ig-m
 
 ```
 ###https://cloud.google.com/storage/docs/gsutil_install#linux
-(p2env) [hongkliu@MiWiFi-R1CM-srv ~]$ pip install gsutil
-$ gsutil --version
-gsutil version: 4.45
-
-### -a not working
-###https://stackoverflow.com/questions/38398066/gsutil-config-a-which-key-to-use
-$ gsutil config -a
-...key/secret...
-
-### -b works, will open browser
-$ gsutil config -a
+###Update: gsutl is part of google sdk now. No need to install additionally.
 
 ### the bucket is in project "OpenShift GCE Devel"
 $ gsutil ls gs://origin-ci-test/

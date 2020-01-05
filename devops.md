@@ -177,7 +177,7 @@ prometheus-prow-0   4/4       Running   1          4m
 
 ```
 $ for master in origin-ci-ig-m-428p origin-ci-ig-m-f3g1 origin-ci-ig-m-pbj3; do
-    gcloud compute --project "openshift-ci-infra" ssh --zone "us-east1-c" "${master}" -- "/usr/local/bin/master-restart controllers"
+    gcloud compute --project "openshift-ci-infra" ssh --zone "us-east1-c" "${master}" -- "sudo /usr/local/bin/master-restart controllers"
 done
 
 ```

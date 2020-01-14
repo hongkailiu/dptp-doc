@@ -46,6 +46,8 @@ TODO
 [some-prow-component-is-down-20190822](#some-prow-component-is-down-20190822) shows an example of using
 `oc` to troubleshoot.
 
+`admin.kubeconfig` on api.ci masters: `KUBECONFIG=/etc/origin/master/admin.kubeconfig`
+
 More oc-cli commands: [cmd.md](cmd.md)
 
 ### gcloud

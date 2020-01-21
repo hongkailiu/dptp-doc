@@ -1,3 +1,15 @@
+# demo: auto-tools: ci-secret-bootstrap
+
+* populating secrets from BW-items to _default/build01_ clusters
+* deprecating `ci-operator/populate-secrets-from-bitwarden.sh`: Not there yet. [config.yaml](https://github.com/openshift/release/blob/master/core-services/ci-secret-bootstrap/_config.yaml)
+* detect secret inconsistency
+* run:
+    * config
+    * bw user/pwd
+    * kubeconfig with contexts named `build01` and `default`
+
+> make kerberos_id=<your_kerberos_id> dry_run=true ci-secret-bootstrap
+
 # demo: alert on job failures
 
 * [routes](https://alertmanager-prow-monitoring.svc.ci.openshift.org/#/status) on alertmanager

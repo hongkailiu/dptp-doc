@@ -283,20 +283,19 @@ https://coreos.slack.com/archives/GB7NB0CUC/p1569340258310500?thread_ts=15693285
 
 ./hack/bump-pr.sh
 
-```
-Steve Kuznetsov  2 hours ago
-The simplest workflow we should default to when possible is always going to be
+### track gh events
+https://coreos.slack.com/archives/CBN38N3MW/p1579208516234300?thread_ts=1579206439.227900&cid=CBN38N3MW
 
-Steve Kuznetsov  2 hours ago
-1. revert the Prow bump PR
+* Generally that's got the #issuecomment-xx
+* That will show hook finding the webhook and list an event-guid as a field in the log
+* Then, you can filter for all logs from all components that have that event-guid field to see everything Prow did in response to that webhook
+
+In general every plugin is using regex to check whether that specific plugin needs to respond to any given comment
+
+### nodes with registry pods are with high CPU load
+https://coreos.slack.com/archives/CBN38N3MW/p1579552231109600?thread_ts=1579541532.082600&cid=CBN38N3MW
 
 
-Steve Kuznetsov  2 hours ago
-2. revert the broken stuff upstream
+### Running out token:
+https://coreos.slack.com/archives/CHY2E1BL4/p1579551321032900
 
-Steve Kuznetsov  2 hours ago
-3. wait for the upstream revert to land and build
-
-Steve Kuznetsov  2 hours ago
-4. re-create a new bump and merge it
-```

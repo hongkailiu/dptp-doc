@@ -296,6 +296,8 @@ https://coreos.slack.com/archives/CBN38N3MW/p1579552231109600?thread_ts=15795415
 ### Running out token:
 https://coreos.slack.com/archives/CHY2E1BL4/p1579551321032900
 
+https://coreos.slack.com/archives/CHY2E1BL4/p1580412051028300
+sort github queries by that token by path and see what's taking up
 
 ### batch rerun on PRs
 https://coreos.slack.com/archives/GB7NB0CUC/p1580408292241600

@@ -29,7 +29,7 @@ with open(filename) as f:
                     build01_job["name"] += "-migrated"
                     build01_job['cluster'] = 'ci/api-build01-ci-devcluster-openshift-com:6443'
                     build01_job["labels"]["ci-operator.openshift.io/prowgen-controlled"] = "false"
-                    #build01_job["labels"]["ci-operator.openshift.io/semantics-ignored"] = "true"
+                    build01_job["labels"]["ci-operator.openshift.io/semantics-ignored"] = "true"
                     build01_job['optional'] = True
                     build01_job['skip_report'] = True
                     jobs.append(build01_job)

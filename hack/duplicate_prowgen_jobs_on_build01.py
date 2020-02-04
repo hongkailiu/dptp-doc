@@ -28,6 +28,7 @@ with open(filename) as f:
                 if "labels" in job and "ci-operator.openshift.io/prowgen-controlled" in job["labels"] and job["labels"]["ci-operator.openshift.io/prowgen-controlled"] == "true":
                     build01_job = copy.deepcopy(job)
                     build01_job["name"] += "-migrated"
+                    build01_job['context'] += "-migrated"
                     build01_job['cluster'] = 'ci/api-build01-ci-devcluster-openshift-com:6443'
                     del build01_job["labels"]["ci-operator.openshift.io/prowgen-controlled"]
                     build01_job["labels"]["ci-operator.openshift.io/semantics-ignored"] = DoubleQuotedScalarString("true")

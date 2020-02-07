@@ -301,3 +301,11 @@ sort github queries by that token by path and see what's taking up
 
 ### batch rerun on PRs
 https://coreos.slack.com/archives/GB7NB0CUC/p1580408292241600
+
+### check kubeconfig
+
+```bash
+$ oc debug node/ip-10-0-175-171.ec2.internal
+sh-4.2# chroot /host
+sh-4.4# cat /etc/kubernetes/kubelet.conf
+```

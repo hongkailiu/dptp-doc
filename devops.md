@@ -313,6 +313,7 @@ sh-4.4# cat /etc/kubernetes/kubelet.conf
 ### Resize master VMs
 https://coreos.slack.com/archives/CTTNY7TN1
 
+Resize on the GCE UI: Stop, Edit, Save, Start.
 
 ```
 [root@origin-ci-ig-m-428p ~]# while true; do ETCDCTL_API=3 etcdctl --cert=/etc/origin/master/master.etcd-client.crt --key=/etc/origin/master/master.etcd-client.key --cacert=/etc/origin/master/master.etcd-ca.crt --endpoints="10.142.0.4:2379,10.142.0.2:2379,10.142.0.3:2379" endpoint health; sleep 10; clear; done

@@ -79,11 +79,12 @@ oc adm policy add-role-to-group system:image-puller system:unauthenticated
 ## migration
 
 ```bash
-$ ci-operator-prowgen --from-dir ./ci-operator/config/ --to-dir ./ci-operator/jobs/
-$ config-migrater --config-dir ./ci-operator/config/ --current-release unused --future-release unused --confirm
+$ config-migrator --config-dir ./ci-operator/config/
 
 $ find ./ci-operator/config -type d -depth 2 | head -n 30 | while read i; do echo "${i#./ci-operator/config/}"; done > /tmp/repo.txt
 $ cat /tmp/repo.txt | while read line; do find /Users/hongkliu/repo/openshift/release/ci-operator/jobs/$line -name "*presubmits.yaml" -print -exec python3 hack/migrate_non_prowgen_jobs.py {} \;; done
+
+$ ci-operator-prowgen --from-dir ./ci-operator/config/ --to-dir ./ci-operator/jobs/
 ```
 
 ## git

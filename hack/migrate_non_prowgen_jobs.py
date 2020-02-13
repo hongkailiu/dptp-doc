@@ -26,6 +26,9 @@ def migrate(job):
     for container in job['spec']['containers']:
         if container['image'].endswith("ci-operator:latest"):
             found = True
+            if "--resolver-address=http://ci-operator-configresolver" in container['args']:
+                container['args'].remove("--resolver-address=http://ci-operator-configresolver")
+                container['args'].append("--resolver-address=http://ci-operator-configresolver-ci.svc.ci.openshift.org")
             if "--lease-server=http://boskos" in container['args']:
                 boskos = True
                 container['args'].remove("--lease-server=http://boskos")

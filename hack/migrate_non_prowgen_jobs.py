@@ -4,10 +4,8 @@
 ### example to run the command:
 ### release_repo=/path_to_release_repo bash -c 'find ${release_repo}  -name "*openshift-origin-master-presubmits.yaml" -exec python3 hack/migrate_non_prowgen_jobs.py {} \;'
 
-import collections
 import logging
-from ruamel.yaml import YAML
-from ruamel.yaml.comments import CommentedMap
+import yaml
 import sys
 
 filename = sys.argv[1]
@@ -16,20 +14,27 @@ def migrate(job):
     if "cluster" in job:
         logging.warning("the cluster of job '%s' has been defined: '%s'", job["name"], job["cluster"])
         return job
-    if job["agent"] != "kubernetes":
-        logging.warning("the agent '%s' of job '%s' is not 'kubernetes'", job["agent"], job["name"])
+    if job.get("agent", "") != "kubernetes":
+        logging.warning("the agent '%s' of job '%s' is not 'kubernetes'", job.get("agent", ""), job["name"])
         return job
-    job['cluster'] = 'ci/api-build01-ci-devcluster-openshift-com:6443'
     containers = []
     found = False
     boskos = False
     for container in job['spec']['containers']:
         if container['image'].endswith("ci-operator:latest"):
             found = True
-            if "--resolver-address=http://ci-operator-configresolver" in container['args']:
+            if 'args' not in container:
+                logging.warning("no args for job %s", job["name"])
+                containers.append(container)
+                continue
+            if container.get('command', []) != ["ci-operator"]:
+                logging.warning("command not ci-operator in job %s", job["name"])
+                containers.append(container)
+                continue
+            if "--resolver-address=http://ci-operator-configresolver" in container.get('args', []):
                 container['args'].remove("--resolver-address=http://ci-operator-configresolver")
                 container['args'].append("--resolver-address=http://ci-operator-configresolver-ci.svc.ci.openshift.org")
-            if "--lease-server=http://boskos" in container['args']:
+            if "--lease-server=http://boskos" in container.get('args', []):
                 boskos = True
                 container['args'].remove("--lease-server=http://boskos")
                 container['args'].append("--lease-server-password-file=/etc/boskos/password")
@@ -56,17 +61,11 @@ def migrate(job):
         if boskos:
             job['spec']['volumes'].append({'name': 'boskos', 'secret': {'items': [{'key': 'password', 'path': 'password'}], 'secretName': 'boskos-credentials'}})
         job['spec']['volumes'] = sorted(job['spec']['volumes'], key=lambda v: v['name'])
-    job = CommentedMap(sorted(job.items(), key=lambda t: t[0]))
-    collections.OrderedDict(job.items())
     return job
 
-yaml = YAML()
-yaml.compact(seq_seq=False)
-yaml.preserve_quotes = True
-
 with open(filename) as f:
-    all = yaml.load(f)
-    for t in ("presubmits", "postsubmits", "periodics"):
+    all = yaml.load(f, Loader=yaml.FullLoader)
+    for t in ("presubmits", "postsubmits"):
         if t not in filename:
             continue
         for repo in all[t]:
@@ -78,6 +77,15 @@ with open(filename) as f:
                 else:
                     jobs.append(job)
             all[t][repo] = jobs
+    if "periodics" in filename:
+        jobs = []
+        for job in all["periodics"]:
+            if not "labels" in job or not "ci-operator.openshift.io/prowgen-controlled" in job["labels"] or job["labels"]["ci-operator.openshift.io/prowgen-controlled"] != "true":
+                logging.info('job is not controlled by prowgen: %s', job["name"])
+                jobs.append(migrate(job))
+            else:
+                jobs.append(job)
+        all["periodics"] = jobs
 
 with open(sys.argv[1], 'w') as f:
     yaml.dump(all, f)

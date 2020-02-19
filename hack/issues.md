@@ -1,15 +1,25 @@
 # issues with migration
 
-[MEM issue on build](https://bugzilla.redhat.com/show_bug.cgi?id=1784163)
+MEM issue on build: [bz1784163](https://bugzilla.redhat.com/show_bug.cgi?id=1784163)
+
 
 * pull-ci-openshift-origin-master-artifacts
 * pull-ci-openshift-origin-master-images
 
-* pull-ci-openshift-windows-machine-config-bootstrapper-master-e2e-wsu
+Time issue on build: [bz1799674](https://bugzilla.redhat.com/show_bug.cgi?id=1799674)
 
-https://coreos.slack.com/archives/CBN38N3MW/p1581619969086000?thread_ts=1581619127.084500&cid=CBN38N3MW
+* [pull-ci-openshift-windows-machine-config-bootstrapper-master-e2e-wsu](https://coreos.slack.com/archives/CBN38N3MW/p1581619969086000?thread_ts=1581619127.084500&cid=CBN38N3MW)
 
-why cannot it be migrated to build01?
+why cannot it be migrated to build01? Fixed by [pull/7186](https://github.com/openshift/release/pull/7186/files#diff-077d243d475d019fc8db8a0adece8f8f)
+
+
+* pull-ci-openshift-kni-cnf-features-deploy-master-ci
+
+`${HOME}` issue on build: [bz1804405](https://bugzilla.redhat.com/show_bug.cgi?id=1804405)
+
+* pull-ci-openshift-knative-serving-release-next-4.3-e2e-aws-ocp-43
+
+`${IMAGE_FORMAT}` issue in the test scripts. Steve sent out email.
 
 * NOT cmd: ci-operator but LITERAL $CONFIG_SPEC is used 
 

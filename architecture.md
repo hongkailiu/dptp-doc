@@ -236,6 +236,10 @@ $ JOB_SPEC='{"type":"periodic","job":"periodic-ci-azure-e2e-applysecurityupdates
 
 TODO: practice testing with templates
 
+### Multi-Stage Tests
+
+* [Multi-Stage Tests Design Document](https://docs.google.com/document/d/1md-1BMf4_7mtKgGVoeZ3jOh4zSIBSjwl6vTTAYESwIM/edit#heading=h.5q65z4jr37ls)
+
 ## config tools
 
 * ci-operator-prowgen

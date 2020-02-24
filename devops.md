@@ -152,6 +152,8 @@ $ TODO
 
 ```
 
+[Upgrading](https://docs.openshift.com/container-platform/4.3/updating/updating-cluster-between-minor.html) and [recovery](https://docs.openshift.com/container-platform/4.3/backup_and_restore/backing-up-etcd.html)
+
 ## Troubleshooting
 
 [Outage Postmortems](https://drive.google.com/drive/u/1/folders/1PcUkPa76udM4Fzy5NSX12zs9hrjwt4EQ)

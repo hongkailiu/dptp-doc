@@ -141,6 +141,8 @@ CPU and MEM from k8s-prometheus: [slack](https://coreos.slack.com/archives/CBN38
 
 autoscaler: node limit? [slack](https://coreos.slack.com/archives/CBN38N3MW/p1568150695436400)
 
+master not responsive: [query](https://prometheus-k8s-openshift-monitoring.svc.ci.openshift.org/graph?g0.range_input=2h&g0.expr=container_memory_usage_bytes%7Bnamespace%3D%22kube-system%22%2Ccontainer_name%3D%22%22%7D&g0.tab=0)
+
 ### OCP4 clsuter
 
 ```bash

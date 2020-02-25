@@ -18,6 +18,7 @@ why cannot it be migrated to build01? Fixed by [pull/7186](https://github.com/op
 `${HOME}` issue on build: [bz1804405](https://bugzilla.redhat.com/show_bug.cgi?id=1804405)
 
 * pull-ci-openshift-knative-serving-release-next-4.3-e2e-aws-ocp-43
+* pull-ci-integr8ly-ansible-tower-configuration-master-e2e
 
 `${IMAGE_FORMAT}` issue in the test scripts. Steve sent out email.
 

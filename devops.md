@@ -65,6 +65,9 @@ $ gcloud compute ssh origin-ci-ig-m-428p -- -L 2222:localhost:8888
 ### https://cloud.google.com/sdk/gcloud/reference/compute/scp
 gcloud compute scp --recurse ~/Downloads/api.ci.cert.1209/upload/ origin-ci-ig-m-428p:~/20191209/
 
+### restart master api on f3g1
+### gcloud compute ssh origin-ci-ig-m-f3g1 -- sudo /usr/local/bin/master-restart api
+
 ```
 
 ```

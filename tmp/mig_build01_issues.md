@@ -23,6 +23,8 @@ why cannot it be migrated to build01? Fixed by [pull/7186](https://github.com/op
 
 `sidecar`: OOMKilled: [jira-comment](https://issues.redhat.com/browse/DPTP-684?focusedCommentId=13984185&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-13984185).
 
+upgrade [bz1808007](https://bugzilla.redhat.com/show_bug.cgi?id=1808007)
+
 * NOT cmd: ci-operator but LITERAL $CONFIG_SPEC is used 
 
 https://coreos.slack.com/archives/GB7NB0CUC/p1581705804023800

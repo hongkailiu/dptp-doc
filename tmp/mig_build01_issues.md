@@ -1,12 +1,11 @@
 # issues with migration
 
-MEM issue on build: [bz1784163](https://bugzilla.redhat.com/show_bug.cgi?id=1784163)
-
+MEM issue on build: [bz1784163](https://bugzilla.redhat.com/show_bug.cgi?id=1784163): Workaround by removing MEM-limits on pod.
 
 * pull-ci-openshift-origin-master-artifacts
 * pull-ci-openshift-origin-master-images
 
-Time issue on build: [bz1799674](https://bugzilla.redhat.com/show_bug.cgi?id=1799674)
+Time issue on build: [bz1799674](https://bugzilla.redhat.com/show_bug.cgi?id=1799674): Fixed after upgrade to `4.3.0-0.nightly-2020-02-25-200400`.
 
 * [pull-ci-openshift-windows-machine-config-bootstrapper-master-e2e-wsu](https://coreos.slack.com/archives/CBN38N3MW/p1581619969086000?thread_ts=1581619127.084500&cid=CBN38N3MW)
 
@@ -17,10 +16,12 @@ why cannot it be migrated to build01? Fixed by [pull/7186](https://github.com/op
 
 `${HOME}` issue on build: [bz1804405](https://bugzilla.redhat.com/show_bug.cgi?id=1804405)
 
-* pull-ci-openshift-knative-serving-release-next-4.3-e2e-aws-ocp-43
-* pull-ci-integr8ly-ansible-tower-configuration-master-e2e
+* pull-ci-openshift-knative-serving-release-next-4.3-e2e-aws-ocp-43 (Fixed in `4.3.0-0.nightly-2020-02-25-200400`)
+* pull-ci-integr8ly-ansible-tower-configuration-master-e2e (email sent to the dev)
 
 `${IMAGE_FORMAT}` issue in the test scripts. Steve sent out email.
+
+`sidecar`: OOMKilled: [jira-comment](https://issues.redhat.com/browse/DPTP-684?focusedCommentId=13984185&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-13984185).
 
 * NOT cmd: ci-operator but LITERAL $CONFIG_SPEC is used 
 

@@ -307,7 +307,22 @@ https://coreos.slack.com/archives/CHY2E1BL4/p1580412051028300
 sort github queries by that token by path and see what's taking up
 
 ### batch rerun on PRs
-https://coreos.slack.com/archives/GB7NB0CUC/p1580408292241600
+https://coreos.slack.com/archives/GB7NB0CUC/p1580408531244100?thread_ts=1580408292.241600&cid=GB7NB0CUC
+
+```
+    - args:
+      - |-
+        --query=is:pr
+        state:open
+        state:failing
+        repo:openshift/release
+      - --token=/etc/oauth/oauth
+      - --updated=0
+      - |-
+        --comment=/test all
+```
+
+Then `make job JOB=periodic-bugzilla-refresh`: It will create [prowjob](https://prow.svc.ci.openshift.org/prowjob?prowjob=73366ce8-5a58-11ea-97a0-96f07a6c9342) in `current` project.
 
 ### check kubeconfig
 

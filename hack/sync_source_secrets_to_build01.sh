@@ -8,7 +8,8 @@ set -euo pipefail
 BASH_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 readonly BASH_DIR
 
-MAPPING_FILE="${BASH_DIR}/_mapping.yaml"
+#MAPPING_FILE="${BASH_DIR}/_mapping.yaml"
+MAPPING_FILE="/Users/hongkliu/repo/openshift/release/core-services/secret-mirroring/_mapping.yaml"
 readonly MAPPING_FILE
 
 TMP_DIR=$(mktemp -d -t ci-XXXXXXXXXX)

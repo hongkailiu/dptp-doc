@@ -79,6 +79,8 @@ oc adm policy add-role-to-group system:image-puller system:unauthenticated
 ## migration
 
 ```bash
+//find ./ci-operator/config -type d -depth 2 | head -n 300 | while read i; do echo "\"${i#./ci-operator/config/}/.*\","; done
+
 $ config-migrator --config-dir ./ci-operator/config/
 
 $ find ./ci-operator/config -type d -depth 2 | head -n 30 | while read i; do echo "${i#./ci-operator/config/}"; done > /tmp/repo.txt

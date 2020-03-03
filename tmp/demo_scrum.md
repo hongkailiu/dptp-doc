@@ -1,3 +1,25 @@
+# demo: Mar 04
+
+* [periodic-ci-image-import-to-build01](https://prow.svc.ci.openshift.org/?job=periodic-ci-image-import-to-build01)
+
+```bash
+$ oc --context build01 get is -n ci ci-operator -o yaml | yq -r -y '.spec.tags'
+- annotations: null
+  from:
+    kind: DockerImage
+    name: registry.svc.ci.openshift.org/ci/ci-operator:latest
+  generation: 120
+  importPolicy:
+    scheduled: true ### importing scheduled every 15 mins
+  name: latest
+  referencePolicy:
+    type: Source
+```
+
+We do it more often (every minute) by [periodic-ci-image-import-to-build01](https://github.com/openshift/release/blob/c3a1d6906e21a1a80288dd1dc7528182127ea830/ci-operator/jobs/infra-periodics.yaml#L11).
+
+* Prowjobs on [default](https://prometheus-k8s-openshift-monitoring.svc.ci.openshift.org/graph?g0.range_input=1w&g0.expr=count(kube_pod_info%7Bnamespace%3D~%22ci.*%22%7D)&g0.tab=0) and [build01](https://prometheus-k8s-openshift-monitoring.apps.build01.ci.devcluster.openshift.com/graph?g0.range_input=1w&g0.expr=count(kube_pod_info%7Bnamespace%3D~%22ci.*%22%7D)&g0.tab=0).
+
 # demo: auto-tools: ci-secret-bootstrap
 
 * populating secrets from BW-items to _default/build01_ clusters

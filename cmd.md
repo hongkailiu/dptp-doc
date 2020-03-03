@@ -74,6 +74,9 @@ $ oc create secret generic --from-file=.dockerconfigjson=/home/hongkliu/Download
 
 # publicize the image
 oc adm policy add-role-to-group system:image-puller system:unauthenticated
+
+# upgrade
+oc --context build01 adm upgrade --allow-explicit-upgrade --to-image registry.svc.ci.openshift.org/ocp/release:4.3.0-0.nightly-2020-02-25-200400 --force=true
 ```
 
 ## migration

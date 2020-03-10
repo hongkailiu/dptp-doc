@@ -304,7 +304,7 @@ https://coreos.slack.com/archives/CBN38N3MW/p1579552231109600?thread_ts=15795415
 https://coreos.slack.com/archives/CHY2E1BL4/p1579551321032900
 
 https://coreos.slack.com/archives/CHY2E1BL4/p1580412051028300
-sort github queries by that token by path and see what's taking up
+sort github queries by that token by path and see what's taking up, e.g., [this query](https://prometheus-prow-monitoring.svc.ci.openshift.org/graph?g0.range_input=1h&g0.expr=github_token_usage&g0.tab=1&g1.range_input=1h&g1.expr=sum(github_request_duration_count%7Btoken_hash%3D%2235411b2f9833b04c964c7a70640354e5a22a8942682c4fb6c9cc80e4c83a7bfe%22%7D)%20by%20(path)&g1.tab=1)
 
 ### batch rerun on PRs
 https://coreos.slack.com/archives/GB7NB0CUC/p1580408531244100?thread_ts=1580408292.241600&cid=GB7NB0CUC

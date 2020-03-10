@@ -66,7 +66,8 @@ $ gcloud compute ssh origin-ci-ig-m-428p -- -L 2222:localhost:8888
 gcloud compute scp --recurse ~/Downloads/api.ci.cert.1209/upload/ origin-ci-ig-m-428p:~/20191209/
 
 ### restart master api on f3g1
-### gcloud compute ssh origin-ci-ig-m-f3g1 -- sudo /usr/local/bin/master-restart api
+### https://prometheus-k8s-openshift-monitoring.svc.ci.openshift.org/graph?g0.range_input=2h&g0.expr=container_memory_usage_bytes%7Bnamespace%3D%22kube-system%22%2Ccontainer_name%3D%22%22%7D&g0.tab=0
+$ gcloud compute ssh origin-ci-ig-m-f3g1 -- sudo /usr/local/bin/master-restart api
 
 ```
 

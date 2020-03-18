@@ -336,6 +336,16 @@ Resize on the GCE UI: Stop, Edit, Save, Start.
 [root@origin-ci-ig-m-428p ~]# while true; do ETCDCTL_API=3 etcdctl --cert=/etc/origin/master/master.etcd-client.crt --key=/etc/origin/master/master.etcd-client.key --cacert=/etc/origin/master/master.etcd-ca.crt --endpoints="10.142.0.4:2379,10.142.0.2:2379,10.142.0.3:2379" endpoint health; sleep 10; clear; done
 ```
 
+### Which container OOMKilled
+
+```bash
+oc get pod -n ci --context build01 | grep -v Running | grep -v Completed | grep -v Terminating | grep -v "Init:"
+NAME                                     READY   STATUS        RESTARTS   AGE
+namespace-ttl-controller-691-deploy      0/1     OOMKilled     0          46m
+
+oc get pod -n ci --context build01 -o yaml | yq -c '.items[].status.containerStatuses[] | [.name, .state.terminated.reason]' | grep OOMKilled
+```
+
 ### Alerts handling
 
 #### openshift-monitoring

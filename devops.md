@@ -301,12 +301,6 @@ In general every plugin is using regex to check whether that specific plugin nee
 https://coreos.slack.com/archives/CBN38N3MW/p1579552231109600?thread_ts=1579541532.082600&cid=CBN38N3MW
 
 
-### Running out token:
-https://coreos.slack.com/archives/CHY2E1BL4/p1579551321032900
-
-https://coreos.slack.com/archives/CHY2E1BL4/p1580412051028300
-sort github queries by that token by path and see what's taking up, e.g., [this query](https://prometheus-prow-monitoring.svc.ci.openshift.org/graph?g0.range_input=1h&g0.expr=github_token_usage&g0.tab=1&g1.range_input=1h&g1.expr=sum(github_request_duration_count%7Btoken_hash%3D%2235411b2f9833b04c964c7a70640354e5a22a8942682c4fb6c9cc80e4c83a7bfe%22%7D)%20by%20(path)&g1.tab=1)
-
 ### batch rerun on PRs
 https://coreos.slack.com/archives/GB7NB0CUC/p1580408531244100?thread_ts=1580408292.241600&cid=GB7NB0CUC
 
@@ -341,3 +335,14 @@ Resize on the GCE UI: Stop, Edit, Save, Start.
 ```
 [root@origin-ci-ig-m-428p ~]# while true; do ETCDCTL_API=3 etcdctl --cert=/etc/origin/master/master.etcd-client.crt --key=/etc/origin/master/master.etcd-client.key --cacert=/etc/origin/master/master.etcd-ca.crt --endpoints="10.142.0.4:2379,10.142.0.2:2379,10.142.0.3:2379" endpoint health; sleep 10; clear; done
 ```
+
+### Alerts handling
+
+#### openshift-monitoring
+
+[KubeCPUOvercommit (openshift-monitoring/k8s warning)](https://coreos.slack.com/archives/CV1UZU53R/p1584001711053000)
+
+#### prow-monitoring
+
+* Running out token:
+[sort github queries by that token by path and see what's taking up](https://coreos.slack.com/archives/CHY2E1BL4/p1580412051028300), e.g., [this query](https://prometheus-prow-monitoring.svc.ci.openshift.org/graph?g0.range_input=1h&g0.expr=github_token_usage&g0.tab=1&g1.range_input=1h&g1.expr=sum(github_request_duration_count%7Btoken_hash%3D%2235411b2f9833b04c964c7a70640354e5a22a8942682c4fb6c9cc80e4c83a7bfe%22%7D)%20by%20(path)&g1.tab=1)

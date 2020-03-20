@@ -97,3 +97,9 @@ $ ci-operator-prowgen --from-dir ./ci-operator/config/ --to-dir ./ci-operator/jo
 ```bash
 $ git branch | grep -ve " master$" | xargs git branch -D
 ```
+
+## podman
+
+```
+$ podman run --entrypoint='["cat", "/etc/shells"]'  -it docker.io/timberio/vector:0.8.2-debian
+```

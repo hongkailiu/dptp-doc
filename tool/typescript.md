@@ -1,9 +1,16 @@
 # [typescript](https://www.typescriptlang.org/)
 
 
-[Install](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html):
+[Install](https://www.typescriptlang.org/#download-links):
 
 ```
 $ npm install -g typescript
-
+$ tsc --version
+Version 3.8.3
 ```
+
+[vscode](https://code.visualstudio.com/docs/typescript/typescript-tutorial)
+
+[doc](https://www.typescriptlang.org/docs/home.html)
+
+[TypeScript Deep Dive](https://basarat.gitbook.io/typescript/getting-started/why-typescript)

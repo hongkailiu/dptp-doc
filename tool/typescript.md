@@ -5,6 +5,7 @@
 
 ```
 $ npm install -g typescript
+#npm  install -g typescript@3.7.5
 $ tsc --version
 Version 3.8.3
 ```

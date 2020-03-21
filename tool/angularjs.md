@@ -26,6 +26,8 @@ $ npm run start
 
 ```
 
+[update-npm-dependencies](https://flaviocopes.com/update-npm-dependencies/)
+
 i18n and i10n:
 
 * [angular-translate](https://github.com/angular-translate/angular-translate): for Angularjs 1.x

@@ -344,6 +344,8 @@ NAME                                     READY   STATUS        RESTARTS   AGE
 namespace-ttl-controller-691-deploy      0/1     OOMKilled     0          46m
 
 oc get pod -n ci --context build01 -o yaml | yq -c '.items[].status.containerStatuses[] | [.name, .state.terminated.reason]' | grep OOMKilled
+
+oc get pod -n ci --context build01 -o yaml | yq -c '.items[].status.containerStatuses[] | [.name, .state.terminated.reason]' | sort | uniq -c | sort -nr
 ```
 
 ### Alerts handling

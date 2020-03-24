@@ -17,7 +17,7 @@ console:
 
 How the change impacts the dev's workflow:
 
-when debugging a failing job, we need to find out where it runs by `cluster` field of the job definition. 
+When debugging a failing job, we need to find out where it runs by `cluster` field of the job definition. 
 If `cluster: api.ci`, then it means the job still runs on api.ci cluster.
 If `cluster: ci/api-build01-ci-devcluster-openshift-com:6443`, it is on build01.
 

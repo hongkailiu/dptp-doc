@@ -17,7 +17,7 @@ console:
 
 How the change impacts the dev's workflow:
 
-When debugging a failing job, we need to find out where it runs by `cluster` field of the job definition. 
+When debugging a failing job, we need to find out where it runs by the `cluster` field of the job definition. 
 If `cluster: api.ci`, then it means the job still runs on api.ci cluster.
 If `cluster: ci/api-build01-ci-devcluster-openshift-com:6443`, it is on build01.
 
@@ -25,7 +25,7 @@ Then we log in to the right cluster's console (links above) and obtain the token
 
 Eventually, all jobs will be on build01 but they might run in different places during the migration process.
 
-_We will provide a better way to providing the cluster information. Before it happens, we suggest the above manual steps as a workaround._
+_We will provide a better way of providing the cluster information. Before it happens, we suggest the above manual steps as a workaround._
 
 The plan of migration:
 * prow controlled presubmits: We are in the process of this now.

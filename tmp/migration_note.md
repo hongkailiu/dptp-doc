@@ -1,7 +1,7 @@
-We are migrating prow jobs from `api.ci` cluster (3.11) to `build01` cluster (4.3).
+We are migrating prow jobs from the `api.ci` cluster (3.11) to the `build01` cluster (4.3).
 
 For each prow controlled (presubmit) job (with label `ci-operator.openshift.io/prowgen-controlled: "true"`), there has been a duplicated one running
-on build01. See the presubmits for this PR history for example:
+on build01. See the presubmits for this PR history, for example, 
 https://prow.svc.ci.openshift.org/pr-history/?org=openshift&repo=origin&pr=24758 job
 `pull-ci-openshift-origin-release-4.3-verify` runs on api.ci and `pull-ci-openshift-origin-release-4.3-verify-build01` is the duplicated
 one on build01.
@@ -33,5 +33,5 @@ The plan of migration:
 * periodics
 * postsubmits
 
-Contact @dptp-helpdesk in #forum-testplatform if you found a job which behaves differently on build01 from api.ci.
+Contact @dptp-helpdesk in #forum-testplatform if you found a job that behaves differently on build01 from api.ci.
 

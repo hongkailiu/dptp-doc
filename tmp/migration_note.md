@@ -21,7 +21,7 @@ When debugging a failing job, we need to find out where it runs by `cluster` fie
 If `cluster: api.ci`, then it means the job still runs on api.ci cluster.
 If `cluster: ci/api-build01-ci-devcluster-openshift-com:6443`, it is on build01.
 
-Then we login to right cluster's console (links above) and obtain the token for oc-cli. We can find the `ci-op-XXXX` namespace ONLY on the cluster where the job runs.
+Then we log in to the right cluster's console (links above) and obtain the token for oc-cli. We can find the `ci-op-XXXX` namespace ONLY on the cluster where the job runs.
 
 Eventually, all jobs will be on build01 but they might run in different places during the migration process.
 

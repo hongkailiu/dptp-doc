@@ -25,6 +25,8 @@ Then we login to right cluster's console (links above) and obtain the token for 
 
 Eventually, all jobs will be on build01 but they might run in different places during the migration process.
 
+We will provide a better way to providing the cluster information. Before it happens, we suggest the above manual steps as a workaround.
+
 The plan of migration:
 * prow controlled presubmits: We are in the process of this now.
 * all presubmits

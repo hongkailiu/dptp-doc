@@ -1,8 +1,11 @@
 # Slack
 
-## slack app
 
 https://coreos.slack.com/messages/
+
+## slack app
+
+https://api.slack.com/apps
 
 ## threads
 

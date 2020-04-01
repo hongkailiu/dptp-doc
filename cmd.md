@@ -3,6 +3,8 @@
 ## oc
 
 ```
+$ oc adm node-logs ip-10-0-131-192.ec2.internal --since='2020-03-30 02:12:51' > ip-10-0-131-192.ec2.internal.log
+
 $ oc adm policy add-role-to-user view -n ci <username>
 #eg, user wking want to login on the UI of monitoring stack
 #https://docs.openshift.com/container-platform/3.11/install_config/prometheus_cluster_monitoring.html#configuring-etcd-monitoring

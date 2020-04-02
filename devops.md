@@ -348,6 +348,17 @@ oc get pod -n ci --context build01 -o yaml | yq -c '.items[].status.containerSta
 oc get pod -n ci --context build01 -o yaml | yq -c '.items[].status.containerStatuses[] | [.name, .state.terminated.reason]' | sort | uniq -c | sort -nr
 ```
 
+### image url
+
+http://post-office.corp.redhat.com/archives/aos-devel/2020-February/msg00301.html
+
+https://coreos.slack.com/archives/CBN38N3MW/p1585833281055400?thread_ts=1585650114.342500&cid=CBN38N3MW
+
+and it should be 
+
+> IMAGE_TOOLCHAIN_OPERATOR=${IMAGE_TOOLCHAIN_OPERATOR} make test-e2e
+
+
 ### Alerts handling
 
 #### openshift-monitoring
@@ -358,3 +369,4 @@ oc get pod -n ci --context build01 -o yaml | yq -c '.items[].status.containerSta
 
 * Running out token:
 [sort github queries by that token by path and see what's taking up](https://coreos.slack.com/archives/CHY2E1BL4/p1580412051028300), e.g., [this query](https://prometheus-prow-monitoring.svc.ci.openshift.org/graph?g0.range_input=1h&g0.expr=github_token_usage&g0.tab=1&g1.range_input=1h&g1.expr=sum(github_request_duration_count%7Btoken_hash%3D%2235411b2f9833b04c964c7a70640354e5a22a8942682c4fb6c9cc80e4c83a7bfe%22%7D)%20by%20(path)&g1.tab=1)
+

@@ -3,7 +3,8 @@
 ## oc
 
 ```
-$ oc adm node-logs ip-10-0-131-192.ec2.internal --since='2020-03-30 02:12:51' > ip-10-0-131-192.ec2.internal.log
+$ node=ip-10-0-157-97.ec2.internal
+$ oc adm node-logs ${node} --since='2020-03-30 02:12:51' > ${node}.log
 
 $ oc adm policy add-role-to-user view -n ci <username>
 #eg, user wking want to login on the UI of monitoring stack

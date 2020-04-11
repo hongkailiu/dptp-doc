@@ -3,6 +3,17 @@
 ## oc
 
 ```
+$ node=ip-10-0-157-97.ec2.internal
+$ oc --context build01 adm node-logs ${node} --since='2020-03-30 02:12:51' > ${node}.log
+$ oc --context build01 adm node-logs ${node} --since="$(gdate -u +"%Y-%m-%d %H:%M:%S" -d "1 hour ago")" > ${node}.log
+
+$ date -v-1H -u +"%Y-%m-%d %H:%M:%S"
+2020-04-10 14:27:36
+
+#crio log: debug node; chroot /host
+#journalctl --all --lines all --no-pager --unit crio.service  > /tmp/crio.hongkliu.all.log
+#oc --context build01 rsync ip-10-0-172-226ec2internal-debug:/host/tmp ./abc.tmp
+
 $ oc adm policy add-role-to-user view -n ci <username>
 #eg, user wking want to login on the UI of monitoring stack
 #https://docs.openshift.com/container-platform/3.11/install_config/prometheus_cluster_monitoring.html#configuring-etcd-monitoring

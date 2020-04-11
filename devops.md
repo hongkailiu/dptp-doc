@@ -275,7 +275,13 @@ TO ask Steve:  i forgot to take it out of the node pool (autoscaler).
 
 ### remove a node from cluster
 
-Never delete a node from 4.3 cluster: https://coreos.slack.com/archives/CHY2E1BL4/p1586353553317700?thread_ts=1586337299.306200&cid=CHY2E1BL4
+Michael Gugino: [Never delete a node from an OCP4 cluster](https://coreos.slack.com/archives/CHY2E1BL4/p1586353553317700?thread_ts=1586337299.306200&cid=CHY2E1BL4)
+
+* In the future, delete the machine-object first, always.  
+* Then, apply [the annotation](https://github.com/openshift/machine-api-operator/pull/534/files#diff-e6f81a9d8df4fb4d787121a242ea6bf1R46) after some time if drain is not completing (if drain is not completing, it's usually due to some kind of bug, so always report that case)
+  > machine.openshift.io/exclude-node-draining
+* (unless the drain is blocked by PDBs, which is not a bug, and is expected behavior)
+
 
 ```
 $ oc adm cordon origin-ci-ig-n-3m3d

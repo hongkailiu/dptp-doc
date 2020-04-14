@@ -3,9 +3,15 @@
 ## oc
 
 ```
+#4.3 cluster
 $ node=ip-10-0-157-97.ec2.internal
 $ oc --context build01 adm node-logs ${node} --since='2020-03-30 02:12:51' > ${node}.log
 $ oc --context build01 adm node-logs ${node} --since="$(gdate -u +"%Y-%m-%d %H:%M:%S" -d "1 hour ago")" > ${node}.log
+
+#311 cluster
+$ node=origin-ci-ig-n-7mlq
+$ gcloud compute --project "openshift-ci-infra" ssh --zone "us-east1-c" $node -- "sudo journalctl --all --lines all --no-pager --unit origin-node.service --since '24 hours ago'" > ${node}.node.log
+$ gcloud compute --project "openshift-ci-infra" ssh --zone "us-east1-c" $node -- "sudo journalctl --all --lines all --no-pager --unit docker.service --since '24 hours ago'" > ${node}.docker.log
 
 $ date -v-1H -u +"%Y-%m-%d %H:%M:%S"
 2020-04-10 14:27:36

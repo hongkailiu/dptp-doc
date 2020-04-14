@@ -250,6 +250,8 @@ $ oc adm cordon "${bad_node}" --as system:admin --loglevel 4 | tee "${HOME}/Down
 $ oc --as system:admin adm drain "${bad_node}"  --delete-local-data --ignore-daemonsets --loglevel 4 | tee "${HOME}/Downloads/drain-${bad_node}.log"
 $ oc --as system:admin delete node "${bad_node}"
 
+$ oc get pods --all-namespaces -o=jsonpath='{range .items[?(@.spec.nodeName=="origin-ci-ig-n-7mlq")]}{.metadata.namespace}{"\t"}{.metadata.name}{"\n"}{end}' | while read ns name; do oc --as system:admin delete pod -n $ns $name --force --wait=false --grace-period=0; done
+
 ###fetch journals on the node
 $ gcloud compute --project "openshift-ci-infra" ssh --zone "us-east1-c" origin-ci-ig-n-d4fs -- "sudo journalctl --all --lines all --no-pager --unit origin-node.service --since '24 hours ago'" > /tmp/origin-ci-ig-n-d4fs.txt
 $ gcloud compute --project "openshift-ci-infra" ssh --zone "us-east1-c" origin-ci-ig-n-d4fs -- "sudo journalctl --all --lines all --no-pager --unit docker.service --since '24 hours ago'" > /tmp/origin-ci-ig-n-d4fs-docker.txt

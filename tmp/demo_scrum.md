@@ -1,3 +1,18 @@
+# demo: Apr. 16
+
+yamls: [release/pull/7789](https://github.com/openshift/release/pull/7789)
+
+```
+oc --context build01 get pod -n api-audit-log
+NAME                     READY   STATUS    RESTARTS   AGE
+vector-audit-log-mmdkk   1/1     Running   0          11s
+vector-audit-log-r8xtr   1/1     Running   0          11s
+vector-audit-log-wznkz   1/1     Running   0          11s
+```
+
+aws cloudwatch console: https://openshift-ci-infra.signin.aws.amazon.com
+
+
 # demo: Mar 04
 
 * [periodic-ci-image-import-to-build01](https://prow.svc.ci.openshift.org/?job=periodic-ci-image-import-to-build01)

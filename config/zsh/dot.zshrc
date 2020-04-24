@@ -103,6 +103,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias centos8='ssh -p 2022 liu@localhost'
 #alias centos8='ssh liu@192.168.31.179'
-alias 2ci='oc config use-context default'
-alias 2b01='oc config use-context build01'
-alias monitor_prow='python3 /Users/hongkliu/repo/openshift/release/hack/monitor_prow.py'
+alias 2api.ci='oc config use-context api.ci'
+alias 2build01='oc config use-context build01'
+alias monitor_prow='python3 ${HOME}/repo/openshift/release/hack/monitor_prow.py'

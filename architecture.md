@@ -28,6 +28,8 @@ Upstream cluster: [config.yaml](https://github.com/kubernetes/test-infra/blob/ma
     * sinker
 * [tide](https://github.com/kubernetes/test-infra/blob/master/prow/cmd/tide/README.md): operates `github`'s PRs.
 
+* [branchprotector](https://github.com/kubernetes/test-infra/tree/master/prow/cmd/branchprotector): configures github branch protection. It is a periodic job [periodic-branch-protector](https://github.com/openshift/release/blob/d1fc7d65cdf6716bac747303af57e4fc48831a9e/ci-operator/jobs/infra-periodics.yaml#L661).
+
 * auxiliary components
     * jenkins-operator
     * tot
@@ -80,26 +82,30 @@ Our [prow deployment](https://github.com/openshift/release/tree/master/cluster/c
 
 ```
 $ oc get deployment -n ci -l app=prow
-NAME                    DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-artifact-uploader       1         1         1            1           273d
-boskos-metrics          1         1         1            1           27d
-boskos-reaper           1         1         1            1           38d
-cherrypick              1         1         1            1           273d
-deck                    1         1         1            1           273d
-deck-internal           1         1         1            1           273d
-ghproxy                 1         1         1            1           273d
-hook                    2         2         2            2           273d
-horologium              1         1         1            1           273d
-jenkins-dev-operator    1         1         1            1           273d
-jenkins-operator        1         1         1            1           273d
-kata-jenkins-operator   1         1         1            1           273d
-needs-rebase            1         1         1            1           273d
-plank                   1         1         1            1           273d
-refresh                 1         1         1            1           273d
-sinker                  1         1         1            1           273d
-statusreconciler        1         1         1            1           271d
-tide                    1         1         1            1           273d
-tot                     1         1         1            1           180d
+NAME                         DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+boskos                       1         1         1            1           226d
+boskos-cleaner               1         1         1            1           64d
+boskos-reaper                1         1         1            1           273d
+cherrypick                   1         1         1            1           1y
+ci-operator-configresolver   3         3         3            3           160d
+crier                        1         1         1            1           57d
+deck                         1         1         1            1           1y
+deck-canary                  1         1         1            1           18d
+deck-internal                1         1         1            1           1y
+exporter                     1         1         1            1           203d
+ghproxy                      1         1         1            1           1y
+hook                         2         2         2            2           1y
+horologium                   1         1         1            1           1y
+jenkins-dev-operator         1         1         1            1           1y
+jenkins-operator             1         1         1            1           1y
+kata-jenkins-operator        1         1         1            1           1y
+needs-rebase                 1         1         1            1           1y
+plank                        1         1         1            1           1y
+refresh                      1         1         1            1           1y
+sinker                       1         1         1            1           1y
+statusreconciler             1         1         1            1           1y
+tide                         1         1         1            1           1y
+tot                          1         1         1            1           1y
 
 ```
 

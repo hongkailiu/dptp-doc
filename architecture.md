@@ -26,7 +26,7 @@ Upstream cluster: [config.yaml](https://github.com/kubernetes/test-infra/blob/ma
         TODO: check on [gcs_configuration section in plank's config](https://github.com/openshift/release/blob/master/cluster/ci/config/prow/config.yaml#L14-L21) from [Nikos](https://coreos.slack.com/archives/GB7NB0CUC/p1567690445207200).
     * horologium
     * sinker
-* [tide](https://github.com/kubernetes/test-infra/blob/master/prow/cmd/tide/README.md): merges PRs when necessary.
+* [tide](https://github.com/kubernetes/test-infra/blob/master/prow/cmd/tide/README.md): merges (or blocks) PRs when necessary.
 
 * [branchprotector](https://github.com/kubernetes/test-infra/tree/master/prow/cmd/branchprotector) [x]: configures github branch protection. It is a periodic job [periodic-branch-protector](https://github.com/openshift/release/blob/d1fc7d65cdf6716bac747303af57e4fc48831a9e/ci-operator/jobs/infra-periodics.yaml#L661).
 

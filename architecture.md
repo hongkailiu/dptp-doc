@@ -28,7 +28,7 @@ Upstream cluster: [config.yaml](https://github.com/kubernetes/test-infra/blob/ma
     * sinker
 * [tide](https://github.com/kubernetes/test-infra/blob/master/prow/cmd/tide/README.md): merges PRs when necessary.
 
-* [branchprotector](https://github.com/kubernetes/test-infra/tree/master/prow/cmd/branchprotector): configures github branch protection. It is a periodic job [periodic-branch-protector](https://github.com/openshift/release/blob/d1fc7d65cdf6716bac747303af57e4fc48831a9e/ci-operator/jobs/infra-periodics.yaml#L661).
+* [branchprotector](https://github.com/kubernetes/test-infra/tree/master/prow/cmd/branchprotector) [x]: configures github branch protection. It is a periodic job [periodic-branch-protector](https://github.com/openshift/release/blob/d1fc7d65cdf6716bac747303af57e4fc48831a9e/ci-operator/jobs/infra-periodics.yaml#L661).
 
 * auxiliary components
     * jenkins-operator

@@ -130,14 +130,6 @@ https://coreos.slack.com/archives/GB7NB0CUC/p1580408531244100?thread_ts=15804082
 
 Then `make job JOB=periodic-bugzilla-refresh`: It will create [prowjob](https://prow.svc.ci.openshift.org/prowjob?prowjob=73366ce8-5a58-11ea-97a0-96f07a6c9342) in `current` project.
 
-### check kubeconfig
-
-```bash
-$ oc debug node/ip-10-0-175-171.ec2.internal
-sh-4.2# chroot /host
-sh-4.4# cat /etc/kubernetes/kubelet.conf
-```
-
 ### Resize master VMs
 https://coreos.slack.com/archives/CTTNY7TN1
 

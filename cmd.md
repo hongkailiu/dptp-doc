@@ -19,6 +19,9 @@ $ oc --context build01 rsync ip-10-0-172-226ec2internal-debug:/host/tmp ./abc.tm
 ### debug node
 $ oc debug node/ip-10-0-133-100.us-east-2.compute.internal -- chroot /host journalctl -u kubelet.service -f
 
+### check kubeconfig
+$ oc --as system:admin --context build01 debug node/ip-10-0-130-137.ec2.internal -- chroot /host cat /etc/kubernetes/kubelet.conf
+
 #311 cluster
 $ node=origin-ci-ig-n-7mlq
 $ gcloud compute --project "openshift-ci-infra" ssh --zone "us-east1-c" $node -- "sudo journalctl --all --lines all --no-pager --unit origin-node.service --since '24 hours ago'" > ${node}.node.log

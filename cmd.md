@@ -45,6 +45,9 @@ $ oc --as system:admin adm drain "${bad_node}"  --delete-local-data --ignore-dae
 ###no need for this when autoscaler is running
 $ oc --as system:admin delete node "${bad_node}"
 
+### must-gather
+oc --as system:admin --context build01 adm must-gather --dest-dir=/Users/hongkliu/Downloads/bz1828631/aaa
+
 ### RBAC-related cmds
 #user wking want to login on the UI of monitoring stack
 #https://docs.openshift.com/container-platform/3.11/install_config/prometheus_cluster_monitoring.html#configuring-etcd-monitoring

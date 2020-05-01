@@ -16,3 +16,5 @@ https://coreos.slack.com/archives/GB7NB0CUC/p1588266713270500
 * failover
 * distribute evenly among available cluster
 * provider of e2e
+
+3. [bz](https://bugzilla.redhat.com/show_bug.cgi?id=1828065#c16) and [samples-operator](https://docs.openshift.com/container-platform/4.1/openshift_images/configuring-samples-operator.html)

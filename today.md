@@ -13,6 +13,6 @@ as far as checking...I guess oc get -o yaml crd/machineconfigs.machineconfigurat
 2. doc on build01 and build02
 https://coreos.slack.com/archives/GB7NB0CUC/p1588266713270500
 
-*. failover
-*. distribute evenly among available cluster
-*. provider of e2e
+* failover
+* distribute evenly among available cluster
+* provider of e2e

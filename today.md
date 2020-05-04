@@ -1,3 +1,11 @@
+
+## May 4
+
+* [slack01](https://coreos.slack.com/archives/CHY2E1BL4/p1588269732276800) for [bz1830018](https://bugzilla.redhat.com/show_bug.cgi?id=1830018) and [slack01](https://coreos.slack.com/archives/GB7NB0CUC/p1588604917370000)
+
+
+## May 1
+
 1. raid0 on m5d
 
 verify raid0 is working:

@@ -46,7 +46,7 @@ $ oc --as system:admin adm drain "${bad_node}"  --delete-local-data --ignore-dae
 $ oc --as system:admin delete node "${bad_node}"
 
 ### must-gather
-oc --as system:admin --context build01 adm must-gather --dest-dir=/Users/hongkliu/Downloads/bz1828631/aaa
+oc --as system:admin --context build01 adm must-gather --dest-dir=./aaa
 
 ### RBAC-related cmds
 #user wking want to login on the UI of monitoring stack

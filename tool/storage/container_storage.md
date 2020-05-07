@@ -1,6 +1,8 @@
+# Container storage
 
-# storage
+[Daniel Messer's blog](https://keithtenzer.com/2017/03/24/storage-for-containers-using-gluster-part-ii/)
 
+## raid0
 [raid0 on coreos](https://github.com/openshift/release/blob/a8f595533e72b4e3411accbd5d04d49222104603/clusters/build-clusters/01_cluster/machine_config/m5d4x_machineconfig.yaml#L7)
 
 ```

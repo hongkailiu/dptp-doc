@@ -1,7 +1,9 @@
 
-* May 7
+## May 7
 
+* build02: design doc
 * [aos-devel] machine API AWS spot instances support
+
 
 ## May 4
 

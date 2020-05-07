@@ -50,6 +50,11 @@ $ kubectl taint node ${node} dptp-debug=true:NoSchedule
 ### remove the taint
 $ kubectl taint node ${node} dptp-debug:NoSchedule-
 
+### label a node
+$ oc label node ${node} node-role.kubernetes.io/debug=
+### remove a label
+$ oc label node ${node} node-role.kubernetes.io/debug-
+
 ### must-gather
 oc --as system:admin --context build01 adm must-gather --dest-dir=./aaa
 

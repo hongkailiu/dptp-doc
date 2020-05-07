@@ -1,6 +1,6 @@
 # demo: May 07
 
-A `hidden` periodic [periodic-ci-secret-bootstrap](https://github.com/openshift/release/blob/8c7eb0a281ed46d42cc88a9ca29103025bb30531/ci-operator/jobs/infra-periodics.yaml#L1205-L1209) by a Read-Only BitWarden user.
+A `hidden` periodic [periodic-ci-secret-bootstrap](https://github.com/openshift/release/blob/8c7eb0a281ed46d42cc88a9ca29103025bb30531/ci-operator/jobs/infra-periodics.yaml#L1205-L1209) by a _Read-Only_ BitWarden user.
 
 ```
 $ make job JOB=periodic-ci-secret-bootstrap

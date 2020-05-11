@@ -10,6 +10,7 @@ api.ci: `admin.kubeconfig` on api.ci masters: `KUBECONFIG=/etc/origin/master/adm
 $ node=ip-10-0-157-97.ec2.internal
 $ oc --context build01 adm node-logs ${node} --since='2020-03-30 02:12:51' > ${node}.log
 $ oc --context build01 adm node-logs ${node} --since="$(gdate -u +"%Y-%m-%d %H:%M:%S" -d "1 hour ago")" > ${node}.log
+$ oc --context build01 adm node-logs ${node} -u crio.service -u kubelet.service > ${node}.log
 
 #crio log only with rsync
 #crio log: debug node; chroot /host

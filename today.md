@@ -1,4 +1,13 @@
 
+## May 14: aws training
+
+* [Alert](https://coreos.slack.com/archives/CHY2E1BL4/p1589458825068200?thread_ts=1589443485.063900&cid=CHY2E1BL4) when upgrade is triggered.
+
+
+## May 8: aws training
+
+FYI, many have requested a link for an on-demand version of this course. This is not the same, but it covers some of the same ground. It is the "Cloud Practitioner Essentials" course which includes some of the business related details (pricing, costing) while this is more technical. Hopefully this helps those that need a little more time with the material. https://aws.amazon.com/training/course-descriptions/cloud-practitioner-essentials/
+
 ## May 7
 
 * build02: design doc

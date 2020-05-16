@@ -193,6 +193,10 @@ $ podman run --entrypoint='["cat", "/etc/shells"]'  -it docker.io/timberio/vecto
 # skopeo copy --src-creds hongkailiu:secret docker://registry.svc.ci.openshift.org/ci-op-v9xbbsn6/pipeline:ci-operator docker://quay.io/hongkailiu/ci-op:ci-operator-009
 ```
 
+## misc
+
+> oc --context build01 get events --all-namespaces -o json | jq --raw-output '.items[] | select(.message | test(".*context deadline exceeded.")) | .source.host' | sort | uniq -c
+
 ## migration
 
 ```bash

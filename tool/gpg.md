@@ -123,6 +123,8 @@ $ gpg --export-secret-keys -a hongkailiu@users.noreply.github.com > hongkailiu.g
 ### encrpytion (with public key)
 ### online tool: https://sela.io/pgp/
 
+gpg --output myfile.txt.gpg --encrypt --recipient your.friend@yourfriendsdomain.com  myfile.txt
+
 ### decryption
 gpg --output <output.txt> <encrypted.file>
 

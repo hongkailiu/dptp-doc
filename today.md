@@ -1,4 +1,9 @@
 
+
+## May 19
+
+[Clayton's telemetry recording](https://coreos.slack.com/archives/GB7NB0CUC/p1589899863018700)
+
 ## May 14: aws training
 
 * [Alert](https://coreos.slack.com/archives/CHY2E1BL4/p1589458825068200?thread_ts=1589443485.063900&cid=CHY2E1BL4) when upgrade is triggered.

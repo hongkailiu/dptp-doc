@@ -93,19 +93,22 @@ $ oc login https://api.ci.openshift.org --token=<sa_token>
 ### output pod logs
 $ oc get pod -n default | grep docker-registry | awk '{print $1}' | while read pod; do oc logs -n default $pod --since 8h --timestamps > $pod.log; done
 
+###https://coreos.slack.com/archives/CMC5URNEM/p1566327819028500
 ###retag the latest of an image
-#https://coreos.slack.com/archives/CMC5URNEM/p1566327819028500
-#steve: get history of sha of images:
-$ oc get is -n ci ci-operator -o yaml
+###### find out the desired image, e.g., the 2nd last built image
+$ oc --context api.ci get is -n ci ci-operator -o json | jq -r '.status.tags[] | select(.tag == "latest") | .items[1].image'
+sha256:92f12a6f82fc07ddfd88a20bcbbc14550fd5f6cf4b3ad7cb3986e219227e2715
+
+###### check if the commit id is the one desired
+$ podman inspect registry.svc.ci.openshift.org/ci/ci-operator@sha256:92f12a6f82fc07ddfd88a20bcbbc14550fd5f6cf4b3ad7cb3986e219227e2715 | jq -r '.[0].Labels["io.openshift.build.commit.id"]'
+6eb6b2b8cd9b98e792f83a8d541f1c48696105bf
+
+######re-tag the image
+$ oc tag ci/ci-operator@sha256:92f12a6f82fc07ddfd88a20bcbbc14550fd5f6cf4b3ad7cb3986e219227e2715 ci/ci-operator:latest
+
+######With docker
 $ docker inspect registry.svc.ci.openshift.org/ci/ci-operator@sha256:947332cac382548ed99dd193be2674af8a5eba81881a6d6fde54e5cb75e5e96b | jq ".[0].Config.Labels[\"io.openshift.build.commit.id\"]"
 "b04de66e58ababf901783140acd3e8510309f1f2"
-
-###re-tag the image
-$ oc tag ci/ci-operator@sha256:b9166ca34f581cb6e513c4824ce34f6d6f511b2bdc837e30325575f2cf5ecc5b ci/ci-operator:latest
-
-###use podman to inspect
-$ podman inspect registry.svc.ci.openshift.org/ci/ci-operator:latest | jq -r '.[0].ContainerConfig.Labels["io.openshift.build.commit.id"]' 
-7087de11e0ce91d949e9ea6b00cbc1d7fb0561de
 
 ### approve certificate
 # oc get csr -o name | xargs oc adm certificate approve

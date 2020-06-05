@@ -4,6 +4,18 @@
 * [Encrypting your drive with FileVault](https://redhat.service-now.com/help?id=kb_article&sysparm_article=KB0000970)
 * [python](python.md#on-mac)
 
+## [limit](https://wilsonmar.github.io/maximum-limits/)
+
+```
+### will be reset at reboot
+➜  launchctl limit maxfiles
+	maxfiles    256            unlimited
+➜  sudo launchctl limit maxfiles 65536 200000
+
+➜  launchctl limit maxfiles
+	maxfiles    65536          200000
+```
+
 ## [change default shell](https://www.howtogeek.com/444596/how-to-change-the-default-shell-to-bash-in-macos-catalina/)
 
 iterm2 + zsh + ohmyzsh: [1](https://medium.com/ayuth/iterm2-zsh-oh-my-zsh-the-most-power-full-of-terminal-on-macos-bdb2823fb04c), [2](https://www.freecodecamp.org/news/how-to-configure-your-macos-terminal-with-zsh-like-a-pro-c0ab3f3c1156/);

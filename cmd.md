@@ -28,6 +28,9 @@ $ node=origin-ci-ig-n-7mlq
 $ gcloud compute --project "openshift-ci-infra" ssh --zone "us-east1-c" $node -- "sudo journalctl --all --lines all --no-pager --unit origin-node.service --since '24 hours ago'" > ${node}.node.log
 $ gcloud compute --project "openshift-ci-infra" ssh --zone "us-east1-c" $node -- "sudo journalctl --all --lines all --no-pager --unit docker.service --since '24 hours ago'" > ${node}.docker.log
 
+# restart docker and node service on 311 cluster
+$ gcloud compute --project "openshift-ci-infra" ssh --zone "us-east1-c" $node -- "sudo systemctl restart docker.service origin-node.service"
+
 ### show internal/external IPs of the nodes
 $ oc get node -o wide
 

@@ -16,7 +16,7 @@ Cert-Manager (app.ci, build0{1|2}): [search_ingress.yaml](https://github.com/ope
 * apps-subdomain, api-server and registry: supported
 * console (4.5+) and openshit-monitoring (not supported yet)
 
-alert on probes and certificate: [blackbox-exporter](https://github.com/openshift/release/blob/master/clusters/app.ci/prow-monitoring/additional-scrape-configs_secret.yaml)
+Alert on probes and certificates for [all targets in blackbox-exporter](https://github.com/openshift/release/blob/master/clusters/app.ci/prow-monitoring/additional-scrape-configs_secret.yaml)
 
 # demo: May 07
 

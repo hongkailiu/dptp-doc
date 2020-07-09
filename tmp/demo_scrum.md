@@ -6,7 +6,7 @@ DSN set up: `A` or `CNAME` record
 
 > oc get svc -n openshift-ingress router-default 
 
-Cert-Manager: [search_ingress.yaml](https://github.com/openshift/release/blob/master/clusters/app.ci/cert-manager/search_ingress.yaml)
+Cert-Manager (app.ci, build0{1|2}): [search_ingress.yaml](https://github.com/openshift/release/blob/master/clusters/app.ci/cert-manager/search_ingress.yaml)
 
 * Route: Not first class citizen of cert-manager
 * Ingress: support only `termination: reencryption`

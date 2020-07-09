@@ -2,7 +2,7 @@
 
 Vanity URLs: E.g., https://search.ci.openshift.org/
 
-DSN set up: `A` or `CNAME` record
+[DSN set up on GCP](https://console.cloud.google.com/net-services/dns/zones?project=openshift-ci-infra&authuser=1&organizationId=54643501348&dnsManagedZonessize=50): `A` or `CNAME` record
 
 > oc get svc -n openshift-ingress router-default 
 

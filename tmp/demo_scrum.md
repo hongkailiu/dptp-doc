@@ -10,10 +10,13 @@ Cert-Manager (app.ci, build0{1|2}): [search_ingress.yaml](https://github.com/ope
 
 * Route: Not first class citizen of cert-manager
 * Ingress: support only `termination: reencryption`
-* [Application awareness](https://issues.redhat.com/browse/DPTP-1166?focusedCommentId=14167463&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-14167463):
-  * apps-subdomain, api-server and registry: supported
-  * console (4.5+) and openshit-monitoring (not supported yet)
-* alert on probes and certificate: [blackbox-exporter](https://github.com/openshift/release/blob/master/clusters/app.ci/prow-monitoring/additional-scrape-configs_secret.yaml)
+
+[Application awareness](https://issues.redhat.com/browse/DPTP-1166?focusedCommentId=14167463&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-14167463):
+
+* apps-subdomain, api-server and registry: supported
+* console (4.5+) and openshit-monitoring (not supported yet)
+
+alert on probes and certificate: [blackbox-exporter](https://github.com/openshift/release/blob/master/clusters/app.ci/prow-monitoring/additional-scrape-configs_secret.yaml)
 
 # demo: May 07
 

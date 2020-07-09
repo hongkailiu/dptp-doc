@@ -9,10 +9,9 @@ DSN set up: `A` or `CNAME` record
 Cert-Manager: [search_ingress.yaml](https://github.com/openshift/release/blob/master/clusters/app.ci/cert-manager/search_ingress.yaml)
 
 * Route: Not first class citizen of cert-manager
-
 * Ingress: support only `termination: reencryption`
-
 * Application awareness: console (4.5+) and openshit-monitoring (not supported yet)
+* alert on probes and certificate: [blackbox-exporter](https://github.com/openshift/release/blob/master/clusters/app.ci/prow-monitoring/additional-scrape-configs_secret.yaml)
 
 # demo: May 07
 

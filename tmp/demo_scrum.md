@@ -1,3 +1,19 @@
+# demo: July 09
+
+Vanity URLs: E.g., https://search.ci.openshift.org/
+
+DSN set up: `A` or `CNAME` record
+
+> oc get svc -n openshift-ingress router-default 
+
+Cert-Manager: [search_ingress.yaml](https://github.com/openshift/release/blob/master/clusters/app.ci/cert-manager/search_ingress.yaml)
+
+* Route: Not first class citizen of cert-manager
+
+* Ingress: support only `termination: reencryption`
+
+* Application awareness: console (4.5+) and openshit-monitoring (not supported yet)
+
 # demo: May 07
 
 A `hidden` periodic [periodic-ci-secret-bootstrap](https://github.com/openshift/release/blob/8c7eb0a281ed46d42cc88a9ca29103025bb30531/ci-operator/jobs/infra-periodics.yaml#L1205-L1209) by a _Read-Only_ BitWarden user.

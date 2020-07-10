@@ -9,7 +9,7 @@ Vanity URLs: E.g., https://search.ci.openshift.org/
 Cert-Manager (app.ci, build0{1|2}): [search_ingress.yaml](https://github.com/openshift/release/blob/master/clusters/app.ci/cert-manager/search_ingress.yaml)
 
 * Route: Not first class citizen of cert-manager
-* Ingress: support only `termination: reencryption`
+* Ingress: support only `termination: edge`
 
 [Application awareness](https://issues.redhat.com/browse/DPTP-1166?focusedCommentId=14167463&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-14167463):
 

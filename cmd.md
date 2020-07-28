@@ -130,6 +130,8 @@ $ oc create secret generic --from-file=.dockerconfigjson=/home/hongkliu/Download
 oc --context build01 adm upgrade --allow-explicit-upgrade --to-image registry.svc.ci.openshift.org/ocp/release:4.3.0-0.nightly-2020-02-25-200400 --force=true
 # pin the nightly build to avoid being GCed
 oc annotate -n ocp istag release:4.3.0-0.nightly-2020-03-23-130439 "release.openshift.io/keep=CI test build"
+# cancel upgrade
+oc --as system:admin --context build02 adm upgrade --clear
 
 ###https://10.0.146.81:10250/metrics/cadvisor
 oc --context build01 get --raw  /api/v1/nodes/ip-10-0-146-81.ec2.internal/proxy/metrics/cadvisor

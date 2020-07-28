@@ -1,4 +1,15 @@
 
+## Jul. 28
+
+certs required? https://coreos.slack.com/archives/GB7NB0CUC/p1595946559490300
+
+certs expired? https://coreos.slack.com/archives/CHY2E1BL4/p1595898486493000
+
+Joseph: https://coreos.slack.com/archives/CBN38N3MW/p1595946690102900?thread_ts=1595870062.035900&cid=CBN38N3MW
+
+
+
+
 
 ## May 19
 

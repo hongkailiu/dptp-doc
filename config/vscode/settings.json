@@ -1,5 +1,6 @@
 {
     "window.zoomLevel": 0,
     "files.autoSave": "afterDelay",
-    "python.pythonPath": "/Users/hongkliu/tool/p3env/bin/python"
+    "python.pythonPath": "/Users/hongkliu/tool/p3env/bin/python",
+    "go.formatTool": "goimports"
 }

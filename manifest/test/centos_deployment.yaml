@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: centos
+  labels:
+    app: centos
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: centos
+  template:
+    metadata:
+      labels:
+        app: centos
+    spec:
+      containers:
+      - name: centos
+        image: docker.io/centos:8
+        command:
+        - tail
+        args:
+        - -f
+        - /var/log/lastlog
+        resources:
+          requests:
+            ephemeral-storage: "1Gi"
+          limits:
+            ephemeral-storage: "2Gi"

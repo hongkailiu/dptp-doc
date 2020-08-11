@@ -3,7 +3,9 @@
 export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export GOPATH=$HOME/go
+export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/hongkliu/.oh-my-zsh"
@@ -74,6 +76,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git oc golang)
 
+DISABLE_MAGIC_FUNCTIONS=true
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -103,6 +106,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias centos8='ssh -p 2022 liu@localhost'
 #alias centos8='ssh liu@192.168.31.179'
-alias 2api.ci='oc config use-context api.ci'
+alias 2app.ci='oc config use-context app.ci'
 alias 2build01='oc config use-context build01'
+alias 2build02='oc config use-context build02'
 alias monitor_prow='python3 ${HOME}/repo/openshift/release/hack/monitor_prow.py'

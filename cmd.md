@@ -135,6 +135,10 @@ oc --as system:admin --context build02 adm upgrade --clear
 
 ###https://10.0.146.81:10250/metrics/cadvisor
 oc --context build01 get --raw  /api/v1/nodes/ip-10-0-146-81.ec2.internal/proxy/metrics/cadvisor
+
+###
+oc run centos8 --image=docker.io/centos:8 --command -- tail -f /var/log/lastlog
+
 ```
 
 ## gcloud

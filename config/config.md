@@ -6,4 +6,8 @@
 
 ## zsh
 
-> ll ~/.zshrc
+> cat ~/.zshrc
+
+## git
+
+> cat ~/.gitconfig

@@ -1,4 +1,13 @@
 
+## Sep 22
+
+* validate double config: https://github.com/openshift/release/pull/12043#issuecomment-696971732
+
+* validate cluster fields for jenkins jobs: https://coreos.slack.com/archives/GB7NB0CUC/p1600799861176500?thread_ts=1600799706.175600&cid=GB7NB0CUC
+
+* migrate pull-ci-openshift-cincinnati-master-cargo-test https://coreos.slack.com/archives/CBN38N3MW/p1600808350234500?thread_ts=1600804395.224300&cid=CBN38N3MW
+
+
 ## Jul. 28
 
 certs required? https://coreos.slack.com/archives/GB7NB0CUC/p1595946559490300

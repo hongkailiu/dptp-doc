@@ -137,7 +137,7 @@ oc --as system:admin --context build02 adm upgrade --clear
 oc --context build01 get --raw  /api/v1/nodes/ip-10-0-146-81.ec2.internal/proxy/metrics/cadvisor
 
 ###
-oc --context build02 -n hongkiliu-test run -i -t debug --image=docker.io/centos:8 --restart=Never --rm=true
+oc --context build02 -n hongkliu-test run -i -t debug --image=docker.io/centos:8 --restart=Never --rm=true
 
 ```
 

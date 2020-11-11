@@ -1,3 +1,8 @@
+# demo: Nov. 12
+
+* PostSubmits are on `build02`: [sanitize-prow-jobs/_config.yaml](https://github.com/openshift/release/blob/01c5a7e911ec3500564e09c206182373212443b0/core-services/sanitize-prow-jobs/_config.yaml#L1624-L1626)
+* [promotion jobs](https://prow.ci.openshift.org/?job=branch-*-images) is implemented by running `oc-image-mirror` in a [pod](https://prow.ci.openshift.org/view/gs/origin-ci-test/logs/branch-ci-codeready-toolchain-host-operator-master-images/1326588620701700096#1:build-log.txt%3A27).
+
 # demo: July 09
 
 Vanity URLs: E.g., https://search.ci.openshift.org/

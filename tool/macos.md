@@ -7,6 +7,13 @@
 ## [limit](https://wilsonmar.github.io/maximum-limits/)
 
 ```
+### change limit on the current session
+ulimit -n
+➜ 256
+➜ ulimit -n 2048
+➜ ulimit -n
+2048
+
 ### will be reset at reboot
 ➜  launchctl limit maxfiles
 	maxfiles    256            unlimited

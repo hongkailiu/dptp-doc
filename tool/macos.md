@@ -8,8 +8,8 @@
 
 ```
 ### change limit on the current session
-ulimit -n
-➜ 256
+➜ ulimit -n
+256
 ➜ ulimit -n 2048
 ➜ ulimit -n
 2048

@@ -37,6 +37,11 @@ $ export AWS_DEFAULT_REGION=us-west-2
 
 ```
 
+
+```console
+$ AWS_PAGER="" aws sts get-caller-identity
+```
+
 ## [Cli tutorial](http://docs.aws.amazon.com/cli/latest/userguide/tutorial-ec2-ubuntu.html)
 
 Fedora 27: ami-959441ed; 28: ami-f5fc948d; 29: ami-07e40fe5cf09f0d68

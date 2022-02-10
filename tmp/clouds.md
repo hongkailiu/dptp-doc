@@ -6,7 +6,7 @@
 
 
 ## AWS
-AWS accounts: https://<account>.signin.aws.amazon.com/console
+AWS accounts: `https://<account>.signin.aws.amazon.com/console`
   
 - openshift-ci-infra: build farm clusters, such as build01, build03
 - openshift-ci: ephemeral clusters provisioned for CI tests

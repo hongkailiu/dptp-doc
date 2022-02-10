@@ -21,7 +21,7 @@ cli: aws
 ## GCP
 GCP accounts: https://console.cloud.google.com/
 
-- openshift-ci-build-farm: build farm clusters, such as build01, build03
+- openshift-ci-build-farm: build farm clusters, such as build02, build04
 - openshift-ci-infra: Prow and (decommissioned 3.11) cluster api.ci
 - openshift-gce-devel-ci: ephemeral clusters provisioned for CI tests
 

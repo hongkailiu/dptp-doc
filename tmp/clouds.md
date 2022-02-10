@@ -12,8 +12,6 @@ AWS accounts: `https://<account>.signin.aws.amazon.com/console`
 - openshift-ci: ephemeral clusters provisioned for CI tests
 - openshift-ci-pools: ephemeral clusters provisioned for CI tests with cluster claims
 
-login: https://<account>.signin.aws.amazon.com/console
-
 Services: EC2, VPC, Route53, CloudWatch, etc.
 
 CloudWatch: Prow logs, API server audit logs for build0{1|2} (openshift-ci-infra)

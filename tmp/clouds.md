@@ -8,9 +8,9 @@
 ## AWS
 AWS accounts: `https://<account>.signin.aws.amazon.com/console`
   
-- openshift-ci-infra: build farm clusters, such as build01, build03
+- openshift-ci-infra: build farm clusters, such as build01, build03; DPP also uses it.
 - openshift-ci: ephemeral clusters provisioned for CI tests
-- openshift-ci-pools: ephemeral clusters provisioned for CI tests with cluster claims
+- openshift-ci-pools: ephemeral clusters provisioned for CI tests with [cluster claims](https://docs.ci.openshift.org/docs/architecture/ci-operator/#testing-with-a-cluster-from-a-cluster-pool)
 
 Services: EC2, VPC, Route53, CloudWatch, etc.
 

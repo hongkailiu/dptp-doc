@@ -57,7 +57,6 @@ Services: Compute Engine, VPC Network, Cloud DNS, Logging, etc.
 
   Cloud DNS: Manage domain "ci.openshift.org" (openshift-ci-infra)
 
-cli: gcloud
 
 ## Cloud DNS
 

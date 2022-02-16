@@ -22,6 +22,8 @@ CloudWatch: Prow logs, API server audit logs for build0{1|2} (openshift-ci-infra
 
 ## CloudWatch
 
+Upload via [vector](https://github.com/openshift/release/blob/62dce99f006bfa6625a5b2b19ee278ea3babb4b0/clusters/build-clusters/01_cluster/openshift/api_audit_log/vector-audit-log_daemonset.yaml#L4).
+
 ### Prow Logs
 
 What Prow did to my PR.
@@ -59,6 +61,6 @@ cli: gcloud
 
 ## Cloud DNS
 
-- Own "ci.openshift.org"
-- Base domain of an OCP cluster.
-- Cert-Manager
+- Own `ci.openshift.org`
+- Base domain of an OCP cluster: `gcp.ci.openshift.org`
+- Cert-Manager: manage TLS certificates, e.g., [prow-ingress](https://github.com/openshift/release/blob/62dce99f006bfa6625a5b2b19ee278ea3babb4b0/clusters/app.ci/cert-manager/prow_ingress.yaml#L2)

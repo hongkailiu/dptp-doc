@@ -39,6 +39,13 @@ cli: gcloud
 
 ### Prow Logs
 
+What Prow did to my PR.
+
+```code
+...
+| filter(pr="827")
+```
+
 ### Audit logs (build01 and build02)
 
 Aggregation:

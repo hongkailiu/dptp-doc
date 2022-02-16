@@ -20,21 +20,6 @@ Services: EC2, VPC, Route53, CloudWatch, etc.
 
 CloudWatch: Prow logs, API server audit logs for build0{1|2} (openshift-ci-infra)
 
-cli: aws
-
-## GCP
-GCP accounts: https://console.cloud.google.com/
-
-- openshift-ci-build-farm: build farm clusters, such as build02, build04
-- openshift-ci-infra: Prow and (decommissioned 3.11) cluster api.ci
-- openshift-gce-devel-ci: ephemeral clusters provisioned for CI tests
-
-Services: Compute Engine, VPC Network, Cloud DNS, Logging, etc.
-
-  Cloud DNS: Manage domain "ci.openshift.org" (openshift-ci-infra)
-
-cli: gcloud
-
 ## CloudWatch
 
 ### Prow Logs
@@ -56,3 +41,24 @@ fields @timestamp, @message
 | stats count() as count by user.username, objectRef.resource
 | sort count desc
 ```
+
+
+## GCP
+
+GCP accounts: https://console.cloud.google.com/
+
+- openshift-ci-build-farm: build farm clusters, such as build02, build04
+- openshift-ci-infra: Prow and (decommissioned 3.11) cluster api.ci
+- openshift-gce-devel-ci: ephemeral clusters provisioned for CI tests
+
+Services: Compute Engine, VPC Network, Cloud DNS, Logging, etc.
+
+  Cloud DNS: Manage domain "ci.openshift.org" (openshift-ci-infra)
+
+cli: gcloud
+
+## Cloud DNS
+
+- Own "ci.openshift.org"
+- Base domain of an OCP cluster.
+- Cert-Manager

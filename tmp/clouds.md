@@ -1,8 +1,8 @@
 ## Summary
 
 - accounts on AWS/GCP and what each of them is for.
-- the services TP uses often
-- Dive into AWS CloudWatch and Cloud DNS
+- the cloud services TP uses often
+- AWS CloudWatch and Cloud DNS
 
 
 ## Cluster Topology

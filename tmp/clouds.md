@@ -5,6 +5,10 @@
 - Dive into AWS CloudWatch and Cloud DNS
 
 
+## Cluster Topology
+
+<img width="1051" alt="Screen Shot 2022-02-15 at 5 50 14 PM" src="https://user-images.githubusercontent.com/4013349/154168942-9de16f51-3460-424f-9099-d661a519af6b.png">
+
 ## AWS
 AWS accounts: `https://<account>.signin.aws.amazon.com/console`
   
@@ -31,7 +35,17 @@ Services: Compute Engine, VPC Network, Cloud DNS, Logging, etc.
 
 cli: gcloud
 
-## Cluster Topology
+## CloudWatch
 
-<img width="1051" alt="Screen Shot 2022-02-15 at 5 50 14 PM" src="https://user-images.githubusercontent.com/4013349/154168942-9de16f51-3460-424f-9099-d661a519af6b.png">
+### Prow Logs
 
+### Audit logs (build01 and build02)
+
+Aggregation:
+
+```
+fields @timestamp, @message 
+| limit 20 
+| stats count() as count by user.username, objectRef.resource
+| sort count desc
+```

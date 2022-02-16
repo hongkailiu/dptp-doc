@@ -7,6 +7,8 @@
 
 ## Cluster Topology
 
+oc-cli is sufficient except outages!
+
 <img width="1051" alt="Screen Shot 2022-02-15 at 5 50 14 PM" src="https://user-images.githubusercontent.com/4013349/154168942-9de16f51-3460-424f-9099-d661a519af6b.png">
 
 ## AWS

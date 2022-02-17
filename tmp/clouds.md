@@ -24,6 +24,8 @@ CloudWatch: Prow logs, API server audit logs for build0{1|2} (openshift-ci-infra
 
 ## CloudWatch
 
+Log groups and Logs Insights
+
 Upload via [vector](https://github.com/openshift/release/blob/62dce99f006bfa6625a5b2b19ee278ea3babb4b0/clusters/build-clusters/01_cluster/openshift/api_audit_log/vector-audit-log_daemonset.yaml#L4).
 
 ### Prow Logs

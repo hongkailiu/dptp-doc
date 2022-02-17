@@ -66,12 +66,12 @@ Services: Compute Engine, VPC Network, Cloud DNS, Logging, etc.
 - Base domain of an OCP cluster: `gcp.ci.openshift.org`
 - Cert-Manager: manage TLS certificates, e.g., [prow-ingress](https://github.com/openshift/release/blob/62dce99f006bfa6625a5b2b19ee278ea3babb4b0/clusters/app.ci/cert-manager/prow_ingress.yaml#L2)
 
-CNAME or A record:
+  CNAME or A record to the ingress on the cluster:
 
-```console
-oc --context app.ci get svc -n openshift-ingress router-default
-NAME             TYPE           CLUSTER-IP      EXTERNAL-IP                                                              PORT(S)                      AGE
-router-default   LoadBalancer   REDACTED   REDACTED.us-east-1.elb.amazonaws.com   80:REDACTED/TCP,443:REDACTED/TCP   671d
-```
+  ```console
+  oc --context app.ci get svc -n openshift-ingress router-default
+  NAME             TYPE           CLUSTER-IP      EXTERNAL-IP                                                              PORT(S)                      AGE
+  router-default   LoadBalancer   REDACTED   REDACTED.us-east-1.elb.amazonaws.com   80:REDACTED/TCP,443:REDACTED/TCP   671d
+  ```
 
 - Domain ownership and TLS certificates

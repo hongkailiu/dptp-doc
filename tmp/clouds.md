@@ -46,6 +46,7 @@ fields @timestamp, @message
 | sort count desc
 ```
 
+Moving Prometheus data between servers at outtages are not practical/possible: 80G for build02.
 
 ## GCP
 

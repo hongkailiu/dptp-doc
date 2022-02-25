@@ -43,6 +43,20 @@ $ npx -v
 
 ### [installation: package manager](https://nodejs.org/en/download/package-manager/)
 
+mac:
+
+```console
+$ brew install node
+$ brew upgrade node
+
+$ node -v
+v17.6.0
+
+$ npm -v
+8.5.1
+
+```
+
 ## hello-world
 
 Output hello-world:

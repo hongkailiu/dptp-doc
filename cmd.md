@@ -20,6 +20,8 @@ $ oc --context build01 rsync ip-10-0-172-226ec2internal-debug:/host/tmp ./abc.tm
 ### debug node
 $ oc debug node/ip-10-0-133-100.us-east-2.compute.internal -- chroot /host journalctl -u kubelet.service -f
 
+$ oc --context build02 adm inspect namespace/openshift-image-registry
+
 ### check kubeconfig
 $ oc --as system:admin --context build01 debug node/ip-10-0-130-137.ec2.internal -- chroot /host cat /etc/kubernetes/kubelet.conf
 

@@ -215,6 +215,15 @@ $ podman run --entrypoint='["cat", "/etc/shells"]'  -it docker.io/timberio/vecto
 
 > oc --context build01 get events --all-namespaces -o json | jq --raw-output '.items[] | select(.message | test(".*context deadline exceeded.")) | .source.host' | sort | uniq -c
 
+
+```console
+### query GitHub in Tide's pod
+$ token=$(oc --context app.ci get secret -n ci github-credentials-openshift-merge-robot -o json | jq .data.oauth -r | base64 -d)
+$ tide_pod=$(oc get pod -n ci -l app=prow,component=tide --no-headers -o custom-columns=":metadata.name")
+$ oc --as system:admin exec -n ci $tide_pod -- wget -O- --header "Authorization: Token $token" --header "Accept: application/vnd.github.v3+json" https://api.github.com/repos/red-hat-storage/kubernetes-csi-addons | jq .allow_merge_commit
+
+```
+
 ## migration
 
 ```bash
@@ -227,3 +236,4 @@ $ cat /tmp/repo.txt | while read line; do find /Users/hongkliu/repo/openshift/re
 
 $ ci-operator-prowgen --from-dir ./ci-operator/config/ --to-dir ./ci-operator/jobs/
 ```
+

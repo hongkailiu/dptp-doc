@@ -1,6 +1,6 @@
 # Angular.js
 
-[javascript](https://www.javascript.com/learn/strings)
+[javascript](https://www.javascript.com/); [mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 tutorials: [angularjs](https://docs.angularjs.org/tutorial)
 

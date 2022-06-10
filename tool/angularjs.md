@@ -1,5 +1,7 @@
 # Angular.js
 
+[javascript](https://www.javascript.com/learn/strings)
+
 tutorials: [angularjs](https://docs.angularjs.org/tutorial)
 
 [need node.js?](https://stackoverflow.com/questions/26398537/do-i-need-node-js-to-use-angularjs)

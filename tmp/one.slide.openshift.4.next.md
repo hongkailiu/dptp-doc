@@ -1,4 +1,4 @@
-Choose the CI build farm cluster build02 to run with nightly builds of OpenShift master branch is a story of the epic "OpenShift 4 Next".
+Choosing the CI build farm cluster build02 to run with nightly builds of OpenShift master branch is a story of the epic "OpenShift 4 Next".
 We have done 2 spritntly upgrades and you can see the most recent one was a couple of days ago to a 4.12 nightly.
 
 We have the supports from TRT for the issues that we cannot handle during the upgrades.

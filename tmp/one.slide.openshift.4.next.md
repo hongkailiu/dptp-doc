@@ -5,7 +5,7 @@ We have the supports from TRT for the issues that we cannot handle during the up
 The results and findings can provide TRT a source of evidence to accept or reject the nightly.
 
 From the two upgrades we have executed, we indeed found bugs and regression of OpenShift.
-Build02 was burn with OCP 4.5.6. The version was too ancient that our normal CI upgrade tests usually do not cover, and we do have bugs there and our customers' clusters might be in the similar situation.
+Build02 was born with OCP 4.5.6. The version was too ancient that our normal CI upgrade tests usually do not cover, and we do have bugs there and our customers' clusters might be in the similar situation.
 
 Another type of issue is regression.
 Here is an example. We lost the compatibility of an annotation provided by openshift-machine-api.

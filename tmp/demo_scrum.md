@@ -1,3 +1,14 @@
+# demo: Sep. 29
+
+- I complaint of the complexity of manipulating the kubeconfig file in [oc_sa_create_kubeconfig.sh](https://github.com/openshift/ci-tools/blob/master/images/ci-secret-generator/oc_sa_create_kubeconfig.sh) whenever a new token is requested.
+- David [suggested](https://issues.redhat.com/browse/DPTP-3087?focusedCommentId=20919808&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-20919808) to link a [tokenFile](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/tools/clientcmd/api/v1/types.go#L111-L113) in the kubeconfig and then the kuebconfig file is static and we need only to refresh the tokenFile.
+- Example: `sprint-automation`: 
+  - [ci-secret-generator](https://github.com/openshift/release/blob/5b786ff19b610e3f36566c274f7871ddc178efb5/core-services/ci-secret-generator/_config.yaml#L162-L172)
+  - [ci-secret-bootstrap](https://github.com/openshift/release/blob/5b786ff19b610e3f36566c274f7871ddc178efb5/core-services/ci-secret-bootstrap/_config.yaml#L2316-L2332)
+  - the upstream support of [kubeconfig-suffix](https://github.com/kubernetes/test-infra/pull/27436)
+  - the new script [oc_create_kubeconfig.sh](https://github.com/openshift/ci-tools/blob/master/images/ci-secret-generator/oc_create_kubeconfig.sh)
+  - a new requirement of build-farm: [The api-server has to use CA trusted certificates](https://github.com/openshift/release/blob/master/clusters/JoinBuildFarm.md#set-up-applyconfig-against-the-cluster). Handled vsphere [SPLAT-720](https://issues.redhat.com/browse/SPLAT-720).
+
 # demo: Nov. 12
 
 * PostSubmits are on `build02`: [sanitize-prow-jobs/_config.yaml](https://github.com/openshift/release/blob/01c5a7e911ec3500564e09c206182373212443b0/core-services/sanitize-prow-jobs/_config.yaml#L1624-L1626)

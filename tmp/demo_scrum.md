@@ -9,6 +9,10 @@
 - the upstream support of [kubeconfig-suffix](https://github.com/kubernetes/test-infra/pull/27436) and [application to CI producction](https://github.com/openshift/release/pull/32421)
 - the new script [oc_create_kubeconfig.sh](https://github.com/openshift/ci-tools/blob/master/images/ci-secret-generator/oc_create_kubeconfig.sh)
 - a new requirement of build-farm: [The api-server has to use CA trusted certificates](https://github.com/openshift/release/blob/master/clusters/JoinBuildFarm.md#set-up-applyconfig-against-the-cluster). Handled vsphere [SPLAT-720](https://issues.redhat.com/browse/SPLAT-720).
+- ongoing work:
+  - release-controller/ci-chat-bot [release/pull/32621](https://github.com/openshift/release/pull/32621) 
+  - prow and ci-tools [release/pull/32642](https://github.com/openshift/release/pull/32642)
+  - adpotion in cluster-init [DPTP-3152](https://issues.redhat.com/browse/DPTP-3152)
 
 # demo: Nov. 12
 

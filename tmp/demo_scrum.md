@@ -5,7 +5,7 @@
 - Example: `sprint-automation`: 
   - [ci-secret-generator](https://github.com/openshift/release/blob/5b786ff19b610e3f36566c274f7871ddc178efb5/core-services/ci-secret-generator/_config.yaml#L162-L172)
   - [ci-secret-bootstrap](https://github.com/openshift/release/blob/5b786ff19b610e3f36566c274f7871ddc178efb5/core-services/ci-secret-bootstrap/_config.yaml#L2316-L2332)
-  - the upstream support of [kubeconfig-suffix](https://github.com/kubernetes/test-infra/pull/27436)
+  - the upstream support of [kubeconfig-suffix](https://github.com/kubernetes/test-infra/pull/27436) and [application to CI producction](https://github.com/openshift/release/pull/32421)
   - the new script [oc_create_kubeconfig.sh](https://github.com/openshift/ci-tools/blob/master/images/ci-secret-generator/oc_create_kubeconfig.sh)
   - a new requirement of build-farm: [The api-server has to use CA trusted certificates](https://github.com/openshift/release/blob/master/clusters/JoinBuildFarm.md#set-up-applyconfig-against-the-cluster). Handled vsphere [SPLAT-720](https://issues.redhat.com/browse/SPLAT-720).
 

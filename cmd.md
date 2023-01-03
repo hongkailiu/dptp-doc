@@ -143,6 +143,9 @@ oc --context build01 get --raw  /api/v1/nodes/ip-10-0-146-81.ec2.internal/proxy/
 oc --context build02 -n hongkliu-test run -i -t debug --image=quay.io/centos/centos:stream8 --restart=Never --rm=true
 oc exec -it -n ci deck-internal-7b5cb98cc9-6fh69 -c deck -- sh
 
+### port-forward alert manager UI
+oc --as system:admin --context hive port-forward -n openshift-user-workload-monitoring alertmanager-user-workload-0 9093:9093
+
 ```
 
 ## gcloud

@@ -11,14 +11,14 @@ Missing:
 - [Cannot manage UWM alerts](https://issues.redhat.com/browse/OCPBUGS-2317)
 
 
-# demo: Jan 10 2023: Improvement of [periodic-ci-secret-bootstrap](https://deck-internal-ci.apps.ci.l2s4.p1.openshiftapps.com/job-history/gs/origin-ci-private/logs/periodic-ci-secret-bootstrap)
+# demo: Jan 10 2023
 
-Result: 35m -> 12m
+Improvement of [periodic-ci-secret-bootstrap](https://deck-internal-ci.apps.ci.l2s4.p1.openshiftapps.com/job-history/gs/origin-ci-private/logs/periodic-ci-secret-bootstrap): 35m -> 12m
 
 - Used to be 2m right after we switch from BW to Vault
   * More clusters
   * More user secrets: default on all clusters
-- [Mostly](https://github.com/openshift/ci-tools/pull/3225#issuecomment-1372679618) updating secrets (3500 in total)
+- [Mostly](https://github.com/openshift/ci-tools/pull/3225#issuecomment-1372679618) updating secrets (about 3500 in total)
   * [Update secrets only when needed](https://github.com/openshift/ci-tools/pull/3229#issuecomment-1373029275): 35m -> 23m
   * [Reduce #API calls to get namespaces](https://github.com/openshift/ci-tools/pull/3232): 23m -> 12m
 

@@ -7,6 +7,11 @@ Status:
 - [Migrated](https://github.com/openshift/release/tree/master/clusters/app.ci/openshift-user-workload-monitoring) the existing mixin-generated metrics, alerts, and dashboards.
 - Configure UWM for Hive.
 
+New:
+- CR [Probe](https://github.com/openshift/release/blob/master/clusters/app.ci/openshift-user-workload-monitoring/blackbox_probe.yaml#L2) to replace `additionalScrapeConfigs`.
+- Grafana: access to prometheus via [trusted CA certs](https://github.com/openshift/release/pull/34842)
+- CR [AlertmanagerConfig](https://github.com/openshift/release/pull/35028/files#diff-92e061dcd79230dcb20cc796befa34a6ab05d73c926f8ba7a1129c25a635cf02R2): Secret references
+
 Missing:
 - [Cannot manage UWM alerts](https://issues.redhat.com/browse/OCPBUGS-2317)
 

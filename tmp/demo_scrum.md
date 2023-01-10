@@ -1,3 +1,16 @@
+# demo: Jan 12 2023
+
+Status:
+- [Enable monitoring user-defined projects](https://github.com/openshift/release/pull/34438):
+  * Prometheus/AlertManager: UWM managed by CMO
+  * Grafana: [Grafana-Operator](https://github.com/grafana-operator/grafana-operator) managed by OLM
+- [Migrated](https://github.com/openshift/release/tree/master/clusters/app.ci/openshift-user-workload-monitoring) the existing mixin-generated metrics, alerts, and dashboards.
+- Configure UWM for Hive.
+
+Missing:
+- [Cannot manage UWM alerts](https://issues.redhat.com/browse/OCPBUGS-2317)
+
+
 # demo: Sep. 29
 
 - I complaint of the complexity of manipulating the kubeconfig file in [oc_sa_create_kubeconfig.sh](https://github.com/openshift/ci-tools/blob/master/images/ci-secret-generator/oc_sa_create_kubeconfig.sh) whenever a new token is requested.

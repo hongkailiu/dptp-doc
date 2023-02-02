@@ -1,11 +1,11 @@
-# demo: Jan 12 2023
+# demo: Feb 2 2023
 
 Status:
 - [Enable monitoring user-defined projects](https://github.com/openshift/release/pull/34438):
   * Prometheus/AlertManager: UWM managed by CMO
   * Grafana: [Grafana-Operator](https://github.com/grafana-operator/grafana-operator) managed by OLM
 - [Migrated](https://github.com/openshift/release/tree/master/clusters/app.ci/openshift-user-workload-monitoring) the existing mixin-generated metrics, alerts, and dashboards.
-- Configure UWM for Hive.
+- Configure [UWM for Hive](https://github.com/openshift/release/blob/master/clusters/hive/openshift-user-workload-monitoring_cm.yaml): No mixins.
 
 New:
 - CR [Probe](https://github.com/openshift/release/blob/master/clusters/app.ci/openshift-user-workload-monitoring/blackbox_probe.yaml#L2) to replace `additionalScrapeConfigs`.
@@ -13,7 +13,7 @@ New:
 - CR [AlertmanagerConfig](https://github.com/openshift/release/pull/35028/files#diff-92e061dcd79230dcb20cc796befa34a6ab05d73c926f8ba7a1129c25a635cf02R2): Secret references instead of [secret templates](https://github.com/openshift/release/blob/master/clusters/build-clusters/01_cluster/openshift-monitoring/alertmanager-main_secret_template.yaml)
 
 Missing:
-- [Cannot manage UWM alerts](https://issues.redhat.com/browse/OCPBUGS-2317)
+- Cannot manage UWM alerts: [OCPBUGS-6740](https://issues.redhat.com/browse/OCPBUGS-6740)
 
 
 # demo: Jan 10 2023

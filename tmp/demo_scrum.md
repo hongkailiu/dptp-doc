@@ -1,3 +1,12 @@
+# oo-testing: March 2023
+
+![Screenshot 2022-11-28 at 8 51 27 AM(1)](https://user-images.githubusercontent.com/4013349/225738093-f18f450d-86ae-4f08-9452-90b1cfa1d701.jpg)
+
+* `operator`: [our doc](https://docs.ci.openshift.org/docs/how-tos/testing-operator-sdk-operators/)
+* Interface to steps was the index image: [optional-operators-subscribe](https://steps.ci.openshift.org/reference/optional-operators-subscribe)
+* Interface to steps is the bundle image: `operator-sdk run bundle -n my-namespace "$OO_BUNDLE_INIT"` because [operator-sdk has moved to file-based catalogs](https://docs.ci.openshift.org/docs/how-tos/testing-operator-sdk-operators/#moving-to-file-based-catalog)
+* Skip the index since it is useless: `skip_building_index`
+
 # demo: Feb 2 2023
 
 Status:

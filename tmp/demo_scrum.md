@@ -5,7 +5,7 @@
 * `operator`: [our doc](https://docs.ci.openshift.org/docs/how-tos/testing-operator-sdk-operators/)
 * Interface to steps was the index image: [optional-operators-subscribe](https://steps.ci.openshift.org/reference/optional-operators-subscribe)
 * Interface to steps is the bundle image: `operator-sdk run bundle -n my-namespace "$OO_BUNDLE_INIT"` because [operator-sdk has moved to file-based catalogs](https://docs.ci.openshift.org/docs/how-tos/testing-operator-sdk-operators/#moving-to-file-based-catalog)
-* Skip the index since it is useless: `skip_building_index`
+* Skip the index since it is useless: `skip_building_index`. Reverted because ci-op does that already.
 
 # demo: Feb 2 2023
 

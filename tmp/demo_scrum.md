@@ -2,7 +2,7 @@
 
 ![Screenshot 2022-11-28 at 8 51 27 AM(1)](https://user-images.githubusercontent.com/4013349/225738093-f18f450d-86ae-4f08-9452-90b1cfa1d701.jpg)
 
-* `operator`: named and unnamed bundles and index. See [our doc](https://docs.ci.openshift.org/docs/how-tos/testing-operator-sdk-operators/). PR-jobs.
+* `operator`: unnamed and named bundles and index. See [our doc](https://docs.ci.openshift.org/docs/how-tos/testing-operator-sdk-operators/). PR-jobs: [unamed](https://prow.ci.openshift.org/view/gs/origin-ci-test/pr-logs/pull/openshift_windows-machine-config-operator/1492/pull-ci-openshift-windows-machine-config-operator-master-ci-index/1637983366806507520) and [named](https://prow.ci.openshift.org/view/gs/origin-ci-test/pr-logs/pull/rh-ecosystem-edge_kernel-module-management/482/pull-ci-rh-ecosystem-edge-kernel-module-management-main-ci-index-hub-operator-bundle/1637929248645713920).
 * Interface to steps was the index image: [optional-operators-subscribe](https://steps.ci.openshift.org/reference/optional-operators-subscribe)
 * Interface to steps is the bundle image: `operator-sdk run bundle -n my-namespace "$OO_BUNDLE_INIT"` because [operator-sdk has moved to file-based catalogs](https://docs.ci.openshift.org/docs/how-tos/testing-operator-sdk-operators/#moving-to-file-based-catalog)
 * Skip the index [WIP] since it is useless: `skip_building_index`. [ci-tools/pull/3331](https://github.com/openshift/ci-tools/pull/3331).

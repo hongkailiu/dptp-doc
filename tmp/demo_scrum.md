@@ -1,3 +1,11 @@
+# Moving to quay.io: June 8 2023
+The very first step: Promotion to Quay.io in addtion: [DPTP-3452](https://issues.redhat.com/browse/DPTP-3452)
+
+* An example job [branch-ci-openshift-cluster-image-registry-operator-master-images](https://prow.ci.openshift.org/view/gs/origin-ci-test/logs/branch-ci-openshift-cluster-image-registry-operator-master-images/1666753661004419072) and its [promotion pod](https://gcsweb-ci.apps.ci.l2s4.p1.openshiftapps.com/gcs/origin-ci-test/logs/branch-ci-openshift-cluster-image-registry-operator-master-images/1666753661004419072/artifacts/build-resources/pods.json)
+* Issue 1 (reported by CI users): cluster-bot's HANDDRAFTED job (promoting to build farm?) and it has been [fixed](https://prow.ci.openshift.org/view/gs/origin-ci-test/logs/release-openshift-origin-installer-launch-aws-modern/1666609610544386048) untentionally.
+* Issue 2 (thanks to Bruno): increased time for promotion, e.g., [ci-tools](https://prow.ci.openshift.org/job-history/gs/origin-ci-test/logs/branch-ci-openshift-ci-tools-master-images): `4m` to `8m`. The [fix](https://github.com/openshift/ci-tools/pull/3474) is on the way: A separate step/pod for "promotion-quay".
+
+
 # oo-testing: March 2023
 
 ![Screenshot 2022-11-28 at 8 51 27 AM(1)](https://user-images.githubusercontent.com/4013349/225738093-f18f450d-86ae-4f08-9452-90b1cfa1d701.jpg)

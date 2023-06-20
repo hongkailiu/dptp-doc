@@ -14,7 +14,7 @@ if [ "${VERSION}" = "${INSTALLED_VERSION}" ]; then
     exit
 fi
 
-curl -o "${TMP_DIR}/openshift-client-mac-${VERSION}.tar.gz" "https://openshift-release-artifacts.apps.ci.l2s4.p1.openshiftapps.com/${VERSION}/openshift-client-mac-${VERSION}.tar.gz"
+curl -o "${TMP_DIR}/openshift-client-mac-${VERSION}.tar.gz" "https://openshift-release-artifacts-arm64.apps.ci.l2s4.p1.openshiftapps.com/${VERSION}/openshift-client-mac-arm64-${VERSION}.tar.gz"
 tar -xzvf "${TMP_DIR}/openshift-client-mac-${VERSION}.tar.gz" -C "${TMP_DIR}"
 mv "${TMP_DIR}/oc" "$HOME/bin"
 oc version --client

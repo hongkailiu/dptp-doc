@@ -14,6 +14,10 @@ podman version 4.5.1
 ➜  ~ podman machine init --cpus=4 --disk-size=100 --memory=8192 -v "$HOME/repo/openshift/release:$HOME/repo/openshift/release"
 ➜  ~ podman machine start
 ➜  ~ podman info
+
+➜  ~ podman run -v /Users/hongkliu/repo/openshift/release:/tmp/release ubuntu ls /tmp/release
+CONTRIBUTING.md
+...
 ```
 
 

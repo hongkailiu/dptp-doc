@@ -49,4 +49,4 @@ Sometimes, we need to restart the machine to make the volume accessible to the c
 ➜  ~ podman machine start
 ```
 
-The volume bind option SELinux `:z` and `:Z` for example, `--volume "$PWD:/tmp/release:z"`, has not been supporte on 'Mac with Apple silicon'. We need to remove it to run the command.
+The volume bind option SELinux `:z` and `:Z` for example, `--volume "$PWD:/tmp/release:z"`, has [not been supported on Mac](https://github.com/containers/podman/issues/13631#issuecomment-1077643246). We need to remove it to run the command.

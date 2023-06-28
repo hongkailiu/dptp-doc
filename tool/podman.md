@@ -22,6 +22,9 @@ Mounting volume... /Users/hongkliu/repo:/Users/hongkliu/repo
 ➜  ~ podman run -v /Users/hongkliu/repo/openshift/release:/tmp/release ubuntu ls /tmp/release
 CONTRIBUTING.md
 ...
+
+### To delete the machine
+➜  ~ podman machine rm
 ```
 
 
@@ -35,3 +38,15 @@ Doc: [here](https://edofic.com/posts/2021-09-12-podman-m1-amd64/)
 ➜  ~ rpm-ostree install qemu-user-static
 ➜  ~ systemctl reboot
 ```
+
+
+## troubleshooting
+
+Sometimes, we need to restart the machine to make the volume accessible to the container
+
+```
+➜  ~ podman machine stop
+➜  ~ podman machine start
+```
+
+The volume bind option SELinux `:z` and `:Z` for example, `--volume "$PWD:/tmp/release:z"`, has not been supporte on 'Mac with Apple silicon'. We need to remove it to run the command.

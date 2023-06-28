@@ -212,6 +212,9 @@ $ podman run --entrypoint='["cat", "/etc/shells"]'  -it docker.io/timberio/vecto
 
 ```bash
 # skopeo copy --src-creds hongkailiu:secret docker://registry.svc.ci.openshift.org/ci-op-v9xbbsn6/pipeline:ci-operator docker://quay.io/hongkailiu/ci-op:ci-operator-009
+
+### on mac with apple-silicon chip
+$ skopeo inspect --override-os=linux --override-arch amd64 docker://registry.ci.openshift.org/ci/redhat-operator-index:v4.10
 ```
 
 ## misc

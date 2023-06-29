@@ -35,7 +35,7 @@ Follow [those steps](README.md#prerequisites).
 * Intellij Ultimate Edition + go plugin
 * vscode
 * goland: [installation](https://www.jetbrains.com/help/go/installation-guide.html#first-run)
-  * M2 (apple silicon): with "aarch64" in the filename, e.g., goland-2023.1.3-aarch64.dmg
+  * M2 (apple silicon): with "aarch64" in the filename, e.g., goland-2023.1.3-aarch64.dmg, on [the download page](https://www.jetbrains.com/go/download/?#section=mac)
   * [version-control-local-changes](https://dirask.com/posts/IntelliJ-IDEA-show-version-control-local-changes-1bdzMp)
 
 ### Dep. Management

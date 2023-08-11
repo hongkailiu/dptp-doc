@@ -146,6 +146,11 @@ oc exec -it -n ci deck-internal-7b5cb98cc9-6fh69 -c deck -- sh
 ### port-forward alert manager UI
 oc --as system:admin --context hive port-forward -n openshift-user-workload-monitoring alertmanager-user-workload-0 9093:9093
 
+
+### rsh
+oc --as system:admin --context build01 rsh -n openshift-monitoring -c prometheus prometheus-k8s-1
+### exec
+oc --as system:admin --context build01 exec -n openshift-monitoring prometheus-k8s-1 -- rm -rf wal/
 ```
 
 ## gcloud

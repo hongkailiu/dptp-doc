@@ -248,3 +248,12 @@ $ cat /tmp/repo.txt | while read line; do find /Users/hongkliu/repo/openshift/re
 $ ci-operator-prowgen --from-dir ./ci-operator/config/ --to-dir ./ci-operator/jobs/
 ```
 
+
+## Promethus
+
+```
+# workers' upgrade
+count by (kernel_version, kubelet_version) (kube_node_info)
+
+group by (type, from_version, version) (cluster_version{type=~"current|updating"})
+```

@@ -249,10 +249,18 @@ $ ci-operator-prowgen --from-dir ./ci-operator/config/ --to-dir ./ci-operator/jo
 ```
 
 
-## Promethus
+## upgrade progress
+
+oc cli:
 
 ```
-# workers' upgrade
+oc get -o json nodes | jq -r '.items[].metadata.annotations | .["machineconfiguration.openshift.io/currentConfig"] + " " + .["machineconfiguration.openshift.io/desiredConfig"] + " " + .["machineconfiguration.openshift.io/state"]' | sort | uniq -c
+```
+
+
+Promethus queries:
+
+```console
 count by (kernel_version, kubelet_version) (kube_node_info)
 
 group by (type, from_version, version) (cluster_version{type=~"current|updating"})

@@ -254,7 +254,7 @@ $ ci-operator-prowgen --from-dir ./ci-operator/config/ --to-dir ./ci-operator/jo
 oc cli:
 
 ```
-oc get -o json nodes | jq -r '.items[].metadata.annotations | .["machineconfiguration.openshift.io/currentConfig"] + " " + .["machineconfiguration.openshift.io/desiredConfig"] + " " + .["machineconfiguration.openshift.io/state"]' | sort | uniq -c
+oc --context build02 get -o json nodes | jq -r '.items[].metadata.annotations | .["machineconfiguration.openshift.io/currentConfig"] + " " + .["machineconfiguration.openshift.io/desiredConfig"] + " " + .["machineconfiguration.openshift.io/state"]' | sort | uniq -c
 ```
 
 

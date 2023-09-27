@@ -1,3 +1,55 @@
+# Dev env of ci-docs
+
+* [Hugo Documentation](https://gohugo.io/documentation/): _static_ website engine with the [Docsy](https://themes.gohugo.io/themes/docsy/) theme.
+
+* bineries:
+
+```console
+$ hugo version
+hugo v0.119.0 ...
+
+$ npm -v
+10.1.0
+```
+
+* Dependencies
+
+```console
+$ make generate
+```
+
+* run
+
+```console
+$ hugo server         
+...
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at //localhost:1313/ (bind address 127.0.0.1) 
+Press Ctrl+C to stop
+```
+
+Including dynamic content: This is a hacking way. Let us keep it simple and minimal.
+
+```console
+$ git --no-pager diff config.yaml 
+diff --git a/config.yaml b/config.yaml
+index 2ca06e8..1db4771 100644
+--- a/config.yaml
++++ b/config.yaml
+@@ -8,7 +8,7 @@ params:
+   offlineSearch: true
+   github_branch: master
+   github_repo: "https://github.com/openshift/ci-docs"
+-  api_v1_url: "https://cluster-display.ci.openshift.org"
++  api_v1_url: "http://localhost:8090"
+ enableGitInfo: true
+ menu:
+   main:
+
+$ cd ../ci-tools
+$ make cluster-display
+```
+
 # Moving to quay.io: June 8 2023
 The very first step: Promotion to Quay.io in addtion: [DPTP-3452](https://issues.redhat.com/browse/DPTP-3452): 
 

@@ -22,11 +22,17 @@ fields datefloor(@timestamp, 24h) as date
 
 The corresponding [code](https://github.com/openshift/ci-tools/blob/4ef739fd69dc672de7673fb984d273064e9f27b4/pkg/controller/quay_io_ci_images_distributor/quay_io_ci_images_distributor.go#L178) in the src.
 
+* `msg="Image is up to date"`: images up to date from [code](https://github.com/openshift/ci-tools/blob/e5683bf2bb5b3d11e15f37905e7d72d30bdb8e58/pkg/controller/quay_io_ci_images_distributor/quay_io_ci_images_distributor.go#L197)
+
+* `msg="Mirroring ..."`: `oc-image-mirror` per day from [code](https://github.com/openshift/ci-tools/blob/e5683bf2bb5b3d11e15f37905e7d72d30bdb8e58/pkg/controller/quay_io_ci_images_distributor/oc_quay_io_image_helper.go#L127)
+
+* `msg="Mirrored successfully"`: successes of `oc-image-mirror` per day from [code](https://github.com/openshift/ci-tools/blob/e5683bf2bb5b3d11e15f37905e7d72d30bdb8e58/pkg/controller/quay_io_ci_images_distributor/oc_quay_io_image_helper.go#L138)
+
 * failures of `oc-image-mirror` per day
 
-  * with retries
-  * without retires
+  * `msg="Failed to mirror"`: with retries from [code](https://github.com/openshift/ci-tools/blob/e5683bf2bb5b3d11e15f37905e7d72d30bdb8e58/pkg/controller/quay_io_ci_images_distributor/oc_quay_io_image_helper.go#L135)
+  * `msg="Failed to mirror even with retries"`: without retires from [code](https://github.com/openshift/ci-tools/blob/e5683bf2bb5b3d11e15f37905e7d72d30bdb8e58/pkg/controller/quay_io_ci_images_distributor/mirror.go#L116)
  
-* a
+
 
 

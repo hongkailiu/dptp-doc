@@ -36,6 +36,13 @@ The corresponding [code](https://github.com/openshift/ci-tools/blob/4ef739fd69dc
 
 ## Errors
 
+```
+fields @timestamp,msg, @message, @logStream, @log
+| filter(component="ci-images-mirror" and msg="Running command failed." and (args like /image mirror.*/))
+| sort @timestamp desc 
+| limit 20
+```
+
 > oc -n ci extract secret/registry-push-credentials-ci-images-mirror --to=- | jq > /tmp/p.c
 
 ### schema version 1

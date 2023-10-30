@@ -34,5 +34,42 @@ The corresponding [code](https://github.com/openshift/ci-tools/blob/4ef739fd69dc
   * `msg="Failed to mirror even with retries"`: without retires from [code](https://github.com/openshift/ci-tools/blob/e5683bf2bb5b3d11e15f37905e7d72d30bdb8e58/pkg/controller/quay_io_ci_images_distributor/mirror.go#L116)
  
 
+## Errors
 
+> oc -n ci extract secret/registry-push-credentials-ci-images-mirror --to=- | jq > /tmp/p.c
 
+### schema version 1
+
+```console
+$ oc image mirror --keep-manifest-list --registry-config=/tmp/p.c --continue-on-error=true --max-per-registry=20 --dry-run=false registry.ci.openshift.org/openshift/release@sha256:09e51ff46de9707cab1d34b1c0d3ee40388f610de21ce30b51153a26c70473b7=quay.io/openshift/ci:openshift_release_tectonic-console-builder-v19 
+...
+I1030 18:22:12.293011   72990 manifest.go:550] warning: Digests are not preserved with schema version 1 images. Support for schema version 1 images will be removed in a future release
+...
+
+$ oc image info registry.ci.openshift.org/openshift/release@sha256:09e51ff46de9707cab1d34b1c0d3ee40388f610de21ce30b51153a26c70473b7 -o json -a /tmp/p.c | jq -r '.mediaType'
+application/vnd.docker.distribution.manifest.v1+prettyjws
+
+$ oc image info registry.ci.openshift.org/openshift/release@sha256:09e51ff46de9707cab1d34b1c0d3ee40388f610de21ce30b51153a26c70473b7 -o json -a /tmp/p.c | jq -r '.digest'
+sha256:09e51ff46de9707cab1d34b1c0d3ee40388f610de21ce30b51153a26c70473b7
+$ oc image info quay.io/openshift/ci:openshift_release_tectonic-console-builder-v19 -o json -a /tmp/p.c | jq -r '.digest'
+sha256:a97051f6ee6c5372c7bee11f6eda922d01351028c24f90273e4662b9dbb87ad3
+
+$ oc image info registry.ci.openshift.org/openshift/release@sha256:09e51ff46de9707cab1d34b1c0d3ee40388f610de21ce30b51153a26c70473b7 -o json -a /tmp/p.c | jq -r '.config.created'
+2020-01-17T14:58:27.4844326Z
+```
+
+### unknown blob
+
+```console
+$ oc image mirror --keep-manifest-list --registry-config=/tmp/p.c --continue-on-error=true --max-per-registry=20 --dry-run=false registry.ci.openshift.org/ci/namespace-ttl-controller@sha256:cfd40eaa6282ae5cc93d87f74f7fa9af9459be7b497cb0c334f4408b81a5142f=quay.io/openshift/ci:20231030_sha256_cfd40eaa6282ae5cc93d87f74f7fa9af9459be7b497cb0c334f4408b81a5142f
+...
+error: unable to open source layer sha256:e30853ed228ffef1bb93a5ead95e0002eb7ad6eba0178d30da4585d1d10aa5df to copy to quay.io/openshift/ci: unknown blob
+error: unable to push manifest to quay.io/openshift/ci:20231030_sha256_cfd40eaa6282ae5cc93d87f74f7fa9af9459be7b497cb0c334f4408b81a5142f: manifest invalid: manifest invalid
+info: Mirroring completed in 650ms (0B/s)
+error: one or more errors occurred
+
+$ oc image info registry.ci.openshift.org/ci/namespace-ttl-controller@sha256:cfd40eaa6282ae5cc93d87f74f7fa9af9459be7b497cb0c334f4408b81a5142f -o json -a /tmp/p.c | jq -r '.config.created'
+2020-10-21T12:00:48.051759197Z
+```
+
+How did it work in our production?

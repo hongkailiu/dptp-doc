@@ -72,4 +72,4 @@ $ oc image info registry.ci.openshift.org/ci/namespace-ttl-controller@sha256:cfd
 2020-10-21T12:00:48.051759197Z
 ```
 
-How did it work in our production?
+We do not use this image stream any more. The one in our production is from `is/ci-ns-ttl-controller`.

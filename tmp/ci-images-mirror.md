@@ -79,4 +79,12 @@ $ oc image info registry.ci.openshift.org/ci/namespace-ttl-controller@sha256:cfd
 2020-10-21T12:00:48.051759197Z
 ```
 
-We do not use this image stream any more. The one in our production is from `is/ci-ns-ttl-controller`.
+We do not use `is/namespace-ttl-controller` any more which is from [build-config](https://github.com/openshift/ci-ns-ttl-controller/blob/f2f2470c99b91667604a7593601e21dd1add4b01/deploy/controller-build.yaml#L21C13-L21C37). The one in our production is from `is/ci-ns-ttl-controller`.
+
+Backup and delete:
+
+```console
+$ oc --context app.ci get is namespace-ttl-controller -n ci > namespace-ttl-controller.is.yaml
+$ oc --context app.ci delete is namespace-ttl-controller -n ci
+imagestream.image.openshift.io "namespace-ttl-controller" deleted
+```

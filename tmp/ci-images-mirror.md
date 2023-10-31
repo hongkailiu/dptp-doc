@@ -88,3 +88,70 @@ $ oc --context app.ci get is namespace-ttl-controller -n ci > namespace-ttl-cont
 $ oc --context app.ci delete is namespace-ttl-controller -n ci
 imagestream.image.openshift.io "namespace-ttl-controller" deleted
 ```
+
+Another broken image:
+
+```
+$ oc image mirror --keep-manifest-list --registry-config=/tmp/p.c --continue-on-error=true --max-per-registry=20 --dry-run=false registry.ci.openshift.org/openshift/ansible-runner@sha256:bd09ef403f2f90f2c6bd133d7533e939058903f69223c5f12557a49e3aed14bb
+
+$ oc get is -n openshift ansible-runner -o yaml
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"image.openshift.io/v1","kind":"ImageStream","metadata":{"annotations":{},"name":"ansible-runner","namespace":"openshift"},"spec":{"tags":[{"from":{"kind":"DockerImage","name":"docker.io/ansible/ansible-runner:latest"},"importPolicy":{"scheduled":false},"name":"latest"}]}}
+    openshift.io/image.dockerRepositoryCheck: "2021-06-03T16:24:42Z"
+  creationTimestamp: "2020-05-29T13:52:00Z"
+  generation: 3366
+  name: ansible-runner
+  namespace: openshift
+  resourceVersion: "2932387480"
+  uid: ff02b090-c77d-441a-a60c-d5a26de66300
+spec:
+  lookupPolicy:
+    local: true
+  tags:
+  - annotations: null
+    from:
+      kind: DockerImage
+      name: docker.io/ansible/ansible-runner:latest
+    generation: 3365
+    importPolicy:
+      importMode: Legacy
+    name: latest
+    referencePolicy:
+      type: Local
+status:
+  dockerImageRepository: image-registry.openshift-image-registry.svc:5000/openshift/ansible-runner
+  publicDockerImageRepository: registry.ci.openshift.org/openshift/ansible-runner
+  tags:
+  - conditions:
+    - generation: 3365
+      lastTransitionTime: "2021-06-03T16:24:42Z"
+      message: 'Internal error occurred: docker.io/ansible/ansible-runner:latest:
+        toomanyrequests: You have reached your pull rate limit. You may increase the
+        limit by authenticating and upgrading: https://www.docker.com/increase-rate-limit'
+      reason: InternalError
+      status: "False"
+      type: ImportSuccess
+    items:
+    - created: "2020-06-02T11:50:06Z"
+      dockerImageReference: docker.io/ansible/ansible-runner@sha256:bd09ef403f2f90f2c6bd133d7533e939058903f69223c5f12557a49e3aed14bb
+      generation: 3364
+      image: sha256:bd09ef403f2f90f2c6bd133d7533e939058903f69223c5f12557a49e3aed14bb
+    tag: latest
+
+$ oc get istag -n openshift ansible-runner:latest -o yaml
+apiVersion: image.openshift.io/v1
+conditions:
+- generation: 3365
+  lastTransitionTime: "2021-06-03T16:24:42Z"
+  message: 'Internal error occurred: docker.io/ansible/ansible-runner:latest: toomanyrequests:
+    You have reached your pull rate limit. You may increase the limit by authenticating
+    and upgrading: https://www.docker.com/increase-rate-limit'
+  reason: InternalError
+  status: "False"
+  type: ImportSuccess
+generation: 3364
+```

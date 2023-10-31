@@ -154,4 +154,8 @@ conditions:
   status: "False"
   type: ImportSuccess
 generation: 3364
+
 ```
+
+* > $ oc get istag -n ci cincinnati-build-root:latest -o yaml
+* > $ oc get istag -n ocp-private 4.1-priv:machine-os-content -o yaml

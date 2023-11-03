@@ -35,7 +35,7 @@ The corresponding [code](https://github.com/openshift/ci-tools/blob/4ef739fd69dc
   * `msg="Failed to mirror"`: with retries from [code](https://github.com/openshift/ci-tools/blob/e5683bf2bb5b3d11e15f37905e7d72d30bdb8e58/pkg/controller/quay_io_ci_images_distributor/oc_quay_io_image_helper.go#L135)
   * `msg="Failed to mirror even with retries"`: without retires from [code](https://github.com/openshift/ci-tools/blob/e5683bf2bb5b3d11e15f37905e7d72d30bdb8e58/pkg/controller/quay_io_ci_images_distributor/mirror.go#L116)
 
- * mirror command duration:
+* mirror command duration:
 
 > histogram_quantile(0.9, rate(http_request_duration_seconds_bucket[10m]))
 

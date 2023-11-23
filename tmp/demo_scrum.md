@@ -1,3 +1,13 @@
+# Nov 23: qci-appci
+
+- a reverse-proxy for the image registry `quay.io/openshift/ci`: [qci-appci/README.md](https://github.com/openshift/ci-tools/blob/master/cmd/qci-appci/README.md)
+- the face of CI registry: [ci-docs](https://docs.ci.openshift.org/docs/how-tos/use-registries-in-build-farm/#the-ci-image-repository-in-quayio-qci)
+- access control delegated to RBACs on `app.ci`
+
+![qci-appci (1)](https://github.com/hongkailiu/dptp-doc/assets/4013349/8fe98b2f-e819-4fb6-ba75-a58e1647c0a6)
+
+
+
 # Dev env of ci-docs
 
 * [Hugo Documentation](https://gohugo.io/documentation/): _static_ website engine with the [Docsy](https://themes.gohugo.io/themes/docsy/) theme.

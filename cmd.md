@@ -229,8 +229,6 @@ $ skopeo inspect --override-os=linux --override-arch amd64 docker://registry.ci.
 
 > CONTAINER_ENGINE=podman PROMTOKEN_TEMPLATE=/Users/hongkliu/repo/tmp/abc-script.XXXXXX ./hack/failover.sh --enable-cluster=build02
 > CONTAINER_ENGINE=podman VOLUME_MOUNT_FLAGS='' make jobs
-> hack/generators/release-controllers/content/osd_rc_deployments.py
-
 
 > vi hack/generators/release-controllers/content/osd_rc_deployments.py
  

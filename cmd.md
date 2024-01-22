@@ -151,6 +151,9 @@ oc --as system:admin --context hive port-forward -n openshift-user-workload-moni
 oc --as system:admin --context build01 rsh -n openshift-monitoring -c prometheus prometheus-k8s-1
 ### exec
 oc --as system:admin --context build01 exec -n openshift-monitoring prometheus-k8s-1 -- rm -rf wal/
+
+### list pods on a specific node
+oc --context build02 get pod -A -o wide --field-selector spec.nodeName=build0-gstfj-m-1.c.openshift-ci-build-farm.internal
 ```
 
 ## gcloud

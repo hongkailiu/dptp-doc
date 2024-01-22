@@ -225,6 +225,16 @@ $ podman run --entrypoint='["cat", "/etc/shells"]'  -it docker.io/timberio/vecto
 $ skopeo inspect --override-os=linux --override-arch amd64 docker://registry.ci.openshift.org/ci/redhat-operator-index:v4.10
 ```
 
+## failover
+
+> CONTAINER_ENGINE=podman PROMTOKEN_TEMPLATE=/Users/hongkliu/repo/tmp/abc-script.XXXXXX ./hack/failover.sh --enable-cluster=build02
+> CONTAINER_ENGINE=podman VOLUME_MOUNT_FLAGS='' make jobs
+> hack/generators/release-controllers/content/osd_rc_deployments.py
+
+# vi hack/generators/release-controllers/content/osd_rc_deployments.py
+
+> source ~/tool/p3env/bin/activate && make release-controllers
+
 ## misc
 
 > oc --context build01 get events --all-namespaces -o json | jq --raw-output '.items[] | select(.message | test(".*context deadline exceeded.")) | .source.host' | sort | uniq -c

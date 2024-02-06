@@ -248,7 +248,7 @@ $ oc --as system:admin exec -n ci $tide_pod -- wget -O- --header "Authorization:
 ```
 
 ```console
-$ oc get nodes -o json | jq -r '.items[]|(select((.spec.taints != null) and (.spec.taints | length > 0)))|select((.spec.taints[].key=="manual-provision"))|"\(.metadata.name) \(.metadata.labels."node.kubernetes.io/instance-type")"'
+$ oc get nodes -o json | jq -r '.items[]|(select((.spec.taints != null) and .spec.taints[].key=="manual-provision"))|"\(.metadata.name) \(.metadata.labels."node.kubernetes.io/instance-type")"'
 ip-10-0-128-253.ec2.internal r5.2xlarge
 ip-10-0-134-82.ec2.internal r5.2xlarge
 ip-10-0-136-237.ec2.internal r5.2xlarge

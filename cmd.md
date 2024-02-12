@@ -254,6 +254,10 @@ ip-10-0-134-82.ec2.internal r5.2xlarge
 ip-10-0-136-237.ec2.internal r5.2xlarge
 ```
 
+```console
+$ oc --context build05 adm top no -l node-role.kubernetes.io/master
+```
+
 ## migration
 
 ```bash

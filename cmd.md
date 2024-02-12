@@ -204,6 +204,11 @@ $ gsutil ls gs://origin-ci-test/
 $ gsutil -m rm -r gs://origin-ci-test/pr-logs/pull/openshift_release/5534/pull-ci-openshift-release-master-build01-dry/8/
 ```
 
+```console
+### get-serial-port-output
+$ gcloud --project openshift-ci-build-farm --format json compute instances get-serial-port-output --zone us-east1-c build0-gstfj-ci-builds-worker-c-5pbsj > build0-gstfj-ci-builds-worker-c-5pbsj.json
+```
+
 ## git
 
 ```bash

@@ -288,8 +288,12 @@ oc --context build02 get -o json nodes | jq -r '.items[].metadata.annotations | 
 
 Promethus queries:
 
+k8s metrics: [doc](https://kubernetes.io/docs/reference/instrumentation/metrics/)
+openshift metrics: [doc](https://docs.openshift.com/container-platform/4.14/support/remote_health_monitoring/showing-data-collected-by-remote-health-monitoring.html)
+
 ```console
 count by (kernel_version, kubelet_version) (kube_node_info)
 
-group by (type, from_version, version) (cluster_version{type=~"current|updating"})
+group by (type, from_version, version) (
+{type=~"current|updating"})
 ```

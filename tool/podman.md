@@ -30,6 +30,8 @@ CONTRIBUTING.md
 
 ## run x86-64 images on arm64 hosting
 
+(Seem no need of those steps for `podman version 5.1.1`)
+
 Doc: [here](https://edofic.com/posts/2021-09-12-podman-m1-amd64/)
 
 ```console

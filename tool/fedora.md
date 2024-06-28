@@ -478,3 +478,14 @@ You can remove cached packages by executing 'dnf clean packages'.
 $ sudo dnf system-upgrade reboot
 
 ```
+
+## enable sshd.service
+
+```
+sudo systemctl status sshd.service
+sudo systemctl start sshd.service
+sudo systemctl enable sshd.service
+
+```
+
+

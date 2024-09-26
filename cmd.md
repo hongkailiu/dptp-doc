@@ -219,6 +219,7 @@ $ git branch | grep -ve " master$" | xargs git branch -D
 
 ```
 $ podman run --entrypoint='["cat", "/etc/shells"]'  -it docker.io/timberio/vector:0.8.2-debian
+$ podman run -it --arch amd64 --entrypoint='["bash"]' --rm quay.io/openshift-release-dev/ocp-release:4.16.15-x86_64
 ```
 
 ## skopeo

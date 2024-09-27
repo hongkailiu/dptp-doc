@@ -154,6 +154,10 @@ oc --as system:admin --context build01 exec -n openshift-monitoring prometheus-k
 
 ### list pods on a specific node
 oc --context build02 get pod -A -o wide --field-selector spec.nodeName=build0-gstfj-m-1.c.openshift-ci-build-farm.internal
+
+### overrides in clusterversion
+oc patch clusterversion version --type json -p '[{"op": "add", "path": "/spec/overrides", "value": [{"kind": "Deployment", "group": "apps", "namespace": "openshift-machine-api", "name": "cluster-autoscaler-operator", "unmanaged": true}]}]'
+oc patch clusterversion version --type json -p '[{"op": "remove", "path": "/spec/overrides"}]'
 ```
 
 ## gcloud

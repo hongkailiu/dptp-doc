@@ -13,4 +13,4 @@
   5. `23m15s`: upgrade completed
 
 Issues: 
-* Worker Pool: Completion 67% (2/3)
+* Worker Pool: Completion 67% (2/3). WIP: [oc#1933](https://github.com/openshift/oc/pull/1933).

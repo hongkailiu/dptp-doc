@@ -1,4 +1,10 @@
 # Dec 4
+
+* builds by cluster-bot for [cvo#1093](https://github.com/openshift/oc/pull/1933)
+  1. `build 4.19,openshift/cluster-version-operator#1093`: [job](https://prow.ci.openshift.org/view/gs/test-platform-results/logs/release-openshift-origin-installer-launch-aws-modern/1863693760852922368)
+  2. `build 4.18,openshift/cluster-version-operator#1093`: [job](https://prow.ci.openshift.org/view/gs/test-platform-results/logs/release-openshift-origin-installer-launch-aws-modern/1863690003989663744)
+
+
 * [OTA-1224](https://issues.redhat.com/browse/OTA-1224): status: simplify worker status line. [diff](https://github.com/openshift/oc/pull/1915/files#diff-62ba76b905a1f503936bc1d24ffb4e585fddfe75f1a4d4092a5b0257bac212b2R17)
 
   1. Move Outdated and Total to COMPLETION

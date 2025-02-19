@@ -104,3 +104,26 @@ Ncat: Version 6.40 ( http://nmap.org/ncat )
 Ncat: Connected to 192.168.122.133:53.
 
 ```
+
+
+## ports
+
+```console
+### list open ports
+$ netstat -anvp tcp | grep LISTEN
+tcp4       0      0  127.0.0.1.61359        *.*                    LISTEN                 0            0  131072  131072  21395      0 00100 00000206 0000000000069e0c 00000001 00000800      1      0 000000
+
+### check the process
+$ ps aux | grep 21395
+hongkliu         21395   0.0  1.1 412906208 362784   ??  S     5:35pm   0:08.78 /Users/...
+
+### check if a specific port is open
+$ nc -z -v 127.0.0.1 62222
+nc: connectx to 127.0.0.1 port 62222 (tcp) failed: Connection refused
+
+### open the port 62222 with another terminal
+$ nc -l -k 62222
+
+$ nc -z -v 127.0.0.1 62222
+Connection to 127.0.0.1 port 62222 [tcp/*] succeeded!
+```

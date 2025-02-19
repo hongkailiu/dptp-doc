@@ -108,6 +108,8 @@ Ncat: Connected to 192.168.122.133:53.
 
 ## ports
 
+### on mac
+
 ```console
 ### list open ports
 $ netstat -anvp tcp | grep LISTEN
@@ -126,4 +128,23 @@ $ nc -l -k 62222
 
 $ nc -z -v 127.0.0.1 62222
 Connection to 127.0.0.1 port 62222 [tcp/*] succeeded!
+```
+
+### on (openshift) node
+
+```console
+$ oc get pod -n openshift-cluster-version cluster-version-operator-5d859f48d-6kpxk -o wide
+NAME                                       READY   STATUS    RESTARTS   AGE   IP           NODE                                       NOMINATED NODE   READINESS GATES
+cluster-version-operator-5d859f48d-6kpxk   1/1     Running   0          79m   10.0.55.72   ip-10-0-55-72.us-west-1.compute.internal   <none>           <none>
+
+$ oc debug node/ip-10-0-55-72.us-west-1.compute.internal
+Starting pod/ip-10-0-55-72us-west-1computeinternal-debug-wbwhz ...
+To use host binaries, run `chroot /host`
+Pod IP: 10.0.55.72
+If you don't see a command prompt, try pressing enter.
+sh-5.1# chroot /host
+sh-5.1# netstat -tulpn | grep LISTEN | grep 9099
+tcp6       0      0 :::9099                 :::*                    LISTEN      8283/cluster-versio
+
+
 ```

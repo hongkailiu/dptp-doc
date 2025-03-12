@@ -4,7 +4,7 @@ In Petr's previous demo, we have seen `ClusterVersion/version` in the status api
 
 The CM [status-api-cm-prototype.yaml](https://gcsweb-ci.apps.ci.l2s4.p1.openshiftapps.com/gcs/test-platform-results/pr-logs/pull/openshift_cluster-version-operator/1164/pull-ci-openshift-cluster-version-operator-main-e2e-agnostic-usc-devpreview/1899151748635824128/artifacts/e2e-agnostic-usc-devpreview/e2e-test/artifacts/status-api-cm-prototype.yaml)
 is taken from
-[ProwJob/pull-ci-openshift-cluster-version-operator-main-e2e-agnostic-usc-devpreview](https://prow.ci.openshift.org/view/gs/test-platform-results/pr-logs/pull/openshift_cluster-version-operator/1164/pull-ci-openshift-cluster-version-operator-main-e2e-agnostic-usc-devpreview/1899151748635824128)
+[ProwJob/pull-ci-openshift-cluster-version-operator-main-e2e-agnostic-usc-devpreview](https://prow.ci.openshift.org/view/gs/test-platform-results/pr-logs/pull/openshift_cluster-version-operator/1164/pull-ci-openshift-cluster-version-operator-main-e2e-agnostic-usc-devpreview/1899151748635824128) which enables `DevPreview` and activates `USC` via [test-usc-integration.sh](https://github.com/openshift/cluster-version-operator/blob/main/hack/test-usc-integration.sh).
 
 ```console
 $ curl -s https://gcsweb-ci.apps.ci.l2s4.p1.openshiftapps.com/gcs/test-platform-results/pr-logs/pull/openshift_cluster-version-operator/1164/pull-ci-openshift-cluster-version-operator-main-e2e-agnostic-usc-devpreview/1899151748635824128/artifacts/e2e-agnostic-usc-devpreview/e2e-test/artifacts/status-api-cm-prototype.yaml | yq -r '.data."usc.cpi.cv-version"' | yq -y

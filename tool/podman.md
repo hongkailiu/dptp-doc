@@ -27,6 +27,15 @@ CONTRIBUTING.md
 ➜  ~ podman machine rm
 ```
 
+```console
+$ podman -v
+podman version 5.1.1
+
+# default auth path: /Users/hongkliu/.config/containers/auth.json
+$ podman login registry.redhat.io -p ${PODMAN_PASSWORD_GMAIL} -u ${PODMAN_USERNAME_GMAIL} -v
+Used:  /Users/hongkliu/.config/containers/auth.json
+Login Succeeded!
+```
 
 ## run x86-64 images on arm64 hosting
 

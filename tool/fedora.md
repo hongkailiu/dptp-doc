@@ -4,6 +4,8 @@
 
 [https://docs.fedoraproject.org/index.html](https://docs.fedoraproject.org/index.html)
 
+fedora vs rhel versions: https://docs.fedoraproject.org/en-US/quick-docs/fedora-and-red-hat-enterprise-linux/
+
 ## Launch a Fedora 26 instance on AWS
 
 Use command [here](https://github.com/hongkailiu/svt-case-doc/blob/master/cloud/ec2/ec2.md#fedora-26).

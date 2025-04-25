@@ -217,6 +217,10 @@ $ gcloud --project openshift-ci-build-farm --format json compute instances get-s
 
 ```bash
 $ git branch | grep -ve " master$" | xargs git branch -D
+
+$ git --no-pager log -S"ack-4" --all --pretty=oneline
+
+$ git --no-pager grep "ack-4" $(git rev-list --all -- install/0000_00_cluster-version-operator_01_admingate_configmap.yaml) install/0000_00_cluster-version-operator_01_admingate_configmap.yaml
 ```
 
 ## podman

@@ -1,3 +1,10 @@
+# Apr 15, 2026
+
+[OTA-1928: Validate release images' metadata](https://redhat.atlassian.net/browse/OTA-1928)
+
+* Job
+* SRC: Fetch metadata from a release image
+
 # Mar 12, 2025
 
 In Petr's previous demo, we have seen `ClusterVersion/version` in the status api (currently stored in a CM):

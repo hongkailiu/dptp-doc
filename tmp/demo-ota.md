@@ -3,7 +3,7 @@
 [OTA-1928: Validate release images' metadata](https://redhat.atlassian.net/browse/OTA-1928)
 
 * a new presumit "validate-release" on graph-data
-* src: Fetch metadata from a release image
+* src: fetch metadata from a release image
 * next step: move src to [openshift-eng/ota-tools](https://github.com/openshift-eng/ota-tools)
 
 # Mar 12, 2025

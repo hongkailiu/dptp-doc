@@ -4,6 +4,7 @@
 
 * Job
 * SRC: Fetch metadata from a release image
+* Next step: move src to [openshift-eng/ota-tools](https://github.com/openshift-eng/ota-tools)
 
 # Mar 12, 2025
 

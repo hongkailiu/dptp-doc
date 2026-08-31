@@ -19,7 +19,7 @@ Source: [redhat.atlassian.net](https://redhat.atlassian.net/browse/OCPSTRAT-3350
 | **[OPRUN-4730](https://redhat.atlassian.net/browse/OPRUN-4730)** | XS | 6 | Operator 1: adopt optional-related-image feature |
 | ⤷ [OPRUN-4732](https://redhat.atlassian.net/browse/OPRUN-4732) | | 3 | Group optional related images by product<br>features (relatedImageGroups) |
 | ⤷ [OPRUN-4733](https://redhat.atlassian.net/browse/OPRUN-4733) | | 3 | Generate olm bundle with the grouped optional<br>related images |
-| **[OPRUN-4731](https://redhat.atlassian.net/browse/OPRUN-4731)** | — | 6 | Operator 2: adopt optional-related-image feature |
+| **[OPRUN-4731](https://redhat.atlassian.net/browse/OPRUN-4731)** | XS | 6 | Operator 2: adopt optional-related-image feature |
 | **[OPRUN-4726](https://redhat.atlassian.net/browse/OPRUN-4726)** | XS | 5 | End-to-end tests for mandatory and optional<br>classification of related images |
 | **[OSDOCS-20296](https://redhat.atlassian.net/browse/OSDOCS-20296)** | XS | 3 | Docs for OCPSTRAT-3350 OLM/Operator Metadata:<br>Mandatory vs Optional Classification of Related<br>Images for Selective Disconnected Mirroring |
 | ⤷ [OSDOCS-21715](https://redhat.atlassian.net/browse/OSDOCS-21715) | | 3 | Document selective mirroring of optional<br>operator image groups (oc-mirror v2) |

@@ -1,12 +1,11 @@
 # OCPSTRAT-3350 — Hierarchy
 
-**Feature:** OLM/Operator Metadata: Mandatory vs Optional Classification of Related Images for Selective Disconnected Mirroring
+**Feature:** [OCPSTRAT-3350](https://redhat.atlassian.net/browse/OCPSTRAT-3350) OLM/Operator Metadata: Mandatory vs Optional Classification of Related Images for Selective Disconnected Mirroring
 
-Source: [redhat.atlassian.net](https://redhat.atlassian.net/browse/OCPSTRAT-3350) · Feature SP is the roll-up of all epics (50).
+Size: L; Total Story Points: 50
 
 | Key | Size | SP | Title |
 |---|---|---|---|
-| **[OCPSTRAT-3350](https://redhat.atlassian.net/browse/OCPSTRAT-3350)** | L | 50 | OLM/Operator Metadata: Mandatory vs Optional<br>Classification of Related Images for Selective<br>Disconnected Mirroring |
 | **[OPRUN-4724](https://redhat.atlassian.net/browse/OPRUN-4724)** | S | 18 | Support the metadata structure for mandatory<br>and optional classification of related images |
 | ⤷ [OPRUN-4725](https://redhat.atlassian.net/browse/OPRUN-4725) | | 5 | Define the metadata structure for mandatory and<br>Optional classification of related images |
 | ⤷ [OPRUN-4727](https://redhat.atlassian.net/browse/OPRUN-4727) | | 8 | Implement the relatedImageGroups schema extension<br>in operator-registry (alpha/declcfg + opm validate) |

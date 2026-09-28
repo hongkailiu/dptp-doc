@@ -159,4 +159,5 @@ No data yet from the operator authors for the typical/realistic selectors.
 
 **Serverless note:** `IMAGE_KN_PLUGIN_FUNC_TEKTON_S2I` (`source-to-image-rhel8`) exists only on the v1.35.0 bundle (not in the v1.38.0 labeling CSV) and was treated as unlabeled.
 
+## Future size
 OCPSTRAT-3755 t-shirt size: L (3-4 Sprint).

@@ -105,24 +105,12 @@ mirror:
 
 ---
 
-## Defaults and compatibility
-
-| Situation | Behavior |
-|-----------|----------|
-| Catalog / bundle with no labels | Full related-image set mirrored (today’s behavior) |
-| Package with no `selectors` | Only unlabeled images mirrored |
-| Package with selectors | Unlabeled + matching labeled images |
-| Metadata format | Additive only — no breaking schema change |
-
----
-
 ## Gaps and Impact
 
 **Out of this iteration**
 
-- Named group objects
+- Named group objects with human-readable title / description per feature
 - Explicit mandatory flag on an image
-- Human-readable title / description per feature
 - Built-in discovery CLI for available features
 
 **Impact:**  **labels** as the product model. Once an operator *starts* labeling images, existing ImageSetConfigurations that omit `selectors` will **stop** mirroring those labeled images until selectors are added. Catalogs that never adopt labels stay fully compatible.

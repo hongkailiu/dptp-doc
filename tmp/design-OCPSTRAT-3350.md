@@ -35,7 +35,7 @@ image: quay.io/example-com/foo-bundle:v0.3.0
 relatedImages:
   - name: operator
     image: quay.io/example-com/foo-operator:v0.3.0
-    # always mirrored (no labels)
+    # labels are optional
 
   - name: shared-operand
     image: quay.io/example-com/shared:v0.3.0

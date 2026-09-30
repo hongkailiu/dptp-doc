@@ -113,7 +113,7 @@ mirror:
 - Explicit mandatory flag on an image
 - Built-in discovery CLI for available features
 
-**Impact:**  **labels** as the product model. Once an operator *starts* labeling images, existing ImageSetConfigurations that omit `selectors` will **stop** mirroring those labeled images until selectors are added. Catalogs that never adopt labels stay fully compatible.
+**Impact:** Once an operator *starts* labeling images, existing ImageSetConfigurations that omit `selectors` will **stop** mirroring those labeled images until selectors are added. Catalogs that never adopt labels stay fully compatible.
 
 ---
 
@@ -132,8 +132,6 @@ No data yet from the operator authors for the typical/realistic selectors.
 
 
 **Concerns** (CNV team): operational overhead on operator authors from labeling the images, and risk of missing images at runtime.
-
-**Serverless note:** `IMAGE_KN_PLUGIN_FUNC_TEKTON_S2I` (`source-to-image-rhel8`) exists only on the v1.35.0 bundle (not in the v1.38.0 labeling CSV) and was treated as unlabeled.
 
 ## Future size
 OCPSTRAT-3755 t-shirt size: L (3-4 Sprint).

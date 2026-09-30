@@ -12,10 +12,9 @@ Disconnected users must mirror every related image an operator declares, even fo
 
 ## Core idea
 
-1. **Authors** attach optional Kubernetes **labels** to related images (in the bundle / CSV).
-2. **Administrators** choose which labeled images to mirror with Kubernetes **label selectors** in `ImageSetConfiguration`.
+1. **Operator authors** attach optional Kubernetes **labels** to related images (in the bundle / CSV).
+2. **Cluster administrators** choose which labeled images to mirror with Kubernetes **label selectors** in `ImageSetConfiguration`.
 
-There is no separate “group” object and no explicit mandatory/optional flag.  
 **Labeled ⇒ skippable. Unlabeled ⇒ always required.**
 
 ## Operator Author — metadata

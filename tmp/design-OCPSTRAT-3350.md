@@ -112,6 +112,7 @@ mirror:
 - Named group objects with human-readable title / description per feature
 - Explicit mandatory flag on an image
 - Built-in discovery CLI for available features
+- CI check: warn when Red Hat operator bundles declare no image labels
 
 **Impact:** Once an operator *starts* labeling images, existing ImageSetConfigurations that omit `selectors` will **stop** mirroring those labeled images until selectors are added. Catalogs that never adopt labels stay fully compatible.
 

@@ -137,24 +137,20 @@ No data yet from the operator authors for the typical/realistic selectors.
 ## Future size
 OCPSTRAT-3755 t-shirt size: L (3-4 Sprint).
 
-Closed children excluded. Epic SP is the sum of open children’s story points (Jira value used only when an epic has no open children).
-
-```
-OCPSTRAT-3755 SP=49  [Spike OPRUN-4753] OLM/Operator Metadata: Mandatory vs Optional Classification of Related Images for Selective Disconnected Mirroring
-├─ CLID-716 SP=9  Extend oc-mirror v2's ImageSetConfiguration to choose optional images
-│  ├─ CLID-717 SP=8  Extend oc-mirror v2's ImageSetConfiguration to choose images
-│  └─ CLID-719 SP=1  Update oc-mirror ImageSetConfiguration example to demo label selectors on related images
-├─ OPRUN-4724 SP=17  Support the metadata structure for classification of related images by labels
-│  ├─ OPRUN-4725 SP=5  Define the metadata structure for classification of related images
-│  ├─ OPRUN-4727 SP=8  Implement the relatedImages.labels schema extension in operator-registry (alpha/declcfg + opm validate)
-│  ├─ OPRUN-4728 SP=2  Document related image labels in the OLM file-based catalog olm.bundle reference
-│  └─ OPRUN-4764 SP=2  Extend RelatedImage in CSV.spec with labels
-├─ OPRUN-4726 SP=5  End-to-end tests for classification of related images
-├─ OPRUN-4730 SP=6  Operator 1 (kubevirt-hyperconverged): adopt optional-related-image feature
-│  ├─ OPRUN-4732 SP=3  Label related images by product features
-│  └─ OPRUN-4733 SP=3  Generate olm bundle with labels on related images
-├─ OPRUN-4731 SP=6  Operator 2 (serverless-operator): adopt optional-related-image feature
-└─ OSDOCS-20296 SP=6  Docs for OCPSTRAT-3350 OLM/Operator Metadata: Labeling Related Images for Selective Disconnected Mirroring
-   ├─ OSDOCS-21715 SP=3  Document selective mirroring of operator images (oc-mirror v2)
-   └─ OSDOCS-22742 SP=3  Document the labels field of relatedImages in the olm.bundle schema reference
-```
+- [OCPSTRAT-3755](https://redhat.atlassian.net/browse/OCPSTRAT-3755) SP=49  [Spike OPRUN-4753] OLM/Operator Metadata: Mandatory vs Optional Classification of Related Images for Selective Disconnected Mirroring
+  - [OPRUN-4724](https://redhat.atlassian.net/browse/OPRUN-4724) SP=17  Support the metadata structure for classification of related images by labels
+    - [OPRUN-4725](https://redhat.atlassian.net/browse/OPRUN-4725) SP=5  Define the metadata structure for classification of related images
+    - [OPRUN-4727](https://redhat.atlassian.net/browse/OPRUN-4727) SP=8  Implement the relatedImages.labels schema extension in operator-registry (alpha/declcfg + opm validate)
+    - [OPRUN-4728](https://redhat.atlassian.net/browse/OPRUN-4728) SP=2  Document related image labels in the OLM file-based catalog olm.bundle reference
+    - [OPRUN-4764](https://redhat.atlassian.net/browse/OPRUN-4764) SP=2  Extend RelatedImage in CSV.spec with labels
+  - [CLID-716](https://redhat.atlassian.net/browse/CLID-716) SP=9  Extend oc-mirror v2's ImageSetConfiguration to choose optional images
+    - [CLID-717](https://redhat.atlassian.net/browse/CLID-717) SP=8  Extend oc-mirror v2's ImageSetConfiguration to choose images
+    - [CLID-719](https://redhat.atlassian.net/browse/CLID-719) SP=1  Update oc-mirror ImageSetConfiguration example to demo label selectors on related images
+  - [OPRUN-4730](https://redhat.atlassian.net/browse/OPRUN-4730) SP=6  Operator 1 (kubevirt-hyperconverged): adopt optional-related-image feature
+    - [OPRUN-4732](https://redhat.atlassian.net/browse/OPRUN-4732) SP=3  Label related images by product features
+    - [OPRUN-4733](https://redhat.atlassian.net/browse/OPRUN-4733) SP=3  Generate olm bundle with labels on related images
+  - [OPRUN-4731](https://redhat.atlassian.net/browse/OPRUN-4731) SP=6  Operator 2 (serverless-operator): adopt optional-related-image feature
+  - [OPRUN-4726](https://redhat.atlassian.net/browse/OPRUN-4726) SP=5  End-to-end tests for classification of related images
+  - [OSDOCS-20296](https://redhat.atlassian.net/browse/OSDOCS-20296) SP=6  Docs for OCPSTRAT-3350 OLM/Operator Metadata: Labeling Related Images for Selective Disconnected Mirroring
+    - [OSDOCS-21715](https://redhat.atlassian.net/browse/OSDOCS-21715) SP=3  Document selective mirroring of operator images (oc-mirror v2)
+    - [OSDOCS-22742](https://redhat.atlassian.net/browse/OSDOCS-22742) SP=3  Document the labels field of relatedImages in the olm.bundle schema reference

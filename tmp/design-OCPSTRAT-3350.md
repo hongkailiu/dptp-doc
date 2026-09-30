@@ -134,39 +134,30 @@ No data yet from the operator authors for the typical/realistic selectors.
 
 **Concerns** (CNV team): operational overhead on operator authors from labeling the images, and risk of missing images at runtime; skipping versions wisely is a more natural solution but it turns out technically difficult.
 
-## Hierarchy
+## Future size
+OCPSTRAT-3755 t-shirt size: L (3-4 Sprint).
 
-Closed children excluded. Story points from Jira.
+Closed children excluded. Epic SP is the sum of open children’s story points (Jira value used only when an epic has no open children).
 
 ```
 OCPSTRAT-3755 SP=—  [Spike OPRUN-4753] OLM/Operator Metadata: Mandatory vs Optional Classification of Related Images for Selective Disconnected Mirroring
-├─ CLID-716 SP=12  Extend oc-mirror v2's ImageSetConfiguration to choose optional images
+├─ CLID-716 SP=9  Extend oc-mirror v2's ImageSetConfiguration to choose optional images
 │  ├─ CLID-717 SP=8  Extend oc-mirror v2's ImageSetConfiguration to choose images
 │  └─ CLID-719 SP=1  Update oc-mirror ImageSetConfiguration example to demo label selectors on related images
-│     (open child SP sum: 9)
-├─ OPRUN-4724 SP=20  Support the metadata structure for classification of related images by labels
+├─ OPRUN-4724 SP=17  Support the metadata structure for classification of related images by labels
 │  ├─ OPRUN-4725 SP=5  Define the metadata structure for classification of related images
 │  ├─ OPRUN-4727 SP=8  Implement the relatedImages.labels schema extension in operator-registry (alpha/declcfg + opm validate)
 │  ├─ OPRUN-4728 SP=2  Document related image labels in the OLM file-based catalog olm.bundle reference
 │  └─ OPRUN-4764 SP=2  Extend RelatedImage in CSV.spec with labels
-│     (open child SP sum: 17)
 ├─ OPRUN-4726 SP=5  End-to-end tests for classification of related images
-│  (no open children)
 ├─ OPRUN-4730 SP=6  Operator 1 (kubevirt-hyperconverged): adopt optional-related-image feature
 │  ├─ OPRUN-4732 SP=3  Label related images by product features
 │  └─ OPRUN-4733 SP=3  Generate olm bundle with labels on related images
-│     (open child SP sum: 6)
 ├─ OPRUN-4731 SP=6  Operator 2 (serverless-operator): adopt optional-related-image feature
-│  (no open children)
 ├─ OSDOCS-20296 SP=3  Docs for OCPSTRAT-3350 OLM/Operator Metadata: Labeling Related Images for Selective Disconnected Mirroring
 │  ├─ OSDOCS-21715 SP=3  Document selective mirroring of operator images (oc-mirror v2)
 │  └─ OSDOCS-22742 SP=—  Document the labels field of relatedImages in the olm.bundle schema reference
-│     (open child SP sum: 3)
 └─ SRVCOM-5208 SP=—  [Serverless] Spike - Serverless Operator Mandatory vs. Optional images for OLM
-   (no open children)
 ```
 
-Open child SP sum: 35. Epic SP sum: 52.
-
-## Future size
-OCPSTRAT-3755 t-shirt size: L (3-4 Sprint).
+Epic SP sum: 46.

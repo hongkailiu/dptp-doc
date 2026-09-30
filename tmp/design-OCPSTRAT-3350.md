@@ -111,8 +111,8 @@ mirror:
 
 - Named group objects with human-readable title / description per feature
 - Explicit mandatory flag on an image
-- Built-in discovery CLI for available features
-- CI check: warn when Red Hat operator bundles declare no image labels
+- Built-in discovery CLI for available features ([CLID-723](https://redhat.atlassian.net/browse/CLID-723))
+- CI check: warn when Red Hat operator bundles declare no image labels ([OPRUN-4729](https://redhat.atlassian.net/browse/OPRUN-4729))
 
 **Impact:** Once an operator *starts* labeling images, existing ImageSetConfigurations that omit `selectors` will **stop** mirroring those labeled images until selectors are added. Catalogs that never adopt labels stay fully compatible.
 
@@ -132,7 +132,7 @@ Sources: [OPRUN-4765](https://redhat.atlassian.net/browse/OPRUN-4765) (CNV), [OP
 No data yet from the operator authors for the typical/realistic selectors.
 
 
-**Concerns** (CNV team): operational overhead on operator authors from labeling the images, and risk of missing images at runtime.
+**Concerns** (CNV team): operational overhead on operator authors from labeling the images, and risk of missing images at runtime; skipping versions wisely is a more natural solution but it turns out technically difficult.
 
 ## Future size
 OCPSTRAT-3755 t-shirt size: L (3-4 Sprint).

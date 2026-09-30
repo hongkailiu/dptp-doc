@@ -65,7 +65,7 @@ mirror:
   operators:
   - catalog: registry.redhat.io/redhat/redhat-operator-index:v4.18
     packages:
-    # Include path: CoolFeatureA OR (GreatFeatureB + tier=frontend + version=1.2.3)
+    # Include path: CoolFeatureA OR (GreatFeatureB AND tier=frontend AND version=1.2.3)
     - name: aws-load-balancer-operator
       selectors:
       - matchExpressions:

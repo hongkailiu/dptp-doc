@@ -32,7 +32,7 @@ Default:    no labels  → always mirror
 
 ## Operator Author — metadata
 
-Optional field on each related image: `labels` (`map[string]string`), Kubernetes label syntax.
+Optional field on each related image: `labels` (`map[string]string`), Kubernetes label syntax. Example: [serverless-operator PR #4186](https://github.com/openshift-knative/serverless-operator/pull/4186/changes#diff-5a9371d1cdfd376365aba4ae0d4297d8d9d4e0fd85cc6d8886a4b79059b66f73).
 
 Same field in:
 

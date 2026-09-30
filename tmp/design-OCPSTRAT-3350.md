@@ -140,7 +140,7 @@ OCPSTRAT-3755 t-shirt size: L (3-4 Sprint).
 Closed children excluded. Epic SP is the sum of open children’s story points (Jira value used only when an epic has no open children).
 
 ```
-OCPSTRAT-3755 SP=—  [Spike OPRUN-4753] OLM/Operator Metadata: Mandatory vs Optional Classification of Related Images for Selective Disconnected Mirroring
+OCPSTRAT-3755 SP=49  [Spike OPRUN-4753] OLM/Operator Metadata: Mandatory vs Optional Classification of Related Images for Selective Disconnected Mirroring
 ├─ CLID-716 SP=9  Extend oc-mirror v2's ImageSetConfiguration to choose optional images
 │  ├─ CLID-717 SP=8  Extend oc-mirror v2's ImageSetConfiguration to choose images
 │  └─ CLID-719 SP=1  Update oc-mirror ImageSetConfiguration example to demo label selectors on related images
@@ -154,10 +154,7 @@ OCPSTRAT-3755 SP=—  [Spike OPRUN-4753] OLM/Operator Metadata: Mandatory vs Opt
 │  ├─ OPRUN-4732 SP=3  Label related images by product features
 │  └─ OPRUN-4733 SP=3  Generate olm bundle with labels on related images
 ├─ OPRUN-4731 SP=6  Operator 2 (serverless-operator): adopt optional-related-image feature
-├─ OSDOCS-20296 SP=3  Docs for OCPSTRAT-3350 OLM/Operator Metadata: Labeling Related Images for Selective Disconnected Mirroring
-│  ├─ OSDOCS-21715 SP=3  Document selective mirroring of operator images (oc-mirror v2)
-│  └─ OSDOCS-22742 SP=—  Document the labels field of relatedImages in the olm.bundle schema reference
-└─ SRVCOM-5208 SP=—  [Serverless] Spike - Serverless Operator Mandatory vs. Optional images for OLM
+└─ OSDOCS-20296 SP=6  Docs for OCPSTRAT-3350 OLM/Operator Metadata: Labeling Related Images for Selective Disconnected Mirroring
+   ├─ OSDOCS-21715 SP=3  Document selective mirroring of operator images (oc-mirror v2)
+   └─ OSDOCS-22742 SP=3  Document the labels field of relatedImages in the olm.bundle schema reference
 ```
-
-Epic SP sum: 46.
